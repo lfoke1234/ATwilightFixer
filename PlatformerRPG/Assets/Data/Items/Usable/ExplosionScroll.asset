@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5009bca2a9d43a4489f9a607a0b6b806, type: 3}
+  m_Name: ExplosionScroll
+  m_EditorClassIdentifier: 
+  itemType: 2
+  itemName: ex
+  icon: {fileID: 21300000, guid: ec90149dd5ccbdc44aefcc07807de599, type: 3}
+  itemPrice: 10
+  itemDescription: 
+  itemID: 30231192ed958ec48883eac680c072e8
+  dropChance: 100
+  usableItemID: 0
+  itemCooldown: 2
+  itemEffects:
+  - {fileID: 11400000, guid: 18bde415f56d98f45bbdf3f35e08a3f1, type: 2}

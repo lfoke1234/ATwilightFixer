@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1204162091134322403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7154817636570709712}
+  - component: {fileID: 3220524595586608101}
+  - component: {fileID: 5011545728593475990}
+  - component: {fileID: 1166753894122927004}
+  - component: {fileID: 441308764555342503}
+  - component: {fileID: 3070806704517507185}
+  m_Layer: 0
+  m_Name: SkillManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7154817636570709712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204162091134322403}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.82999945, y: 1.2299993, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3220524595586608101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204162091134322403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf4d41d7f47c0f4f86de08b2ca995b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5011545728593475990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204162091134322403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e629d349465f84a9795c5a232fd422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 2
+  amount: 0
+  dash1Unlocked: 0
+  dash1UnlockButton: {fileID: 0}
+  damage1: 0
+  timer1: 3
+  dash2Unlocked: 0
+  dash2UnlockButton: {fileID: 0}
+  damage2: 50
+  timer2: 3
+  dash3Unlocked: 0
+  dash3UnlockButton: {fileID: 0}
+  damage3: 100
+  timer3: 3
+--- !u!114 &1166753894122927004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204162091134322403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661dbba7ca2f1ad44917da7b69ab76b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 0
+  amount: 0
+  clonePrefab: {fileID: 4733373544230290480, guid: c1638a1512d97014cae759344ce0f116, type: 3}
+  cloneDuration: 1.5
+  canAttack: 1
+--- !u!114 &441308764555342503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204162091134322403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 875b7d4bc6932c04587df41f3cf0cbf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 0
+  amount: 0
+  swordPrefab: {fileID: 3774977209003123932, guid: 73ede905e22c40a4781ebbe02031f350, type: 3}
+  launchForce: {x: 35, y: 25}
+  swordGravity: 4.5
+  numberOfDots: 20
+  spaceBeetwenDots: 0.07
+  dotPrefab: {fileID: 3231553389752942059, guid: 329bee1c50a3b004385389e281ffe9f4, type: 3}
+  dotsParent: {fileID: 0}
+--- !u!114 &3070806704517507185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204162091134322403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a01b246096c392f4a9f6a59802239166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 2
+  amount: 0
+  slashController: {fileID: 0}
+  slashDoDamage: 0
+  firstSlashUnlocked: 0
+  firstSlashButton: {fileID: 0}
+  damage1: 10
+  secondSlashUnlocked: 0
+  secondSlashButton: {fileID: 0}
+  damage2: 20
+  thirdSlashUnlocked: 0
+  thirdSlashButton: {fileID: 0}
+  damage3: 30

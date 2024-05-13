@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63db483f41306844895503699f5c9569, type: 3}
+  m_Name: Heroine
+  m_EditorClassIdentifier: 
+  speakerName: "\uD788\uB85C\uC778"
+  textColor: {r: 1, g: 0, b: 0.5498705, a: 0}
+  sprites:
+  - {fileID: 21300000, guid: 1e5c1db71c5f1ff4f87e0d0cd3c49dd9, type: 3}
+  - {fileID: 21300000, guid: 167a1a37f7b8e8c4e9e6c25e07b43242, type: 3}
+  - {fileID: 21300000, guid: 85cfd38caecd1504cbc646e8fd489fee, type: 3}
+  prefab: {fileID: -2218388484970605353, guid: e5afac4134a57cc4cb4a418b95826b73, type: 3}

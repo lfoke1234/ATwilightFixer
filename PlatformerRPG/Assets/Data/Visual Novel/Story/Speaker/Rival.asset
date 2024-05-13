@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63db483f41306844895503699f5c9569, type: 3}
+  m_Name: Rival
+  m_EditorClassIdentifier: 
+  speakerName: "\uB77C\uC774\uBC8C"
+  textColor: {r: 0.2688679, g: 0.45559552, b: 1, a: 0}
+  sprites:
+  - {fileID: 21300000, guid: 08bc9a1059bdc6340997b4e651c027c8, type: 3}
+  - {fileID: 21300000, guid: a179191ae90bd5340b24b5e8b20c7cf6, type: 3}
+  - {fileID: 21300000, guid: eabbb3ca24d936b4a964ba3c992fcb28, type: 3}
+  prefab: {fileID: -2218388484970605353, guid: d3acd59b90edc6644888084bc3436d81, type: 3}

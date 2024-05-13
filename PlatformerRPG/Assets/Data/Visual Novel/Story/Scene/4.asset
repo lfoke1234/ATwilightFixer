@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70cf0c3032c6eac4a9453ab267dccdaa, type: 3}
+  m_Name: 4
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: "\uC8FC\uC778\uACF5 \uB4F1\uC7A5"
+    speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 400, y: 0}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
+      spriteIndex: 1
+      actionType: 5
+      coords: {x: 400, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "\uD788\uB85C\uC778 \uB4F1\uC7A5"
+    speaker: {fileID: 11400000, guid: 1a686b430ab517342a58061e99772d16, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 1a686b430ab517342a58061e99772d16, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 400, y: 0}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 1a686b430ab517342a58061e99772d16, type: 2}
+      spriteIndex: 1
+      actionType: 5
+      coords: {x: 400, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "\uB77C\uC774\uBC8C \uB4F1\uC7A5"
+    speaker: {fileID: 11400000, guid: 769a8b588781bf948bff6c93207bd827, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 769a8b588781bf948bff6c93207bd827, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 400, y: 0}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 769a8b588781bf948bff6c93207bd827, type: 2}
+      spriteIndex: 1
+      actionType: 5
+      coords: {x: 400, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  background: {fileID: 0}
+  nextScene: {fileID: 11400000, guid: 7c9fc6f0d4e3a7840a3a05792a874dd9, type: 2}
