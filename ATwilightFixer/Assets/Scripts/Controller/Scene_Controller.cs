@@ -20,7 +20,11 @@ public class Scene_Controller : MonoBehaviour, ISaveManager
 
     public void SaveData(ref GameData _data)
     {
-        _data.clearStage.Add(currentStageName, clear);
+        bool success = _data.clearStage.TryAdd(currentStageName, clear);
+        if (!success)
+        {
+            _data.clearStage[currentStageName] = clear;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

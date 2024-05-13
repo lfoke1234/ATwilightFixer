@@ -23,10 +23,15 @@ public class SaveManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null)
-            Destroy(instance.gameObject);
-        else
+        if (instance == null)
+        {
             instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
     }
 
@@ -38,6 +43,15 @@ public class SaveManager : MonoBehaviour
         saveManagers = FindAllSaveManagers();
 
         LoadGame();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            SaveGame();
+        }
+
     }
 
     public void NewGame()

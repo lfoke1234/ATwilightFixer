@@ -53,7 +53,8 @@ public class UI : MonoBehaviour, ISaveManager
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex != 0)
+        //if (SceneManager.GetActiveScene().buildIndex != 0)
+        if (!Array.Exists(donSwitchInGameUI, element => element == SceneManager.GetActiveScene().buildIndex))
             SwitchTo(inGameUI);
             
         skillTreeUI.gameObject.SetActive(false);
@@ -64,7 +65,8 @@ public class UI : MonoBehaviour, ISaveManager
     private void Update()
     {
         // Debug.Log("Current Time.timeScale: " + Time.timeScale);
-        if (SceneManager.GetActiveScene().buildIndex != 0)
+        // if (SceneManager.GetActiveScene().buildIndex != 0)
+        if (!Array.Exists(donSwitchInGameUI, element => element == SceneManager.GetActiveScene().buildIndex))
         {
             if (Input.GetKeyDown(KeyCode.I))
                 SwitchWithKeyTo(characterUI);

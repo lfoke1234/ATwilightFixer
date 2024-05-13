@@ -13052,7 +13052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ff113095c077c44b7064881d62d5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  donSwitchInGameUI: 0000000001000000
+  donSwitchInGameUI: 000000000100000002000000
   fadeScreen: {fileID: 5602248683438978337}
   endText: {fileID: 1876013202313074573}
   restartButton: {fileID: 4362235291493720409}

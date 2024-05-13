@@ -1,19 +1,37 @@
+using System.Threading;
 using UnityEngine;
 
 public class DropObjectController : MonoBehaviour
 {
+    private SpriteRenderer sr;
+    private Rigidbody2D rb;
+
+    [SerializeField] private ParticleSystem particle;
+    private bool hasDamaged;
     [SerializeField] private int damage;
-    private ParticleSystem particle;
+    private float timer = 5f;
+
 
     private void Start()
     {
-        particle.GetComponentInChildren<ParticleSystem>();    
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+    }
 
+    private void Update()
+    {
+        timer -= Time.deltaTime;
+
+        if (timer <= 0)
+            Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Entity>())
+        int layerIndex = collision.gameObject.layer;
+        string layerName = LayerMask.LayerToName(layerIndex);
+
+        if (collision.GetComponent<Entity>() && hasDamaged == false)
         {
             Enemy targetEnemy = collision.GetComponent<Enemy>();
             Player targetPlayer = collision.GetComponent<Player>();
@@ -27,10 +45,16 @@ public class DropObjectController : MonoBehaviour
                 targetPlayer.stats.TakeDamage(damage);
             }
 
-            Destroy(gameObject);
+            hasDamaged = true;
         }
-        else
+
+        if (layerName == "Ground" || layerName == "BrokenWall")
         {
+            hasDamaged = true;
+            rb.isKinematic = true;
+            rb.velocity = Vector3.zero;
+            sr.enabled = false;
+            particle.Play();
         }
     }
 }
