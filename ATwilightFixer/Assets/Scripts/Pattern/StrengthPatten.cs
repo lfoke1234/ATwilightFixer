@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class StrengthPatten : MonoBehaviour
 {
+    public int deadCount;
+
     [SerializeField] private GameObject thunderSpawner;
     [SerializeField] private GameObject chainSpawner;
     [SerializeField] private GameObject bulletSpawner;
