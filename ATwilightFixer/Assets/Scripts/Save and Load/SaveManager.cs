@@ -87,6 +87,7 @@ public class SaveManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
+        Debug.Log("Save Data");
         SaveGame();
     }
 

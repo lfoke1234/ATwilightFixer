@@ -21,7 +21,10 @@ public class BornAnimation : MonoBehaviour
         if (player != null && !doDamage)
         {
             int playerArmor = player.armor.GetValue();
-            player.TakeDamage(damage - playerArmor);
+
+            if (damage - playerArmor >= 0)
+                player.TakeDamage(damage - playerArmor);
+
             doDamage = true;
         }
     }

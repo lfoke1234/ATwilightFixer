@@ -20,12 +20,17 @@ public class WorldObject : Entity
 
     public override void Die()
     {
-        if(isRespawn)
+        if (isRespawn)
         {
             StartCoroutine(RespawnObject());
         }
         else if (!isRespawn)
-            Destroy(gameObject);
+            DeadEvent();
+    }
+
+    protected virtual void DeadEvent()
+    {
+        Destroy(gameObject);
     }
 
     public void StartRespawnCoroutine(IEnumerator coroutine)
