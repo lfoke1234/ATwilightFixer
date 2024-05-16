@@ -18,8 +18,31 @@ public class StrengthPatten : MonoBehaviour
 
     private void Update()
     {
-        if (isActive)
+        BuffPatten();
+    }
+
+    private void BuffPatten()
+    {
+        if (deadCount == 1)
+        {
+            Debug.Log(deadCount);
+            thunderSpawner.SetActive(true);
+        }
+        else if (deadCount == 2)
+        {
+            Debug.Log(deadCount);
+            bulletSpawner.SetActive(true);
+        }
+        else if (deadCount == 3)
+        {
+            Debug.Log(deadCount);
+            chainSpawner.SetActive(true);
+        }
+        else if (deadCount == 4)
+        {
+            Debug.Log(deadCount);
             Strength();
+        }
     }
 
     private void Strength()

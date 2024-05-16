@@ -23,7 +23,6 @@ public class ChainSpawner : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(isStr);
         player = PlayerManager.instance.player.transform;
         StartCoroutine(SpawnChain());
     }

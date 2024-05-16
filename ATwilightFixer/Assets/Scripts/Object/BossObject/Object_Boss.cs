@@ -24,7 +24,6 @@ public class Object_Boss : Enemy
         stats.isDead = true;
         anim.SetBool("Dead", true);
         FindObjectOfType<StrengthPatten>().deadCount++;
-        Debug.Log(FindObjectOfType<StrengthPatten>().deadCount);
     }
 
 }
