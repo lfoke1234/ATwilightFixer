@@ -44,13 +44,11 @@ public class PlayerManager : MonoBehaviour, ISaveManager
 
     public void LoadData(GameData _data)
     {
-        Debug.Log("Load gold");
         this.currency = _data.currency;
     }
 
     public void SaveData(ref GameData _data)
     {
-        Debug.Log("Save gold");
         _data.currency = this.currency;
     }
 

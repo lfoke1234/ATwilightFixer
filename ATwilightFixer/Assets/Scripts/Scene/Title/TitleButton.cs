@@ -20,6 +20,7 @@ public class TitleButton : MonoBehaviour, ISaveManager
 
     void Start()
     {
+        Debug.Log(isClearTutorial);
         start.onClick.AddListener(() => StartGame());
         quit.onClick.AddListener(() => Application.Quit());
     }

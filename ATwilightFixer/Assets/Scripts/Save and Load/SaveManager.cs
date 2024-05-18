@@ -1,7 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour
 {
@@ -69,14 +69,22 @@ public class SaveManager : MonoBehaviour
             NewGame();
         }
 
+        saveManagers = FindAllSaveManagers();
         foreach (ISaveManager saveManager in saveManagers)
         {
             saveManager.LoadData(gameData);
         }
+
+        // saveManagers = FindAllSaveManagers(); // saveManagers¸¦ °»½Å
+        // foreach (ISaveManager saveManager in saveManagers)
+        // {
+        //     saveManager.LoadData(gameData);
+        // }
     }
 
     public void SaveGame()
     {
+        saveManagers = FindAllSaveManagers();
         foreach (ISaveManager saveManager in saveManagers)
         {
             saveManager.SaveData(ref gameData);
@@ -87,8 +95,10 @@ public class SaveManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        Debug.Log("Save Data");
-        SaveGame();
+        if (SceneManager.sceneCount != 0)
+        {
+            SaveGame();
+        }
     }
 
     private List<ISaveManager> FindAllSaveManagers()

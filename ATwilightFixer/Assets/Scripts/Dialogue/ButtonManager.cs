@@ -7,10 +7,12 @@ public class ButtonManager : MonoBehaviour
     public void Stage1()
     {
         SceneManager.LoadScene("Stage 1");
+        SaveManager.instance.LoadGame();
     }
     public void Stage2()
     {
         SceneManager.LoadScene("Stage 2");
+        SaveManager.instance.LoadGame();
     }
     public void Stage3()
     {

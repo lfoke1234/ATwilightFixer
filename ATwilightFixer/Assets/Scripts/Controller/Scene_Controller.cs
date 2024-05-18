@@ -8,22 +8,39 @@ public class Scene_Controller : MonoBehaviour, ISaveManager
     protected string currentStageName;
     protected bool clear;
 
-
     private void Start()
     {
         currentStageName = SceneManager.GetActiveScene().name;
+        SaveManager.instance.LoadGame();
     }
 
     public void LoadData(GameData _data)
     {
+        Debug.Log("Loaded StageController");
+        if (!string.IsNullOrEmpty(currentStageName) && _data.clearStage.ContainsKey(currentStageName))
+        {
+            clear = _data.clearStage[currentStageName];
+            Debug.Log(clear);
+        }
+        else
+        {
+            Debug.Log("Current stage name is null or empty, or the key does not exist in the dictionary.");
+        }
     }
 
     public void SaveData(ref GameData _data)
     {
-        bool success = _data.clearStage.TryAdd(currentStageName, clear);
-        if (!success)
+        if (!string.IsNullOrEmpty(currentStageName))
         {
-            _data.clearStage[currentStageName] = clear;
+            bool success = _data.clearStage.TryAdd(currentStageName, clear);
+            if (!success)
+            {
+                _data.clearStage[currentStageName] = clear;
+            }
+        }
+        else
+        {
+            Debug.Log("Current stage name is null or empty.");
         }
     }
 
@@ -41,7 +58,7 @@ public class Scene_Controller : MonoBehaviour, ISaveManager
             }
 
             clear = true;
-            
+
             SaveManager.instance.SaveGame();
             SceneManager.LoadScene("MainMenu");
         }
