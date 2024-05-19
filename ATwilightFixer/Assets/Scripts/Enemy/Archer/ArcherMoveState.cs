@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ArcherMoveState : ArcherGroundState
@@ -37,7 +35,7 @@ public class ArcherMoveState : ArcherGroundState
     {
         int dir = Random.Range(0, 2);
         int sec = Random.Range(2, 4);
-        
+
         moveDir = (dir == 0) ? -1 : 1;
         stateTimer = sec;
     }

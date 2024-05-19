@@ -26,20 +26,20 @@ public class PlayerWallSlideState : PlayerState
     public override void Update()
     {
         base.Update();
-
-        if (Input.GetKeyDown(KeyCode.C))
+        if (IsActionTriggered("Jump"))
         {
             stateMachine.ChangeState(player.wallJump);
             return;
         }
 
-        if (yInput != 0 && player.IsTopDected() == false)
+        if (movementInput.y != 0 && player.IsTopDected() == false)
         {
             stateMachine.ChangeState(player.wallMove);
         }
 
-        if(xInput != 0 && player.facingDir != xInput)
+        if(movementInput.x != 0 && player.facingDir != movementInput.x)
         {
+            Debug.Log("Change state");
             stateMachine.ChangeState(player.idleState);
         }
 

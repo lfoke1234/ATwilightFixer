@@ -25,19 +25,19 @@ public class PlayerWallMoveState : PlayerState
     public override void Update()
     {
         base.Update();
-        player.SetVelocity(0, yInput * player.wallMoveSpeed);
+        player.SetVelocity(0, movementInput.y * player.wallMoveSpeed);
 
-        if (yInput == 0)
+        if (movementInput.y == 0)
         {
             stateMachine.ChangeState(player.wallSlide);
         }
 
-        if (xInput != 0 && player.facingDir != xInput)
+        if (movementInput.x != 0 && player.facingDir != movementInput.x)
         {
             stateMachine.ChangeState(player.idleState);
         }
 
-        if (player.WallClimbCheck() == false && yInput > 0)
+        if (player.WallClimbCheck() == false && movementInput.y > 0)
         {
             stateMachine.ChangeState(player.climbState);
         }

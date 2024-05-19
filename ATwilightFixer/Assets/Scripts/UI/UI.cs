@@ -27,6 +27,7 @@ public class UI : MonoBehaviour, ISaveManager
 
     [SerializeField] private UI_VolumeSlider[] volumeSettings;
 
+
     private void Awake()
     {
         if (instance == null)
@@ -68,13 +69,13 @@ public class UI : MonoBehaviour, ISaveManager
         // if (SceneManager.GetActiveScene().buildIndex != 0)
         if (!Array.Exists(donSwitchInGameUI, element => element == SceneManager.GetActiveScene().buildIndex))
         {
-            if (Input.GetKeyDown(KeyCode.I))
+            if (IsActionTriggered("UI_Inventory"))
                 SwitchWithKeyTo(characterUI);
 
-            if (Input.GetKeyDown(KeyCode.K))
+            if (IsActionTriggered("UI_Skilltree"))
                 SwitchWithKeyTo(skillTreeUI);
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (IsActionTriggered("UI_Option"))
                 SwitchWithKeyTo(optionsUI);
         }
         
@@ -196,5 +197,11 @@ public class UI : MonoBehaviour, ISaveManager
         {
             _data.volumSettings.Add(item.parameter, item.slider.value);
         }
+    }
+
+    protected bool IsActionTriggered(string actionName)
+    {
+        var action = PlayerInputHandler.instance.GetAction(actionName);
+        return action != null && action.triggered;
     }
 }

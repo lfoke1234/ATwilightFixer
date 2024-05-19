@@ -1,15 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerState
 {
+    private PlayerController controls;
+
     protected PlayerStateMachine stateMachine;
     protected Player player;
 
     protected Rigidbody2D rb;
 
+    protected Vector2 movementInput;
     protected float xInput;
     protected float yInput;
     private string animBoolName;
@@ -23,6 +24,7 @@ public class PlayerState
         this.player = _player;
         this.animBoolName = animBoolName;
     }
+    
 
     public virtual void Enter()
     {
@@ -34,8 +36,9 @@ public class PlayerState
     public virtual void Update()
     {
         stateTimer -= Time.deltaTime;
-        xInput = Input.GetAxisRaw("Horizontal");
-        yInput = Input.GetAxisRaw("Vertical");
+        movementInput = PlayerInputHandler.instance.GetMovementInput();
+        //xInput = Input.GetAxisRaw("Horizontal");
+        //yInput = Input.GetAxisRaw("Vertical");
         player.anim.SetFloat("yVelocity", rb.velocity.y);
     }
 
@@ -47,5 +50,11 @@ public class PlayerState
     public virtual void AnimationFinishTrigger()
     {
         triggerCalled = true;
+    }
+
+    protected bool IsActionTriggered(string actionName)
+    {
+        var action = PlayerInputHandler.instance.GetAction(actionName);
+        return action != null && action.triggered;
     }
 }

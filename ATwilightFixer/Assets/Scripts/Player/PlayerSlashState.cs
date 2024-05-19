@@ -29,8 +29,8 @@ public class PlayerSlashState : PlayerState
     public override void Update()
     {
         base.Update();
-        if (xInput != 0)
-            attackDir = xInput;
+        if (movementInput.x != 0)
+            attackDir = movementInput.x;
 
         player.SetVelocity(player.attackMovement[3].x * attackDir, player.attackMovement[3].y);
 

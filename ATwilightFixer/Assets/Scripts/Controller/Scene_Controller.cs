@@ -16,7 +16,6 @@ public class Scene_Controller : MonoBehaviour, ISaveManager
 
     public void LoadData(GameData _data)
     {
-        Debug.Log("Loaded StageController");
         if (!string.IsNullOrEmpty(currentStageName) && _data.clearStage.ContainsKey(currentStageName))
         {
             clear = _data.clearStage[currentStageName];

@@ -26,7 +26,7 @@ public class PlayerJumpState : PlayerState
     {
         base.Update();
 
-        if (Input.GetKeyDown(KeyCode.C) && player.hasJump && !player.hasSecondJump)
+        if (IsActionTriggered("Jump") && player.hasJump && !player.hasSecondJump)
         {
             stateMachine.ChangeState(player.secondJump);
         }
@@ -36,9 +36,9 @@ public class PlayerJumpState : PlayerState
             stateMachine.ChangeState(player.airState);
         }
 
-        if (xInput != 0)
+        if (movementInput.x != 0)
         {
-            player.SetVelocity(xInput * player.moveSpeed, rb.velocity.y);
+            player.SetVelocity(movementInput.x * player.moveSpeed, rb.velocity.y);
         }
     }
 }

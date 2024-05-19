@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Cinemachine;
+using UnityEngine;
 
 public class VCPlayerFollow_Controller : MonoBehaviour
 {
@@ -15,5 +13,4 @@ public class VCPlayerFollow_Controller : MonoBehaviour
             vcam.Follow = PlayerManager.instance.player.transform;
         }
     }
-
 }

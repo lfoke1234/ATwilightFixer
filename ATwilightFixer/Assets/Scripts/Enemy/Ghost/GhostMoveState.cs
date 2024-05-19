@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GhostMoveState : EnemyState
@@ -37,17 +35,17 @@ public class GhostMoveState : EnemyState
     {
         base.Update();
 
-       //if (Vector2.Distance(enemy.transform.position, player.position) < 2)
-       //{
-       //    if (player.position.x < enemy.transform.position.x && enemy.facingDir == 1)
-       //    {
-       //        enemy.Flip();
-       //    }
-       //    else if (player.position.x > enemy.transform.position.x && enemy.facingDir == -1)
-       //    {
-       //        enemy.Flip();
-       //    }
-       //}
+        //if (Vector2.Distance(enemy.transform.position, player.position) < 2)
+        //{
+        //    if (player.position.x < enemy.transform.position.x && enemy.facingDir == 1)
+        //    {
+        //        enemy.Flip();
+        //    }
+        //    else if (player.position.x > enemy.transform.position.x && enemy.facingDir == -1)
+        //    {
+        //        enemy.Flip();
+        //    }
+        //}
 
 
         Vector2 currentPosition = enemy.transform.position;

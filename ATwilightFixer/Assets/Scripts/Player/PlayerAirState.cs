@@ -30,7 +30,7 @@ public class PlayerAirState : PlayerState
             stateMachine.ChangeState(player.wallSlide);
         }
 
-        if (Input.GetKeyDown(KeyCode.C) && !player.hasSecondJump)
+        if (IsActionTriggered("Jump") && !player.hasSecondJump)
         {
             stateMachine.ChangeState(player.secondJump);
         }
@@ -51,9 +51,9 @@ public class PlayerAirState : PlayerState
             player.SetVelocity(0.0f, 0.0f);
         }
 
-        if (xInput!= 0)
+        if (movementInput.x != 0)
         {
-            player.SetVelocity(xInput * player.moveSpeed * 0.8f, rb.velocity.y);
+            player.SetVelocity(movementInput.x * player.moveSpeed * 0.8f, rb.velocity.y);
         }
     }
 }

@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class GhostDeadState : EnemyState
 {
     Enemy_Ghost enemy;
@@ -27,5 +23,4 @@ public class GhostDeadState : EnemyState
         enemy.SetZeroVelocity();
     }
 
-    
 }

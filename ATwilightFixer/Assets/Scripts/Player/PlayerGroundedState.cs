@@ -34,12 +34,18 @@ public class PlayerGroundedState : PlayerState
         //}
 
 
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            stateMachine.ChangeState(player.counterAttack);
-        }
+        // if (Input.GetKeyDown(KeyCode.A))
+        // {
+        //     stateMachine.ChangeState(player.counterAttack);
+        // }
+        // 
+        // if(Input.GetKeyDown(KeyCode.X) && player.stats.currentStamina > 0)
+        // {
+        //     stateMachine.ChangeState(player.primaryAttack);
+        // }
 
-        if(Input.GetKeyDown(KeyCode.X) && player.stats.currentStamina > 0)
+
+        if (IsActionTriggered("Attack") && player.stats.currentStamina > 0)
         {
             stateMachine.ChangeState(player.primaryAttack);
         }
@@ -47,14 +53,14 @@ public class PlayerGroundedState : PlayerState
         if (player.IsGroundDetected() == false)
             stateMachine.ChangeState(player.airState);
 
-        if (Input.GetKeyDown(KeyCode.C) && player.IsGroundDetected())
+        if (IsActionTriggered("Jump") && player.IsGroundDetected())
         {
             if (!player.hasJump && !player.hasSecondJump)
             stateMachine.ChangeState(player.jumpState);
             
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && SkillManager.instance.slash.CanUseSkill())
+        if (IsActionTriggered("Slash") && SkillManager.instance.slash.CanUseSkill())
         {
             stateMachine.ChangeState(player.slashState);
         }

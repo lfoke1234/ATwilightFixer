@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class ArcherIdleState : ArcherGroundState
 {
     public ArcherIdleState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, Enemy_Archer _enemy) : base(_enemyBase, _stateMachine, _animBoolName, _enemy)
@@ -27,6 +23,4 @@ public class ArcherIdleState : ArcherGroundState
         if (stateTimer <= 0)
             stateMachine.ChangeState(enemy.moveState);
     }
-
-   
 }

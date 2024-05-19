@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Entity
@@ -141,23 +140,23 @@ public class Player : Entity
         CheckForDashInput();
 
         #region Quick Slot
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (IsActionTriggered("QuickSlot01"))
         {
             Inventory.Instance.UseQuickSlot(1);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (IsActionTriggered("QuickSlot02"))
         {
             Inventory.Instance.UseQuickSlot(2);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (IsActionTriggered("QuickSlot03"))
         {
             Inventory.Instance.UseQuickSlot(3);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        else if (IsActionTriggered("QuickSlot04"))
         {
             Inventory.Instance.UseQuickSlot(4);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        else if (IsActionTriggered("QuickSlot05"))
         {
             Inventory.Instance.UseQuickSlot(5);
         }
@@ -235,9 +234,10 @@ public class Player : Entity
         if (IsWallDected())
             return;
 
-        if (Input.GetKeyDown(KeyCode.Z) && SkillManager.instance.dash.CanUseSkill()) 
+        if (IsActionTriggered("Dash") && SkillManager.instance.dash.CanUseSkill()) 
         {
-            dashDir = Input.GetAxisRaw("Horizontal");
+            Vector2 dashMovement = PlayerInputHandler.instance.GetMovementInput();
+            dashDir = dashMovement.x;
 
             if (dashDir == 0)
                 dashDir = facingDir;
@@ -259,6 +259,12 @@ public class Player : Entity
         stateMachine.ChangeState(idleState);
         stats.currentHealth = stats.GetMaxHealthValue();
         stats.currentStamina = stats.GetMaxStaminaValue();
+    }
+
+    private bool IsActionTriggered(string actionName)
+    {
+        var action = PlayerInputHandler.instance.GetAction(actionName);
+        return action != null && action.triggered;
     }
 
     protected override void OnDrawGizmos()
