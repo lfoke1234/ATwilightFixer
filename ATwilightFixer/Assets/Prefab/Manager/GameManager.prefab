@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc21f09c211696489aea2cdb44160e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nonPauseSceneIndexes: 0000000001000000
+  nonPauseSceneIndexes: 000000000100000002000000
+  isPlayCutScene: 0
