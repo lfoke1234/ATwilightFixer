@@ -19,6 +19,8 @@ public class UI : MonoBehaviour, ISaveManager
     [SerializeField] private GameObject skillTreeUI;
     [SerializeField] private GameObject craftUI;
     [SerializeField] private GameObject optionsUI;
+    [SerializeField] private GameObject keyBindingUI;
+    [SerializeField] private GameObject resolutionUI;
     [SerializeField] private GameObject inGameUI;
 
     public UI_SkillTooltip skillTooltip;
@@ -27,6 +29,8 @@ public class UI : MonoBehaviour, ISaveManager
 
     [SerializeField] private UI_VolumeSlider[] volumeSettings;
 
+    private GameObject[] uiPanels;
+    private int currentUIPanelIndex;
 
     private void Awake()
     {
@@ -41,6 +45,8 @@ public class UI : MonoBehaviour, ISaveManager
             return;
         }
 
+        uiPanels = new GameObject[] { characterUI, skillTreeUI, optionsUI };
+             
         SwitchTo(skillTreeUI);
 
         if (SceneManager.GetActiveScene().buildIndex != 0)
@@ -57,8 +63,13 @@ public class UI : MonoBehaviour, ISaveManager
         //if (SceneManager.GetActiveScene().buildIndex != 0)
         if (!Array.Exists(donSwitchInGameUI, element => element == SceneManager.GetActiveScene().buildIndex))
             SwitchTo(inGameUI);
-            
+
+        characterUI.gameObject.SetActive(false);
         skillTreeUI.gameObject.SetActive(false);
+        optionsUI.gameObject.SetActive(false);
+        keyBindingUI.gameObject.SetActive(false);
+        resolutionUI.gameObject.SetActive(false);
+
         itemTooltip.gameObject.SetActive(false);
         statTooltip.gameObject.SetActive(false);
     }
@@ -75,8 +86,30 @@ public class UI : MonoBehaviour, ISaveManager
             if (IsActionTriggered("UI_Skilltree"))
                 SwitchWithKeyTo(skillTreeUI);
 
-            if (IsActionTriggered("UI_Option"))
+            if (IsActionTriggered("UI_Option") && keyBindingUI.gameObject.activeSelf == false && resolutionUI.gameObject.activeSelf == false)
                 SwitchWithKeyTo(optionsUI);
+
+            if (IsActionTriggered("UI_Next"))
+                SwitchToNextUIPanel();
+
+            if (IsActionTriggered("UI_Previous"))
+                SwitchToPreviousUIPanel();
+
+            if (IsActionTriggered("UI_Select"))
+                SelectCurrentUIPanel();
+
+            if (Input.GetKeyDown(KeyCode.Escape) && keyBindingUI.gameObject.activeSelf)
+            {
+                AudioManager.instance.PlaySFX(5, null);
+                keyBindingUI.gameObject.SetActive(false);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape) && resolutionUI.gameObject.activeSelf)
+            {
+                AudioManager.instance.PlaySFX(5, null);
+                resolutionUI.gameObject.SetActive(false);
+            }
+
         }
         
     }
@@ -139,6 +172,27 @@ public class UI : MonoBehaviour, ISaveManager
         }
 
         SwitchTo(_menu);
+    }
+
+    private void SwitchToNextUIPanel()
+    {
+        currentUIPanelIndex = (currentUIPanelIndex + 1) % uiPanels.Length;
+        SwitchTo(uiPanels[currentUIPanelIndex]);
+    }
+
+    private void SwitchToPreviousUIPanel()
+    {
+        currentUIPanelIndex = (currentUIPanelIndex - 1 + uiPanels.Length) % uiPanels.Length;
+        SwitchTo(uiPanels[currentUIPanelIndex]);
+    }
+
+    private void SelectCurrentUIPanel()
+    {
+        if (uiPanels[currentUIPanelIndex].activeSelf)
+        {
+            // 현재 활성화된 UI 패널 내의 옵션을 선택하는 로직을 구현합니다.
+            Debug.Log("Selected: " + uiPanels[currentUIPanelIndex].name);
+        }
     }
 
     private void CheckForInGameUI()

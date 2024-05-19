@@ -170,6 +170,33 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UI_Next"",
+                    ""type"": ""Button"",
+                    ""id"": ""87b117a0-29cb-4e0a-adc4-b8f1bc54cb7b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UI_Previous"",
+                    ""type"": ""Button"",
+                    ""id"": ""6e02a213-ef35-4d28-8e90-c6bb8b71c76d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UI_Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""66645482-fe51-4bb8-ac51-d3ba2e98d335"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -359,6 +386,39 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                     ""action"": ""Right"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""681ea16b-e642-4110-bf4c-18752b68b40f"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UI_Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e61b1fc7-e8bc-4af9-a2a8-24387e46b2cf"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UI_Previous"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b39de716-d89b-41f9-a0bd-7a430b78f1af"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UI_Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -383,6 +443,9 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         m_Character_Down = m_Character.FindAction("Down", throwIfNotFound: true);
         m_Character_Left = m_Character.FindAction("Left", throwIfNotFound: true);
         m_Character_Right = m_Character.FindAction("Right", throwIfNotFound: true);
+        m_Character_UI_Next = m_Character.FindAction("UI_Next", throwIfNotFound: true);
+        m_Character_UI_Previous = m_Character.FindAction("UI_Previous", throwIfNotFound: true);
+        m_Character_UI_Select = m_Character.FindAction("UI_Select", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -460,6 +523,9 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
     private readonly InputAction m_Character_Down;
     private readonly InputAction m_Character_Left;
     private readonly InputAction m_Character_Right;
+    private readonly InputAction m_Character_UI_Next;
+    private readonly InputAction m_Character_UI_Previous;
+    private readonly InputAction m_Character_UI_Select;
     public struct CharacterActions
     {
         private @PlayerController m_Wrapper;
@@ -480,6 +546,9 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         public InputAction @Down => m_Wrapper.m_Character_Down;
         public InputAction @Left => m_Wrapper.m_Character_Left;
         public InputAction @Right => m_Wrapper.m_Character_Right;
+        public InputAction @UI_Next => m_Wrapper.m_Character_UI_Next;
+        public InputAction @UI_Previous => m_Wrapper.m_Character_UI_Previous;
+        public InputAction @UI_Select => m_Wrapper.m_Character_UI_Select;
         public InputActionMap Get() { return m_Wrapper.m_Character; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -537,6 +606,15 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
             @Right.started += instance.OnRight;
             @Right.performed += instance.OnRight;
             @Right.canceled += instance.OnRight;
+            @UI_Next.started += instance.OnUI_Next;
+            @UI_Next.performed += instance.OnUI_Next;
+            @UI_Next.canceled += instance.OnUI_Next;
+            @UI_Previous.started += instance.OnUI_Previous;
+            @UI_Previous.performed += instance.OnUI_Previous;
+            @UI_Previous.canceled += instance.OnUI_Previous;
+            @UI_Select.started += instance.OnUI_Select;
+            @UI_Select.performed += instance.OnUI_Select;
+            @UI_Select.canceled += instance.OnUI_Select;
         }
 
         private void UnregisterCallbacks(ICharacterActions instance)
@@ -589,6 +667,15 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
             @Right.started -= instance.OnRight;
             @Right.performed -= instance.OnRight;
             @Right.canceled -= instance.OnRight;
+            @UI_Next.started -= instance.OnUI_Next;
+            @UI_Next.performed -= instance.OnUI_Next;
+            @UI_Next.canceled -= instance.OnUI_Next;
+            @UI_Previous.started -= instance.OnUI_Previous;
+            @UI_Previous.performed -= instance.OnUI_Previous;
+            @UI_Previous.canceled -= instance.OnUI_Previous;
+            @UI_Select.started -= instance.OnUI_Select;
+            @UI_Select.performed -= instance.OnUI_Select;
+            @UI_Select.canceled -= instance.OnUI_Select;
         }
 
         public void RemoveCallbacks(ICharacterActions instance)
@@ -624,5 +711,8 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         void OnDown(InputAction.CallbackContext context);
         void OnLeft(InputAction.CallbackContext context);
         void OnRight(InputAction.CallbackContext context);
+        void OnUI_Next(InputAction.CallbackContext context);
+        void OnUI_Previous(InputAction.CallbackContext context);
+        void OnUI_Select(InputAction.CallbackContext context);
     }
 }
