@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class UI_KeyBinding : MonoBehaviour, ISaveManager
 {
+    [SerializeField] private GameObject _activeParent;
+
     #region Button
     [SerializeField] private Button rightButton;
     [SerializeField] private TextMeshProUGUI rightText;
@@ -39,8 +41,17 @@ public class UI_KeyBinding : MonoBehaviour, ISaveManager
     [SerializeField] private Button optionButton;
     [SerializeField] private TextMeshProUGUI optionText;
 
-    
+
     #endregion
+
+    private void Awake()
+    {
+        _activeParent.SetActive(true);
+    }
+
+    private void OnEnable()
+    {
+    }
 
     private void Start()
     {
@@ -82,6 +93,7 @@ public class UI_KeyBinding : MonoBehaviour, ISaveManager
 
     private void StartRebinding(string actionName, TextMeshProUGUI buttonText)
     {
+        buttonText.text = "Å° ÀÔ·Â";
         var action = PlayerInputHandler.instance.GetAction(actionName);
         if (action == null) return;
 
@@ -137,6 +149,9 @@ public class UI_KeyBinding : MonoBehaviour, ISaveManager
             case "rightShift":
                 readableName = "RShift";
                 break;
+            case "leftCtrl":
+                readableName = "LCtr";
+                    break;
             default:
                 readableName = InputControlPath.ToHumanReadableString(controlPath, InputControlPath.HumanReadableStringOptions.OmitDevice).ToUpper();
                 break;
@@ -148,9 +163,9 @@ public class UI_KeyBinding : MonoBehaviour, ISaveManager
 
     public void LoadData(GameData _data)
     {
+        Debug.Log("Load keyBInding value");
         if (_data.keyBindings != null)
         {
-            Debug.Log("Load key value");
             foreach (var binding in _data.keyBindings)
             {
                 var action = PlayerInputHandler.instance.GetAction(binding.Key);

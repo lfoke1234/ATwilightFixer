@@ -46,7 +46,6 @@ public class UI_SkillTreeSlot : MonoBehaviour, IPointerClickHandler, ISaveManage
     {
         if (canUnlock == false)
         {
-            Debug.Log("You need Clear Stage");
             return;
         }
 
