@@ -93,6 +93,22 @@ public class SaveManager : MonoBehaviour
         dataHandler.Save(gameData);
     }
 
+    public void SaveSpecificScript(string scriptName)
+    {
+        saveManagers = FindAllSaveManagers();
+        ISaveManager specificSaveManager = saveManagers.FirstOrDefault(sm => sm.GetType().Name == scriptName);
+
+        if (specificSaveManager != null)
+        {
+            specificSaveManager.SaveData(ref gameData);
+            dataHandler.Save(gameData);
+        }
+        else
+        {
+            Debug.LogWarning("No SaveManager found with the script name: " + scriptName);
+        }
+    }
+
     private void OnApplicationQuit()
     {
         if (SceneManager.sceneCount != 0)

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class UI_KeyBinding : MonoBehaviour
+public class UI_KeyBinding : MonoBehaviour, ISaveManager
 {
     #region Button
     [SerializeField] private Button rightButton;
@@ -38,6 +38,8 @@ public class UI_KeyBinding : MonoBehaviour
 
     [SerializeField] private Button optionButton;
     [SerializeField] private TextMeshProUGUI optionText;
+
+    
     #endregion
 
     private void Start()
@@ -91,6 +93,7 @@ public class UI_KeyBinding : MonoBehaviour
               {
                   action.Enable();
                   UpdateButtonTextWithSize(action.controls[0].path, buttonText);
+                  SaveManager.instance.SaveSpecificScript(this.GetType().Name);
                   operation.Dispose();
               })
               .Start();
@@ -128,6 +131,12 @@ public class UI_KeyBinding : MonoBehaviour
                 readableName = "¡æ";
                 fontSize = 48;
                 break;
+            case "leftShift":
+                readableName = "LShift";
+                break;
+            case "rightShift":
+                readableName = "RShift";
+                break;
             default:
                 readableName = InputControlPath.ToHumanReadableString(controlPath, InputControlPath.HumanReadableStringOptions.OmitDevice).ToUpper();
                 break;
@@ -135,5 +144,68 @@ public class UI_KeyBinding : MonoBehaviour
 
         buttonText.text = readableName;
         buttonText.fontSize = fontSize;
+    }
+
+    public void LoadData(GameData _data)
+    {
+        if (_data.keyBindings != null)
+        {
+            Debug.Log("Load key value");
+            foreach (var binding in _data.keyBindings)
+            {
+                var action = PlayerInputHandler.instance.GetAction(binding.Key);
+                if (action != null)
+                {
+                    Debug.Log("Binding " + binding.Value + "With " + binding.Key);
+                    action.ApplyBindingOverride(binding.Value);
+                    UpdateButtonText(binding.Key, GetButtonText(binding.Key));
+                }
+            }
+        }
+    }
+
+    public void SaveData(ref GameData _data)
+    {
+        if (_data.keyBindings == null)
+        {
+            _data.keyBindings = new SerializableDictionary<string, string>();
+        }
+
+        var actions = PlayerInputHandler.instance.GetAllActions();
+        foreach (var action in actions)
+        {
+            _data.keyBindings[action.name] = action.controls[0].path;
+        }
+    }
+
+    private TextMeshProUGUI GetButtonText(string actionName)
+    {
+        switch (actionName)
+        {
+            case "Right":
+                return rightText;
+            case "Left":
+                return leftText;
+            case "Up":
+                return upText;
+            case "Down":
+                return downText;
+            case "Jump":
+                return jumpText;
+            case "Dash":
+                return dashText;
+            case "Attack":
+                return attackText;
+            case "Slash":
+                return slashText;
+            case "UI_Inventory":
+                return inventoryText;
+            case "UI_Skilltree":
+                return skillText;
+            case "UI_Option":
+                return optionText;
+            default:
+                return null;
+        }
     }
 }

@@ -15,6 +15,8 @@ public class GameData
     public SerializableDictionary<string, int> quickSlot;
 
     public SerializableDictionary<string, float> volumSettings;
+    public SerializableDictionary<string, string> keyBindings;
+
     public SerializableDictionary<string, bool> clearStage;
 
     public GameData()
@@ -29,6 +31,8 @@ public class GameData
         quickSlot = new SerializableDictionary<string, int>();
 
         volumSettings = new SerializableDictionary<string, float>();
+        keyBindings = new SerializableDictionary<string, string>();
+
         clearStage = new SerializableDictionary<string, bool>();
 
     }

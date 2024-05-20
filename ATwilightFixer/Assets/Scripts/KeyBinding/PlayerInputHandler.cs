@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -68,5 +69,15 @@ public class PlayerInputHandler : MonoBehaviour
     public InputAction GetAction(string actionName)
     {
         return controls.asset.FindAction(actionName);
+    }
+
+    public List<InputAction> GetAllActions()
+    {
+        List<InputAction> actions = new List<InputAction>();
+        foreach (var map in controls.asset.actionMaps)
+        {
+            actions.AddRange(map.actions);
+        }
+        return actions;
     }
 }
