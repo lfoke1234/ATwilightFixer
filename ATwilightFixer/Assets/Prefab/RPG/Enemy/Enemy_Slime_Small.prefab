@@ -278,6 +278,7 @@ MonoBehaviour:
   isGround:
     serializedVersion: 2
     m_Bits: 16448
+  entityFeet: {fileID: 0}
   knockbackPower: {x: 0, y: 0}
   knockbackDuration: 0.07
   isPlayer:
@@ -643,7 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
