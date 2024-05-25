@@ -6,8 +6,8 @@ public class Heal_Effect : ItemEffect
 {
     [Range(0f, 1f)]
     [SerializeField] private float healPercent;
-    [SerializeField] private float duration = 5f; // 힐 효과 지속 시간
-    [SerializeField] private float interval = 1f; // 힐 효과 간격
+    [SerializeField] private float duration = 5f;
+    [SerializeField] private float interval = 1f;
 
     public override void ExecuteEffect()
     {
