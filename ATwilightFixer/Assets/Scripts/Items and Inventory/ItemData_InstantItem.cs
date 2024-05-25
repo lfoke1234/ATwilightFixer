@@ -6,11 +6,13 @@ using UnityEngine;
 public class ItemData_InstantItem : ItemData
 {
     public int instanceItemID;
-    public int healValue = 50;
+    public ItemEffect[] itemEffects;
 
     public void ExcuteItemEffect()
     {
-        PlayerStats playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
-        playerStats.TakeDamage(healValue);
+        foreach (var item in itemEffects)
+        {
+            item.ExecuteEffect();
+        }
     }
 }

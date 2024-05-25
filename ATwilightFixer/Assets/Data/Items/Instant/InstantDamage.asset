@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fad69534e425eb0479be232e68fd325b, type: 3}
-  m_Name: InstantHeal
+  m_Name: InstantDamage
   m_EditorClassIdentifier: 
   itemType: 3
   itemName: heal10
-  icon: {fileID: -1547864223, guid: be55291aae08d434db3da3b59db3ab4a, type: 3}
+  icon: {fileID: -1409952321, guid: be55291aae08d434db3da3b59db3ab4a, type: 3}
   itemPrice: 0
   itemDescription: 
-  itemID: 4cd484970f63887488efa66d49e2541a
+  itemID: 7b9973fffdb2cd2439c75ac7b99ada6b
   dropChance: 100
   instanceItemID: 0
   healValue: 50
   itemEffects:
-  - {fileID: 11400000, guid: 77be9a6cdb9a04f4f8b7613c5385ec0d, type: 2}
+  - {fileID: 11400000, guid: ef827c08e54718947b1f8b8a0e28d9ae, type: 2}
