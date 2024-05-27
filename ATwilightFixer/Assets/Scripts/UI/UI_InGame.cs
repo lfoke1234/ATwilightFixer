@@ -31,6 +31,8 @@ public class UI_InGame : MonoBehaviour
 
     private void Start()
     {
+        playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
+
         if (playerStats != null)
         {
             playerStats.onHealthChanged += UpdateHealthUI;

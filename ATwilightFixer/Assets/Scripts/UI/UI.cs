@@ -31,6 +31,7 @@ public class UI : MonoBehaviour, ISaveManager
 
     private GameObject[] uiPanels;
     private int currentUIPanelIndex;
+    private bool isActiveUI;
 
     private void Awake()
     {
@@ -89,13 +90,16 @@ public class UI : MonoBehaviour, ISaveManager
             if (IsActionTriggered("UI_Option") && keyBindingUI.gameObject.activeSelf == false && resolutionUI.gameObject.activeSelf == false)
                 SwitchWithKeyTo(optionsUI);
 
-            if (IsActionTriggered("UI_Next"))
+            if (IsActionTriggered("UI_Next") && isActiveUI == true)
+            {
+                Debug.Log("Active");
                 SwitchToNextUIPanel();
+            }
 
-            if (IsActionTriggered("UI_Previous"))
+            if (IsActionTriggered("UI_Previous") && isActiveUI == true)
                 SwitchToPreviousUIPanel();
 
-            if (IsActionTriggered("UI_Select"))
+            if (IsActionTriggered("UI_Select") && isActiveUI == false)
                 SelectCurrentUIPanel();
 
             if (Input.GetKeyDown(KeyCode.Escape) && keyBindingUI.gameObject.activeSelf)
@@ -155,9 +159,15 @@ public class UI : MonoBehaviour, ISaveManager
         if (GameManager.Instance != null)
         {
             if (_menu == inGameUI || _menu == null)
+            {
+                isActiveUI = false;
                 GameManager.Instance.PausueGame(false);
+            }
             else
+            {
+                isActiveUI = true;
                 GameManager.Instance.PausueGame(true);
+            }
         }
 
     }
@@ -190,7 +200,6 @@ public class UI : MonoBehaviour, ISaveManager
     {
         if (uiPanels[currentUIPanelIndex].activeSelf)
         {
-            // 현재 활성화된 UI 패널 내의 옵션을 선택하는 로직을 구현합니다.
             Debug.Log("Selected: " + uiPanels[currentUIPanelIndex].name);
         }
     }
