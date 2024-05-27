@@ -32,13 +32,6 @@ public class ItemObject : MonoBehaviour
 
     public void PickupItem()
     {
-        if (itemData is ItemData_InstantItem instantItem)
-        {
-            instantItem.ExcuteItemEffect();
-            Destroy(gameObject);
-            return;
-        }
-
         if (Inventory.Instance.CanAddtoInventory() == false && itemData.itemType == ItemType.Equipment)
         {
             rb.velocity = new Vector2(0, 7);

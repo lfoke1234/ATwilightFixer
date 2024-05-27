@@ -336,7 +336,7 @@ public class CharacterStats : MonoBehaviour
             currentHiddenHealth = GetHiddenHealthValue();
     }
 
-    public virtual void DecreaseHealthBy(int _damage)
+    protected virtual void DecreaseHealthBy(int _damage)
     {
         currentHealth -= _damage;
 

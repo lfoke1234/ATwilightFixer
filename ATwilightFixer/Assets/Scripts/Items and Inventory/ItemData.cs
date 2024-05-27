@@ -10,7 +10,6 @@ public enum ItemType
     Material,
     Equipment,
     Useable,
-    Instance,
 }
 
 [CreateAssetMenu(fileName = "New Item Data", menuName = "Data/Item")]

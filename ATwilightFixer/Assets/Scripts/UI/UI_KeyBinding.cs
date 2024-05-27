@@ -150,11 +150,8 @@ public class UI_KeyBinding : MonoBehaviour, ISaveManager
                 readableName = "RShift";
                 break;
             case "leftCtrl":
-                readableName = "LCtrl";
-                break;
-            case "rightCtrl":
-                readableName = "RCtrl";
-                break;
+                readableName = "LCtr";
+                    break;
             default:
                 readableName = InputControlPath.ToHumanReadableString(controlPath, InputControlPath.HumanReadableStringOptions.OmitDevice).ToUpper();
                 break;
