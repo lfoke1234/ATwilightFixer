@@ -16,7 +16,7 @@ public class ArcherBattleState : EnemyState
         player = PlayerManager.instance.player.transform;
 
         if (player.GetComponent<PlayerStats>().isDead)
-            stateMachine.ChangeState(enemy.moveState);
+            stateMachine.ChangeState(enemy.idleState);
     }
 
     public override void Exit()

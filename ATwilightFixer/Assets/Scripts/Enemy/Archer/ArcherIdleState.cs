@@ -8,7 +8,7 @@ public class ArcherIdleState : ArcherGroundState
     {
         base.Enter();
 
-        stateTimer = enemy.idleTime;
+        //stateTimer = enemy.idleTime;
     }
 
     public override void Exit()
@@ -20,7 +20,7 @@ public class ArcherIdleState : ArcherGroundState
     {
         base.Update();
 
-        if (stateTimer <= 0)
-            stateMachine.ChangeState(enemy.moveState);
+        //if (stateTimer <= 0)
+         //   stateMachine.ChangeState(enemy.moveState);
     }
 }

@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2328461601494747790}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.8, y: 8.6, z: 0.07217619}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -254,6 +254,7 @@ MonoBehaviour:
   isGround:
     serializedVersion: 2
     m_Bits: 16448
+  entityFeet: {fileID: 0}
   knockbackPower: {x: 0, y: 0}
   knockbackDuration: 0
   isPlayer:
@@ -323,7 +324,7 @@ Transform:
   m_GameObject: {fileID: 4250729139673933063}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: 1, z: 0}
+  m_LocalPosition: {x: -0.9, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -370,12 +371,12 @@ SpriteRenderer:
   m_SortingLayerID: 1195303879
   m_SortingLayer: 4
   m_SortingOrder: 5
-  m_Sprite: {fileID: -963428901, guid: 0e4e9e307a6097a4cbd21f66b7bdf986, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ff72a9bcef806eb4a896b07bb7932c31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.7777777, y: 5.1666665}
+  m_Size: {x: 6.8, y: 5.4666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
