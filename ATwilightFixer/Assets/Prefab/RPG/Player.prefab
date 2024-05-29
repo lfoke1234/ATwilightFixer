@@ -404,6 +404,7 @@ Transform:
   - {fileID: 8843344753170340318}
   - {fileID: 7217395292241718571}
   - {fileID: 2000238377930614985}
+  - {fileID: 6848386362603576772}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &6265834925013917760
@@ -516,6 +517,8 @@ MonoBehaviour:
   defaultDashSpeed: 0
   dashSpeed: 25
   dashDuration: 0.15
+  slopeCheckPosition: {fileID: 6848386362603576772}
+  slopeCheckDistance: 0.79
   climbCheckDistance: 0.61
   climbCheck: {fileID: 5548184111364767241}
 --- !u!114 &1994355178689703799
@@ -679,7 +682,7 @@ MonoBehaviour:
     m_DissipationMode: 2
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
-  m_DefaultVelocity: {x: 0.3, y: 0.2, z: 0}
+  m_DefaultVelocity: {x: -1.5, y: 1.5, z: 0}
 --- !u!1 &4391322584958552235
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,6 +1064,37 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &7986661150467952661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6848386362603576772}
+  m_Layer: 7
+  m_Name: SlopeChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6848386362603576772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7986661150467952661}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.02, y: -1.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8694087647452600764}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8477513684987906660
 GameObject:
   m_ObjectHideFlags: 0
