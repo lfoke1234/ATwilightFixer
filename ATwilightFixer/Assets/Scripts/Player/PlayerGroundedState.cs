@@ -22,7 +22,6 @@ public class PlayerGroundedState : PlayerState
     {
         base.Update();
 
-
         //if (Input.GetKeyDown(KeyCode.S))
         //{
         //    stateMachine.ChangeState(player.aimSword);
@@ -45,6 +44,8 @@ public class PlayerGroundedState : PlayerState
         // }
 
 
+
+
         if (IsActionTriggered("Attack") && player.stats.currentStamina > 0)
         {
             stateMachine.ChangeState(player.primaryAttack);
@@ -53,12 +54,7 @@ public class PlayerGroundedState : PlayerState
         if (player.IsGroundDetected() == false)
             stateMachine.ChangeState(player.airState);
 
-        if (IsActionTriggered("Jump") && player.IsGroundDetected())
-        {
-            if (!player.hasJump && !player.hasSecondJump)
-            stateMachine.ChangeState(player.jumpState);
-            
-        }
+        
 
         if (IsActionTriggered("Slash") && SkillManager.instance.slash.CanUseSkill())
         {
@@ -71,6 +67,24 @@ public class PlayerGroundedState : PlayerState
         // }
 
 
+    }
+
+    protected void CheckSlope()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(player.slopeCheckPosition.position, Vector2.down, player.slopeCheckDistance, ground);
+
+        if (hit)
+        {
+            perp = Vector2.Perpendicular(hit.normal);
+            slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
+
+            if (slopeAngle != 0)
+                isSlope = true;
+            else
+                isSlope = false;
+
+            Debug.DrawLine(hit.point, hit.point + hit.normal, Color.blue);
+        }
     }
 
     private bool HasNoSwrod()

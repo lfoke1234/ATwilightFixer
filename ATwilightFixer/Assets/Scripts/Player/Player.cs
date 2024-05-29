@@ -37,6 +37,10 @@ public class Player : Entity
     public float dashDuration;
     public float dashDir { get; private set; }
 
+    [Header("Slope info")]
+    public Transform slopeCheckPosition;
+    public float slopeCheckDistance;
+
     [SerializeField] private float climbCheckDistance;
     public Transform climbCheck;
 

@@ -16,6 +16,7 @@ public class PlayerPrimaryAttackState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        dontFreeze = true;
 
         if (comboCounter > 1 || Time.time >= lastTimeAttacked + comboWindow) 
         {
@@ -43,7 +44,7 @@ public class PlayerPrimaryAttackState : PlayerState
 
         comboCounter++;
         lastTimeAttacked = Time.time;
-
+        dontFreeze = false;
     }
 
     public override void Update()

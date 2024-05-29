@@ -105,10 +105,16 @@ public class Entity : MonoBehaviour
 
     public void SetVelocity(float xVelocity, float yVelocity)
     {
-        if (isKnocked) return;
+        //if (isKnocked) return;
 
         rb.velocity = new Vector2(xVelocity, yVelocity);
         FlipController(xVelocity);
+    }
+
+    public void SetVelocity(Vector2 velocity)
+    {
+        rb.velocity = new Vector2(velocity.x, velocity.y);
+        FlipController(velocity.x);
     }
     #endregion
 

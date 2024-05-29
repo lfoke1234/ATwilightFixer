@@ -25,10 +25,18 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Update()
     {
         base.Update();
+        CheckSlope();
+
         if (movementInput.x == player.facingDir && player.IsWallDected())
             return;
 
         if (movementInput.x != 0 && !player.isBusy)
             stateMachine.ChangeState(player.moveState);
+
+        if (IsActionTriggered("Jump") && player.IsGroundDetected())
+        {
+            if (!player.hasJump && !player.hasSecondJump)
+                stateMachine.ChangeState(player.jumpState);
+        }
     }
 }

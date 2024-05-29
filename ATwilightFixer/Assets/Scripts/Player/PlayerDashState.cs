@@ -12,6 +12,7 @@ public class PlayerDashState : PlayerState
     {
         base.Enter();
         stateTimer = player.dashDuration;
+        dontFreeze = true;
         player.gameObject.layer = LayerMask.NameToLayer("PlayerDashing");
         //player.cd.enabled = false;
         //player.stats.ReturnDamage(true);
@@ -25,7 +26,10 @@ public class PlayerDashState : PlayerState
     public override void Exit()
     {
         base.Exit();
+        dontFreeze = false;
         player.SetVelocity(0, rb.velocity.y);
+        dontFreeze = false;
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         player.gameObject.layer = LayerMask.NameToLayer("Player");
         //player.stats.ReturnDamage(false);
         //player.cd.enabled = true;
