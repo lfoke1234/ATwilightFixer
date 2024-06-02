@@ -9610,7 +9610,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &695207774
 Transform:
   m_ObjectHideFlags: 0
@@ -13927,7 +13927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &916663358
 Transform:
   m_ObjectHideFlags: 0
@@ -17454,7 +17454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1077480693
 Transform:
   m_ObjectHideFlags: 0
@@ -56164,6 +56164,8 @@ MonoBehaviour:
   defaultDashSpeed: 0
   dashSpeed: 25
   dashDuration: 0.15
+  slopeCheckPosition: {fileID: 0}
+  slopeCheckDistance: 0
   climbCheckDistance: 0.61
   climbCheck: {fileID: 1568878454112027426}
 --- !u!224 &3699344948022516418
