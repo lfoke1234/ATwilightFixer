@@ -6,6 +6,7 @@ public class Player : Entity
     public static Player instance;
 
     [Header("Player Collision info")]
+    [SerializeField] private Vector2 groundCheckSize;
     public Transform slashCheck;
     public Vector2 slashBoxSize;
     public Transform checkLand;
@@ -231,6 +232,12 @@ public class Player : Entity
     public bool CheckLand() => Physics2D.Raycast(checkLand.position, Vector2.down, groundCheckDistance, isGround);
 
     public virtual bool IsTopDected() => Physics2D.Raycast(topCheck.position, Vector2.up, topCheckDistane, isGround);
+
+    public override bool IsGroundDetected()
+    {
+        Vector2 boxCenter = (Vector2)groundCheck.position + Vector2.down * (groundCheckDistance / 2);
+        return Physics2D.BoxCast(boxCenter, groundCheckSize, 0f, Vector2.down, groundCheckDistance / 2, isGround);
+    }
     #endregion
 
     private void CheckForDashInput()
@@ -274,9 +281,16 @@ public class Player : Entity
     protected override void OnDrawGizmos()
     {
         base.OnDrawGizmos();
+        Gizmos.color = Color.red;
+        Vector2 boxCenter = (Vector2)groundCheck.position + Vector2.down * (groundCheckDistance / 2);
+        Gizmos.DrawWireCube(boxCenter, groundCheckSize);
+
+        Gizmos.color = Color.green;
         Gizmos.DrawLine(climbCheck.position, new Vector3(climbCheck.position.x + climbCheckDistance, climbCheck.position.y));
 
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(slashCheck.position, slashBoxSize);
+
+        Gizmos.DrawLine(slopeCheckPosition.position, new Vector2(slopeCheckPosition.position.x, slopeCheckPosition.position.y - slopeCheckDistance));
     }
 }

@@ -41,8 +41,6 @@ public class PlayerState
 
     public virtual void Update()
     {
-        Debug.Log(dontFreeze);
-
         stateTimer -= Time.deltaTime;
         movementInput = PlayerInputHandler.instance.GetMovementInput();
         //xInput = Input.GetAxisRaw("Horizontal");

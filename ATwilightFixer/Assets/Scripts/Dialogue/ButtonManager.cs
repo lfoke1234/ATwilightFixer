@@ -14,10 +14,12 @@ public class ButtonManager : MonoBehaviour
     }
     public void Stage3()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("Stage 3");
+        SaveManager.instance.LoadGame();
     }
     public void Stage4()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("Stage 4");
+        SaveManager.instance.LoadGame();
     }
 }

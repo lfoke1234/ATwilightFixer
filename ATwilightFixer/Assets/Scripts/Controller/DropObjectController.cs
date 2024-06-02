@@ -5,6 +5,7 @@ public class DropObjectController : MonoBehaviour
 {
     private SpriteRenderer sr;
     private Rigidbody2D rb;
+    private CapsuleCollider2D cd;
 
     [SerializeField] private ParticleSystem particle;
     private bool hasDamaged;
@@ -16,11 +17,17 @@ public class DropObjectController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        cd = GetComponent<CapsuleCollider2D>();
+
+        cd.enabled = false;
     }
 
     private void Update()
     {
         timer -= Time.deltaTime;
+
+        if (timer <= 3.5f)
+            cd.enabled = true;
 
         if (timer <= 0)
             Destroy(gameObject);

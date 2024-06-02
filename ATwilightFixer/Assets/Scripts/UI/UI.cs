@@ -215,6 +215,11 @@ public class UI : MonoBehaviour, ISaveManager
         SwitchTo(inGameUI);
     }
 
+    public GameObject GetInventory()
+    {
+        return characterUI;
+    }
+
     public void SwitchOnEndScreen()
     {
         fadeScreen.FadeOut();
