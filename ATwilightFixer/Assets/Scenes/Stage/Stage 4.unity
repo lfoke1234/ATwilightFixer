@@ -2839,10 +2839,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1682599108}
     m_Modifications:
-    - target: {fileID: 230299593869962672, guid: 37d2383d1c8ff81449a68f6645733077, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 65.8
-      objectReference: {fileID: 0}
     - target: {fileID: 1990701687383385860, guid: 37d2383d1c8ff81449a68f6645733077, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.45885
@@ -2886,10 +2882,6 @@ PrefabInstance:
     - target: {fileID: 5291885423677760330, guid: 37d2383d1c8ff81449a68f6645733077, type: 3}
       propertyPath: m_Name
       value: LightningSpawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 5291885423677760330, guid: 37d2383d1c8ff81449a68f6645733077, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
