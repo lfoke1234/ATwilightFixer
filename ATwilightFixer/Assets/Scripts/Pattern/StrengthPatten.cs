@@ -5,10 +5,11 @@ public class StrengthPatten : MonoBehaviour
 {
     public int deadCount;
 
-    [SerializeField] private GameObject thunderSpawner;
+    [SerializeField] private GameObject[] thunderSpawner;
     [SerializeField] private GameObject chainSpawner;
     [SerializeField] private GameObject bulletSpawner;
-
+    [SerializeField] private GameObject potal;
+ 
     [SerializeField] private bool isActive;
 
 
@@ -25,29 +26,41 @@ public class StrengthPatten : MonoBehaviour
     {
         if (deadCount == 1)
         {
-            Debug.Log(deadCount);
-            thunderSpawner.SetActive(true);
+            foreach (GameObject thunder in thunderSpawner)
+            {
+                thunder.SetActive(true);
+            }
         }
         else if (deadCount == 2)
         {
-            Debug.Log(deadCount);
             bulletSpawner.SetActive(true);
         }
         else if (deadCount == 3)
         {
-            Debug.Log(deadCount);
             chainSpawner.SetActive(true);
         }
         else if (deadCount == 4)
         {
-            Debug.Log(deadCount);
             Strength();
+        }
+        else if (deadCount >= 6)
+        {
+            foreach (GameObject thunder in thunderSpawner)
+            {
+                thunder.SetActive(false);
+            }
+            bulletSpawner.SetActive(false);
+            chainSpawner.SetActive(false);
+            potal.SetActive(true);
         }
     }
 
     private void Strength()
     {
-        thunderSpawner.GetComponent<LightningSpawner>().isStrength = true;
+        foreach (GameObject thunder in thunderSpawner)
+        {
+            thunder.GetComponent<LightningSpawner>().isStrength = true;
+        }
         chainSpawner.GetComponent<ChainSpawner>().isStr = true;
         bulletSpawner.GetComponent<BulletPattern>().isStr = true;
     }
