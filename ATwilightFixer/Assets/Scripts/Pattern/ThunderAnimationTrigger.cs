@@ -18,6 +18,11 @@ public class ThunderAnimationTrigger : MonoBehaviour
         cd.enabled = true;
     }
 
+    public void DisableCollision()
+    {
+        cd.enabled = false;
+    }
+
     public void SetPercent(float value) => percent = value;
 
     private void OnTriggerEnter2D(Collider2D target)
