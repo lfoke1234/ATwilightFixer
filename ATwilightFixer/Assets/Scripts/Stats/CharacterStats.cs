@@ -122,6 +122,9 @@ public class CharacterStats : MonoBehaviour
 
     public virtual void DoDamage(CharacterStats _targetStats)
     {
+        if (_targetStats.isDead)
+            return;
+
         //if (TargetCanAvoidAttack(_targetStats)) return;
         _targetStats.GetComponent<Entity>().SetupKnockbackDir(transform);
 
@@ -199,6 +202,9 @@ public class CharacterStats : MonoBehaviour
 
     private void AttemptyToApplyAilments(CharacterStats _targetStatas, int _poisonDamage, int _iceDamage, int _lightingDamage, ref bool canApplyPoison, ref bool canApplyChill, ref bool canApplyShock)
     {
+        if (_targetStatas.isDead)
+            return;
+
         while (!canApplyPoison && !canApplyChill && !canApplyShock)
         {
             if (Random.value < 0.5f && _poisonDamage > 0)
