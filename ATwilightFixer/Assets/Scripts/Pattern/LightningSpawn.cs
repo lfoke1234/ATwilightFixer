@@ -69,6 +69,6 @@ public class LightningSpawner : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(nextSpawnPosition, Vector2.down, 100f, isGround);
 
         float distance = Vector2.Distance(nextSpawnPosition, hit.point) / test;
-        target.transform.localScale = new Vector3(1f, distance, 1f);
+        target.transform.localScale = new Vector3(5.3433f, distance, 1f);
     }
 }

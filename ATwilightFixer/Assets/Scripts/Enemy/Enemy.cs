@@ -156,6 +156,12 @@ public class Enemy : Entity
         return false;
     }
 
+    public override void Die()
+    {
+        base.Die();
+        GetComponentInChildren<UI_HealthBar>().DisableHPBar();
+    }
+
 
     protected override void OnDrawGizmos()
     {

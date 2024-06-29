@@ -39,7 +39,6 @@ public class PlayerWallSlideState : PlayerState
 
         if(movementInput.x != 0 && player.facingDir != movementInput.x)
         {
-            Debug.Log("Change state");
             stateMachine.ChangeState(player.idleState);
         }
 

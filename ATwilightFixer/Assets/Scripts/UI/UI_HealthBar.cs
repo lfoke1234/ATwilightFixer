@@ -23,8 +23,6 @@ public class UI_HealthBar : MonoBehaviour
         UpdateHealthUI();
     }
 
-
-
     private void UpdateHealthUI()
     {
         slider.maxValue = myStats.GetMaxHealthValue();
@@ -34,6 +32,11 @@ public class UI_HealthBar : MonoBehaviour
     public void FlipUI()
     {
         myTransform.Rotate(0, 180, 0);
+    }
+
+    public void DisableHPBar()
+    {
+        slider.gameObject.SetActive(false);
     }
 
     private void OnDisable()

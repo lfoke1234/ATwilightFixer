@@ -22,4 +22,9 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene("Stage 4");
         SaveManager.instance.LoadGame();
     }
+
+    public void QuitApp()
+    {
+        Application.Quit();
+    }
 }
