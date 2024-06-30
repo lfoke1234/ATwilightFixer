@@ -518,6 +518,8 @@ MonoBehaviour:
   defaultDashSpeed: 0
   dashSpeed: 25
   dashDuration: 0.15
+  slidingSpeed: 15
+  slidingDuration: 0.45
   slopeCheckPosition: {fileID: 6848386362603576772}
   slopeCheckDistance: 0.79
   climbCheckDistance: 0.61

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UI_InGame : MonoBehaviour
 {
-    [SerializeField] private PlayerStats playerStats;
+    /* private */ PlayerStats playerStats;
     [SerializeField] private Slider slider;
     [SerializeField] private Slider slider2; 
 

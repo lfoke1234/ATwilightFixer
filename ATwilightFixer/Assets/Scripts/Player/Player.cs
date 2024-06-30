@@ -36,6 +36,8 @@ public class Player : Entity
     public float defaultDashSpeed;
     public float dashSpeed;
     public float dashDuration;
+    public float slidingSpeed;
+    public float slidingDuration;
     public float dashDir { get; private set; }
 
     [Header("Slope info")]
@@ -62,6 +64,7 @@ public class Player : Entity
     public PlayerClimbState climbState { get; private set; }
     public PlayerSecondJumpState secondJump { get; private set; }
     public PlayerDashState dashState { get; private set; }
+    public PlayerSlidingState slidingState { get; private set; }
     public PlayerPrimaryAttackState primaryAttack { get; private set; }
     public PlayerCounterAttackState counterAttack { get; private set; }
     public PlayerAimSwordState aimSword { get; private set; }
@@ -90,6 +93,7 @@ public class Player : Entity
         wallJump = new PlayerWallJumpState(this, stateMachine, "Jump");
         climbState = new PlayerClimbState(this, stateMachine, "Climb");
         dashState = new PlayerDashState(this, stateMachine, "Dash");
+        slidingState = new PlayerSlidingState(this, stateMachine, "Sliding");
         secondJump = new PlayerSecondJumpState(this, stateMachine, "Jump");
         slashState = new PlayerSlashState(this, stateMachine, "Slash");
 
@@ -252,8 +256,11 @@ public class Player : Entity
 
             if (dashDir == 0)
                 dashDir = facingDir;
-
-            stateMachine.ChangeState(dashState);
+            
+            if (skill.dash.dash3Unlocked == true)
+                stateMachine.ChangeState(slidingState);
+            else
+                stateMachine.ChangeState(dashState);
         }
     }
 

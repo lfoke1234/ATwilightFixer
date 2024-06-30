@@ -16862,7 +16862,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ee2308d48d03c4993fd5b1074ad45b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
   slider: {fileID: 6077283725563834183}
   slider2: {fileID: 2089411213137713623}
   dashImage: {fileID: 3144775804292292405}
