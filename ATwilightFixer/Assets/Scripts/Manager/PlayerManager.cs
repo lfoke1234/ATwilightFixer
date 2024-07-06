@@ -52,4 +52,6 @@ public class PlayerManager : MonoBehaviour, ISaveManager
         _data.currency = this.currency;
     }
 
+    
+
 }

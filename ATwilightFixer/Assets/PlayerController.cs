@@ -197,6 +197,15 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interaction"",
+                    ""type"": ""Button"",
+                    ""id"": ""81e856be-4c8d-49d8-b84a-adae7b2a6748"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -419,6 +428,17 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                     ""action"": ""UI_Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""be0c3ccb-2617-49f4-8880-24bff680fb68"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interaction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -446,6 +466,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         m_Character_UI_Next = m_Character.FindAction("UI_Next", throwIfNotFound: true);
         m_Character_UI_Previous = m_Character.FindAction("UI_Previous", throwIfNotFound: true);
         m_Character_UI_Select = m_Character.FindAction("UI_Select", throwIfNotFound: true);
+        m_Character_Interaction = m_Character.FindAction("Interaction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -526,6 +547,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
     private readonly InputAction m_Character_UI_Next;
     private readonly InputAction m_Character_UI_Previous;
     private readonly InputAction m_Character_UI_Select;
+    private readonly InputAction m_Character_Interaction;
     public struct CharacterActions
     {
         private @PlayerController m_Wrapper;
@@ -549,6 +571,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         public InputAction @UI_Next => m_Wrapper.m_Character_UI_Next;
         public InputAction @UI_Previous => m_Wrapper.m_Character_UI_Previous;
         public InputAction @UI_Select => m_Wrapper.m_Character_UI_Select;
+        public InputAction @Interaction => m_Wrapper.m_Character_Interaction;
         public InputActionMap Get() { return m_Wrapper.m_Character; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -615,6 +638,9 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
             @UI_Select.started += instance.OnUI_Select;
             @UI_Select.performed += instance.OnUI_Select;
             @UI_Select.canceled += instance.OnUI_Select;
+            @Interaction.started += instance.OnInteraction;
+            @Interaction.performed += instance.OnInteraction;
+            @Interaction.canceled += instance.OnInteraction;
         }
 
         private void UnregisterCallbacks(ICharacterActions instance)
@@ -676,6 +702,9 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
             @UI_Select.started -= instance.OnUI_Select;
             @UI_Select.performed -= instance.OnUI_Select;
             @UI_Select.canceled -= instance.OnUI_Select;
+            @Interaction.started -= instance.OnInteraction;
+            @Interaction.performed -= instance.OnInteraction;
+            @Interaction.canceled -= instance.OnInteraction;
         }
 
         public void RemoveCallbacks(ICharacterActions instance)
@@ -714,5 +743,6 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         void OnUI_Next(InputAction.CallbackContext context);
         void OnUI_Previous(InputAction.CallbackContext context);
         void OnUI_Select(InputAction.CallbackContext context);
+        void OnInteraction(InputAction.CallbackContext context);
     }
 }

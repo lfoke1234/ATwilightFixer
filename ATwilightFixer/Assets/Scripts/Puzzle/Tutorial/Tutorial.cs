@@ -10,13 +10,13 @@ public class Tutorial : MonoBehaviour
     private TextMeshPro textMesh;
     private Coroutine fadeCoroutine;
 
-    void Start()
+    private void Start()
     {
         textMesh = GetComponent<TextMeshPro>();
         SetAlpha(0.0f);
     }
 
-    void Update()
+    private void Update()
     {
         if (GameManager.Instance.isPlayCutScene) return;
 
@@ -34,9 +34,8 @@ public class Tutorial : MonoBehaviour
         }
     }
 
-    IEnumerator FadeTextAlpha(float targetAlpha)
+    private IEnumerator FadeTextAlpha(float targetAlpha)
     {
-
         float startAlpha = textMesh.color.a;
         float timer = 0.0f;
 
