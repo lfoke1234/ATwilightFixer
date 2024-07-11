@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70cf0c3032c6eac4a9453ab267dccdaa, type: 3}
-  m_Name: 1_2Stage1_After
+  m_Name: 1_2_1Stage1_After
   m_EditorClassIdentifier: 
   sentences:
   - text: "\uC138\uC774\uD504!!!"
