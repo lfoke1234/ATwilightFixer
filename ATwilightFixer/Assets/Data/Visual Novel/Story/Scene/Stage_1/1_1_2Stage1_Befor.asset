@@ -21,7 +21,7 @@ MonoBehaviour:
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "\uC7AD\uD31F \uD130\uD2B8\uB838\uB2E4\uACE0! \uC774\uC81C \uBAA8\uD5D8\uAC00
-      \uC740\uD1F4\uD558\uACE0 \uC5EC\uC720\uB85C\uC6B4 \uBC4D\uC218 \uC0DD\uD65C
+      \uC740\uD1F4\uD558\uACE0 \uC5EC\uC720\uB85C\uC6B4 \uBC31\uC218 \uC0DD\uD65C
       \uC2DC\uC791\uC774\uB2E4!"
     speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
     actions: []
@@ -54,15 +54,15 @@ MonoBehaviour:
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
-  - text: "\uBAA8\uD5D8\uAC00 \uC9EC\uBC25\uC744 \uD5DB\uC73C\uB85C \uBA39\uC740
+  - text: "\uBAA8\uD5D8\uAC00 \uC9EC\uBC25\uC744 \uD5C8\uD22C\uB8E8 \uBA39\uC740
       \uAC8C \uC544\uB2CC \uB8E8\uB4DC\uB294 \uB04A\uC5B4\uC9C8\uBED4\uD55C \uC774\uC131\uC758
-      \uB048\uC744 \uBD99\uC7A1\uACE0 \uC6D0\uC2DC\uC801\uC778 \uBC29\uBC95\uC73C\uB85C
-      \uBCF4\uBB3C\uB354\uBBF8\uC758 \uD568\uC815\uC744 \uD655\uC778\uD588\uB2E4."
+      \uB048\uC744 \uBD99\uC7A1\uACE0 \uC6D0\uC2DC\uC801\uC778 \uBC29\uBC95\uC73C\uB85C[n]\uBCF4\uBB3C\uB354\uBBF8\uC758
+      \uD568\uC815\uC744 \uD655\uC778\uD588\uB2E4."
     speaker: {fileID: 11400000, guid: c59fe0cc86d3b554ab55d8fe4bd55b70, type: 2}
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
-  - text: "\uD719 [n]\uC9E4\uB791 [n]\uCD24\uB974\uB974\uB975"
+  - text: "\uD719[n]\uC9E4\uB791[n]\uCD24\uB974\uB974\uB975"
     speaker: {fileID: 11400000, guid: c59fe0cc86d3b554ab55d8fe4bd55b70, type: 2}
     actions: []
     music: {fileID: 0}
@@ -112,8 +112,8 @@ MonoBehaviour:
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "\uB0B4 \uC190\uC744 \uCC0C\uB978 \uAD18\uC538\uD55C \uB140\uC11D\uC774
-      \uBC14\uB85C \uB108\uB85C\uAD6C\uB098! [n]\uD06C\uD750\uD750... \uB0B4 \uC8FC\uBA39\uB9CC\uD55C
-      \uBD89\uC740 \uB2E4\uC774\uC544\uB140\uC11D \uC544\uC8FC \uC0C8\uCE68\uB370\uAE30\uAC00
+      \uBC14\uB85C \uB108\uB85C\uAD6C\uB098! [n]\uD06C\uD750\uD750... \uB0B4 \uC8FC\uBA39\uB9CC
+      \uD55C \uBD89\uC740 \uB2E4\uC774\uC544\uB140\uC11D \uC544\uC8FC \uC0C8\uCE68\uB370\uAE30\uAC00
       \uB530\uB85C \uC5C6\uAD6C\uB098"
     speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
     actions: []
@@ -180,7 +180,7 @@ MonoBehaviour:
   - text: "\uD683\uBD88\uB3C4 \uBC84\uB9AC\uACE0 \uD568\uC815\uC774 \uBC1C\uB3D9\uD558\uAE30
       \uC804\uAE4C\uC9C0 \uC5F4\uC2EC\uD788 \uCC59\uAE30\uB358 \uBCF4\uBB3C \uC8FC\uBA38\uB2C8\uB4E4\uC744
       \uD488\uC5D0 \uC548\uACE0 \uB4F1 \uB4A4\uB85C \uBB34\uB108\uC9C0\uB294 \uBBF8\uAD81\uC758
-      \uD30C\uD3B8\uB4E4\uC774 \uB0B4\uB294 \uC18C\uB9AC\uB97C \uBB34\uC2DC\uD55C
+      \uD30C\uD3B8\uB4E4\uC774[n]\uB0B4\uB294 \uC18C\uB9AC\uB97C \uBB34\uC2DC\uD55C
       \uCC44 \uADC0\uD658 \uC218\uC815\uC774 \uC788\uB294 \uACF3\uAE4C\uC9C0 \uC5F4\uC2EC\uD788
       \uB2EC\uB838\uB2E4."
     speaker: {fileID: 11400000, guid: c59fe0cc86d3b554ab55d8fe4bd55b70, type: 2}
@@ -191,21 +191,11 @@ MonoBehaviour:
       \uBB34\uB108\uC9C0\uB294 \uC18D\uB3C4\uAC00 \uC0B4\uC9DD \uBE68\uB790\uB294\uB370[n]\uADF8
       \uB355\uC5D0 \uB8E8\uB4DC\uB294 \uB2EC\uB9AC\uBA74\uC11C \uD30C\uD3B8\uC744
       \uD53C\uD574 \uAD6C\uB974\uACE0 \uBC14\uB2E5\uC774 \uAEBC\uC9C0\uBA74 \uB5A8\uC5B4\uC9C0\uB294
-      \uD30C\uD3B8\uC744 \uBC1F\uACE0 \uB3C4\uC57D\uD558\uBA70 \uADC0\uD658 \uC218\uC815\uC774
-      \uC788\uB294\uACF3\uAE4C\uC9C0 \uB2EC\uB824\uAC14\uB2E4."
-    speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
-    actions:
-    - speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
-      spriteIndex: 0
-      actionType: 4
-      coords: {x: 0, y: 0}
-      moveSpeed: 0
-    music: {fileID: 0}
-    sound: {fileID: 0}
-  - text: "\uADF8 \uC640\uC911\uC5D0 \uBCF4\uBB3C\uC5D0 \uB300\uD55C \uC695\uC2EC\uC774
-      \uADF8\uB4DD\uD588\uB294\uC9C0 \uD488\uC5D0 \uAEF4\uC548\uACE0 \uB2EC\uB838\uB294\uB370\uB3C4
-      \uC8FC\uBA38\uB2C8\uB294 \uD558\uB098\uB3C4 \uC783\uC5B4\uBC84\uB9AC\uC9C0
-      \uC54A\uC558\uB2E4"
+      \uD30C\uD3B8\uC744 \uBC1F\uACE0 \uB3C4\uC57D\uD558\uBA70[n]\uADC0\uD658 \uC218\uC815\uC774
+      \uC788\uB294 \uACF3\uAE4C\uC9C0 \uB2EC\uB824\uAC14\uB2E4.[n]\uADF8 \uC640\uC911\uC5D0
+      \uBCF4\uBB3C\uC5D0 \uB300\uD55C \uC695\uC2EC\uC774 \uADF8\uB4DD\uD588\uB294\uC9C0
+      \uD488\uC5D0 \uAEF4\uC548\uACE0 \uB2EC\uB838\uB294\uB370\uB3C4 \uC8FC\uBA38\uB2C8\uB294
+      \uD558\uB098\uB3C4 \uC783\uC5B4\uBC84\uB9AC\uC9C0 \uC54A\uC558\uB2E4."
     speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
@@ -216,6 +206,21 @@ MonoBehaviour:
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "\uC138\uC774\uD504!!!"
+    speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
+      spriteIndex: 0
+      actionType: 4
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "\uB8E8\uB4DC\uAC00 \uC55E\uC5D0 \uBCF4\uC774\uB294 \uC218\uC815\uC744
+      \uD5A5\uD574 \uBAB8\uC744 \uC9D1\uC5B4 \uB358\uC9C0\uBA70 \uCD5C\uD6C4\uC758
+      \uB3C4\uC57D\uC744 \uD558\uC790 \uADC0\uD658 \uC218\uC815\uC740 \uBE5B\uC744
+      \uBC1C\uD558\uBA70[n]\uB8E8\uB4DC\uB97C \uB9DE\uC774\uD574\uC8FC\uACE0 \uC77C\uC744
+      \uB2E4\uD55C \uADC0\uD658 \uC218\uC815\uC740 \uBBF8\uAD81\uC758 \uD30C\uD3B8\uC5D0
+      \uB9DE\uC544 \uC18C\uBA78\uD588\uB2E4."
     speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
