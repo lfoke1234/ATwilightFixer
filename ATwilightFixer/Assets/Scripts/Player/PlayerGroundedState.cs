@@ -58,7 +58,7 @@ public class PlayerGroundedState : PlayerState
 
         if (IsActionTriggered("Slash") && SkillManager.instance.slash.CanUseSkill())
         {
-            stateMachine.ChangeState(player.slashState);
+            stateMachine.ChangeState(player.flashCut);
         }
 
         // if (Input.GetKeyDown(KeyCode.DownArrow))

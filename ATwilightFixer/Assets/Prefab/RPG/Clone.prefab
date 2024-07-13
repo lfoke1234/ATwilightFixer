@@ -128,7 +128,7 @@ Animator:
   m_GameObject: {fileID: 4733373544230290480}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2cb5a48f989dcf74f98a04af273e6e38, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3dafa7ef971e1b246a8dd534d8cb89bf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -152,5 +152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorLossingSpeed: 1.5
+  exitCount: 5
   attackCheck: {fileID: 9222549335102678973}
-  attackCheckRadious: 0.8
+  attackCheckRadius: 0.8

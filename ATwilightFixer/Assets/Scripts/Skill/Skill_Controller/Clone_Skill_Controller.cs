@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Clone_Skill_Controller : MonoBehaviour
 {
     private SpriteRenderer sr;
     private Animator animator;
-    
+
     [SerializeField] private float colorLossingSpeed;
-    private float cloneTimer;
+
+    private bool isEnd;
+    [SerializeField] private int exitCount = 5;
+    private int lastAttackNumber = -1;
 
     [SerializeField] private Transform attackCheck;
-    [SerializeField] private float attackCheckRadious = 0.8f;
-    private Transform closeEnemy;
+    [SerializeField] private float attackCheckRadius = 0.8f;
 
     private void Awake()
     {
@@ -22,9 +22,8 @@ public class Clone_Skill_Controller : MonoBehaviour
 
     private void Update()
     {
-        cloneTimer -= Time.deltaTime;
 
-        if (cloneTimer < 0)
+        if (isEnd)
         {
             sr.color = new Color(1, 1, 1, sr.color.a - (Time.deltaTime * colorLossingSpeed));
 
@@ -35,60 +34,79 @@ public class Clone_Skill_Controller : MonoBehaviour
         }
     }
 
-    public void SetupClone(Transform _newTransform, float _cloneDuration, bool _canAttack)
+    public void SetupClone(Vector2 newPosition, bool isFlip)
     {
-        if (_canAttack)
-            animator.SetInteger("AttackNumber", Random.Range(1, 3));
-        transform.position = _newTransform.position;
-        cloneTimer = _cloneDuration;
+        transform.position = newPosition;
 
+        if (isFlip)
+        {
+            transform.Rotate(0f, 180f, 0f);
+        }
 
-        FaceClosestTarget();
+        SetAnimation();
+    }
+
+    private void SetAnimation()
+    {
+        if (!isEnd)
+        {
+            int randomNum;
+            do
+            {
+                randomNum = Random.Range(1, 4);
+            } while (randomNum == lastAttackNumber);
+
+            lastAttackNumber = randomNum;
+            animator.SetInteger("AttackNumber", randomNum);
+        }
     }
 
     private void AnimationTrigger()
     {
-        cloneTimer = -0.1f;
+        if (exitCount > 0)
+        {
+            exitCount--;
+            SetAnimation();
+        }
+        else if (exitCount <= 0)
+        {
+            isEnd = true;
+        }
     }
 
     private void AttackTrigger()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(attackCheck.position, attackCheckRadious);
+        AudioManager.instance.PlaySFX(0, null);
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(attackCheck.position, attackCheckRadius);
 
         foreach (var hit in colliders)
         {
-            if (hit.GetComponent<Enemy>() != null)
+            if (hit.GetComponent<Arrow_Controller>() != null)
             {
-                hit.GetComponent<Enemy>().DamageEffect();
+                hit.GetComponent<Arrow_Controller>().FlipArrow();
             }
-        }
-    }
 
-    private void FaceClosestTarget()
-    {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 25f);
-
-        float closesDistances = Mathf.Infinity;
-
-        foreach (var hit in colliders)
-        {
-            if(hit.GetComponent<Enemy>() != null)
+            if (hit.GetComponent<Enemy>() != null || hit.GetComponent<WorldObject>() != null)
             {
-                float distanceToEnemy = Vector2.Distance(transform.position, hit.transform.position);
+                EnemyStats _target = hit.GetComponent<EnemyStats>();
+                ObjectStats _targetObject = hit.GetComponent<ObjectStats>();
 
-                if (distanceToEnemy < closesDistances)
+                if (_target != null)
                 {
-                    closesDistances = distanceToEnemy;
-                    closeEnemy = hit.transform;
+                    PlayerManager.instance.player.stats.DoDamage(_target);
                 }
-            }
-        }
+                else if (_targetObject != null)
+                {
+                    PlayerManager.instance.player.stats.DoTrueDamage(_targetObject);
+                }
 
-        if(closeEnemy != null)
-        {
-            if(transform.position.x > closeEnemy.transform.position.x)
-            {
-                transform.Rotate(0, 180, 0);
+                ItemData_Equipment weaponData = Inventory.Instance.GetEquipment(EquipmentType.Weapon);
+
+                if (weaponData != null)
+                {
+                    weaponData.ExcuteItemEffect();
+                }
             }
         }
     }

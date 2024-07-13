@@ -44,6 +44,9 @@ public class Player : Entity
     public Transform slopeCheckPosition;
     public float slopeCheckDistance;
 
+    [Header("Skill info")]
+    public float flashDistance;
+
     [SerializeField] private float climbCheckDistance;
     public Transform climbCheck;
 
@@ -69,8 +72,12 @@ public class Player : Entity
     public PlayerCounterAttackState counterAttack { get; private set; }
     public PlayerAimSwordState aimSword { get; private set; }
     public PlayerCatchSwordState catchSword { get; private set; }
-    public PlayerDeadState deadState { get; private set; }
+
+    public PlayerBlinkStrikeState blinkStrike { get; private set; }
     public PlayerSlashState slashState { get; private set; }
+    public PlayerFlashCutState flashCut { get; private set; }
+
+    public PlayerDeadState deadState { get; private set; }
 
     public PlayerCrouchState crouchState { get; private set; }
     public PlayerCrouchIdleState crouchIdleState { get; private set; }
@@ -95,7 +102,11 @@ public class Player : Entity
         dashState = new PlayerDashState(this, stateMachine, "Dash");
         slidingState = new PlayerSlidingState(this, stateMachine, "Sliding");
         secondJump = new PlayerSecondJumpState(this, stateMachine, "Jump");
+
+
+        blinkStrike = new PlayerBlinkStrikeState(this, stateMachine, "BlinkStrike");
         slashState = new PlayerSlashState(this, stateMachine, "Slash");
+        flashCut = new PlayerFlashCutState(this, stateMachine, "FlashCut");
 
         primaryAttack = new PlayerPrimaryAttackState(this, stateMachine, "Attack");
         counterAttack = new PlayerCounterAttackState(this, stateMachine, "CounterAttack");
