@@ -21,14 +21,21 @@ public class Skill : MonoBehaviour
 
     public virtual bool CanUseSkill()
     {
-        if(coolDownTimer < 0 && player.stats.currentStamina > amount)
+        if (coolDownTimer < 0 && player.stats.currentStamina > amount)
         {
             UseSkill();
             coolDownTimer = coolDown;
             return true;
         }
+        else if (coolDownTimer > 0)
+        {
+            player.fx.CreatePopUpText("쿨타임 중");
+        }
+        else
+        {
+            player.fx.CreatePopUpText("MP 부족");
+        }
 
-        player.fx.CreatePopUpText("쿨타임 중");
         return false;
     }
 

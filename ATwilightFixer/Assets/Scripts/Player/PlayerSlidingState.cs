@@ -46,8 +46,8 @@ public class PlayerSlidingState : PlayerState
         if (!player.IsGroundDetected() && player.IsWallDected())
             stateMachine.ChangeState(player.wallSlide);
 
-        if (player.IsGroundDetected() && player.IsWallDected())
-            stateMachine.ChangeState(player.idleState);
+        //if (player.IsGroundDetected() && player.IsWallDected())
+        //    stateMachine.ChangeState(player.idleState);
 
         player.SetVelocity(player.slidingSpeed * player.dashDir, player.rb.velocity.y);
 

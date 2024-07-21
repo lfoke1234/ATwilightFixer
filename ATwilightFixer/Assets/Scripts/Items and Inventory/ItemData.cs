@@ -1,5 +1,7 @@
 using System.Text;
 using UnityEngine;
+using System;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -23,6 +25,7 @@ public class ItemData : ScriptableObject
     public string itemDescription;
     public string itemID;
 
+
     [Range(0, 100)]
     public float dropChance;
 
@@ -45,6 +48,7 @@ public class ItemData : ScriptableObject
         //     return sb.ToString();
         // }
         // else
-            return "";  
+            return "";
+
     }
 }
