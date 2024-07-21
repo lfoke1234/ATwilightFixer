@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerBlinkStrikeState : PlayerState
 {
-    private float maxBlinkDistance = 10f;
 
     public PlayerBlinkStrikeState(Player _player, PlayerStateMachine _stateMachine, string animBoolName) : base(_player, _stateMachine, animBoolName)
     {

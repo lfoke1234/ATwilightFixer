@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerSlidingState : PlayerState
 {
+    private Vector2 slidColPos = new Vector2(-0.076f, -0.966f);
+    private Vector2 slidColSize = new Vector2(0.676f, 0.734f);
+
     public PlayerSlidingState(Player _player, PlayerStateMachine _stateMachine, string animBoolName) : base(_player, _stateMachine, animBoolName)
     {
     }
@@ -19,6 +22,9 @@ public class PlayerSlidingState : PlayerState
         player.skill.dash.Dash1();
         player.skill.dash.Dash2();
         player.skill.dash.Dash3();
+
+        player.cd.offset = slidColPos;
+        player.cd.size = slidColSize;
     }
 
     public override void Exit()
@@ -29,6 +35,9 @@ public class PlayerSlidingState : PlayerState
         dontFreeze = false;
         rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         player.gameObject.layer = LayerMask.NameToLayer("Player");
+
+        player.cd.offset = player.defaultColOffset;
+        player.cd.size = player.defaultColSize;
     }
 
     public override void Update()

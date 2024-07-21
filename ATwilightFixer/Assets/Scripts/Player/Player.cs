@@ -12,6 +12,8 @@ public class Player : Entity
     public Transform checkLand;
     [SerializeField] private Transform topCheck;
     [SerializeField] private float topCheckDistane;
+    public Vector2 defaultColOffset;
+    public Vector2 defaultColSize;
 
     [Header("Attack details")]
     public Vector2[] attackMovement;
@@ -144,6 +146,8 @@ public class Player : Entity
         defaultMoveSpeed = moveSpeed;
         defaultJumpForce = jumoForce;
         defaultDashSpeed = dashSpeed;
+        defaultColOffset = cd.offset;
+        defaultColSize = cd.size;
     }
 
     protected override void Update()
