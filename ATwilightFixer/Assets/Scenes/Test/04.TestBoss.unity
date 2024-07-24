@@ -1538,9 +1538,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadCount: 0
-  thunderSpawner: {fileID: 997361082}
+  thunderSpawner:
+  - {fileID: 0}
   chainSpawner: {fileID: 2222140284271716662}
   bulletSpawner: {fileID: 1692135082}
+  potal: {fileID: 0}
   isActive: 0
 --- !u!4 &260540126
 Transform:
@@ -4099,11 +4101,6 @@ MonoBehaviour:
   damageStatsModifireWithLevel: 0
   maxHealthStatsModifireWithLevel: 0
   armorStatsModifireWithLevel: 0
---- !u!1 &997361082 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5291885423677760330, guid: 37d2383d1c8ff81449a68f6645733077, type: 3}
-  m_PrefabInstance: {fileID: 691203983}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &997361084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1990701687383385860, guid: 37d2383d1c8ff81449a68f6645733077, type: 3}
