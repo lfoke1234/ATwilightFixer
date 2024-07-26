@@ -499,6 +499,8 @@ MonoBehaviour:
   checkLand: {fileID: 8843344753170340318}
   topCheck: {fileID: 7217395292241718571}
   topCheckDistane: 0.5
+  defaultColOffset: {x: 0, y: 0}
+  defaultColSize: {x: 0, y: 0}
   attackMovement:
   - {x: 2, y: 3}
   - {x: 1, y: 3}
@@ -630,7 +632,7 @@ MonoBehaviour:
   currentStamina: 0
   isDead: 0
   returnDamage: 0
-  level: 3
+  level: 1
   damageStatsModifireWithLevel: 30
   maxHealthStatsModifireWithLevel: 100
   armorStatsModifireWithLevel: 10

@@ -1051,7 +1051,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   damage:
-    baseValue: 10
+    baseValue: 80
     modifiers: 
   trueDamage:
     baseValue: 0
@@ -1066,7 +1066,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   maxHealth:
-    baseValue: 50
+    baseValue: 270
     modifiers: 
   maxHiddenHealth:
     baseValue: 0
@@ -1075,7 +1075,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   armor:
-    baseValue: 0
+    baseValue: 50
     modifiers: 
   evasion:
     baseValue: 0
@@ -1104,9 +1104,9 @@ MonoBehaviour:
   isDead: 0
   returnDamage: 0
   level: 1
-  damageStatsModifireWithLevel: 0
-  maxHealthStatsModifireWithLevel: 0
-  armorStatsModifireWithLevel: 0
+  damageStatsModifireWithLevel: 35
+  maxHealthStatsModifireWithLevel: 125
+  armorStatsModifireWithLevel: 20
 --- !u!114 &631797519435468961
 MonoBehaviour:
   m_ObjectHideFlags: 0
