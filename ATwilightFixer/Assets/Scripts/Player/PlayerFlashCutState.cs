@@ -45,14 +45,21 @@ public class PlayerFlashCutState : PlayerState
                     float posX;
                     Transform enemyPos = enemy.transform;
 
+                    SpriteRenderer enemyRenderer = enemy.GetComponentInChildren<SpriteRenderer>();
+                    if (enemyRenderer == null)
+                    {
+                        Debug.LogWarning("Enemy does not have a SpriteRenderer.");
+                        continue;
+                    }
+
                     if (player.facingDir == -1)
                     {
-                        posX = enemy.transform.position.x + enemy.GetComponentInChildren<SpriteRenderer>().bounds.size.x / 2f;
+                        posX = enemy.transform.position.x + enemyRenderer.bounds.size.x / 2f;
                         cloneFlip = true;
                     }
                     else if (player.facingDir == 1)
                     {
-                        posX = enemy.transform.position.x - enemy.GetComponentInChildren<SpriteRenderer>().bounds.size.x / 2f;
+                        posX = enemy.transform.position.x - enemyRenderer.bounds.size.x / 2f;
                         cloneFlip = false;
                     }
                     else
@@ -61,7 +68,15 @@ public class PlayerFlashCutState : PlayerState
                     }
 
                     Vector2 newPosition = new Vector2(posX, enemy.transform.position.y);
-                    player.skill.clone.CreateClone(newPosition, cloneFlip);
+                    if (player.skill.clone != null)
+                    {
+                        player.skill.clone.CreateClone(newPosition, cloneFlip);
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Player skill clone is not set.");
+                    }
+
                     clonesCreated.Add(enemy);
                 }
             }
@@ -74,7 +89,6 @@ public class PlayerFlashCutState : PlayerState
         {
             player.stateMachine.ChangeState(player.idleState);
         }
-
     }
 
     private void ExecuteFlashCut()
@@ -102,9 +116,16 @@ public class PlayerFlashCutState : PlayerState
                 else if (((1 << hit.collider.gameObject.layer) & enemyLayer) != 0)
                 {
                     Enemy enemy = hit.collider.GetComponent<Enemy>();
-                    hitEnemies.Add(enemy);
-                    enemy.stunDuration = 3f;
-                    enemy.CanBeStunned();
+                    if (enemy != null)
+                    {
+                        hitEnemies.Add(enemy);
+                        enemy.stunDuration = 3f;
+                        enemy.CanBeStunned();
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Hit object does not have an Enemy component.");
+                    }
                 }
             }
         }
