@@ -17993,6 +17993,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Archer
       objectReference: {fileID: 0}
+    - target: {fileID: 3959568540434276043, guid: 58c8262544ef54645a31e2d1b5e8be62, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3959568540434276043, guid: 58c8262544ef54645a31e2d1b5e8be62, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7680786753271142536, guid: 58c8262544ef54645a31e2d1b5e8be62, type: 3}
       propertyPath: m_LocalPosition.x
       value: 88.3
