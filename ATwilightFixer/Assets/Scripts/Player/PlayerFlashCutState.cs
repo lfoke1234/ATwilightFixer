@@ -111,6 +111,7 @@ public class PlayerFlashCutState : PlayerState
                 if (((1 << hit.collider.gameObject.layer) & groundLayer) != 0)
                 {
                     travelDistance = hit.distance;
+                    break;
                 }
                 else if (((1 << hit.collider.gameObject.layer) & enemyLayer) != 0)
                 {
