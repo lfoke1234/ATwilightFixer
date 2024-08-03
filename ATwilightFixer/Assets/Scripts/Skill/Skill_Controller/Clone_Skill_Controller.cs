@@ -90,16 +90,16 @@ public class Clone_Skill_Controller : MonoBehaviour
             if (hit.GetComponent<Enemy>() != null || hit.GetComponent<WorldObject>() != null)
             {
                 EnemyStats _target = hit.GetComponent<EnemyStats>();
-                ObjectStats _targetObject = hit.GetComponent<ObjectStats>();
+                // ObjectStats _targetObject = hit.GetComponent<ObjectStats>();
 
                 if (_target != null)
                 {
                     PlayerManager.instance.player.stats.DoDamage(_target);
                 }
-                else if (_targetObject != null)
-                {
-                    PlayerManager.instance.player.stats.DoTrueDamage(_targetObject);
-                }
+                // else if (_targetObject != null)
+                // {
+                //     PlayerManager.instance.player.stats.DoTrueDamage(_targetObject);
+                // }
 
                 ItemData_Equipment weaponData = Inventory.Instance.GetEquipment(EquipmentType.Weapon);
 
