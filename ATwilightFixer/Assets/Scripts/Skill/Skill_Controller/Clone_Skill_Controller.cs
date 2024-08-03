@@ -87,7 +87,7 @@ public class Clone_Skill_Controller : MonoBehaviour
                 hit.GetComponent<Arrow_Controller>().FlipArrow();
             }
 
-            if (hit.GetComponent<Enemy>() != null || hit.GetComponent<WorldObject>() != null)
+            if (hit.GetComponent<Enemy>() != null)
             {
                 EnemyStats _target = hit.GetComponent<EnemyStats>();
                 // ObjectStats _targetObject = hit.GetComponent<ObjectStats>();
