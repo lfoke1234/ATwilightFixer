@@ -23,6 +23,11 @@ public class ButtonManager : MonoBehaviour
         SaveManager.instance.LoadGame();
     }
 
+    public void Title()
+    {
+        SaveManager.instance.SaveGame();
+        SceneManager.LoadScene("Title");
+    }
     public void QuitApp()
     {
         Application.Quit();

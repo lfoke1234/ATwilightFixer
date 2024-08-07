@@ -110,6 +110,20 @@ public class CharacterStats : MonoBehaviour
             onStaminaChanged();
     }
 
+    public void RecoveryStaminaBy(int _value)
+    {
+        if (currentStamina < GetMaxStaminaValue())
+            currentStamina += _value;
+
+        if (currentStamina > GetMaxStaminaValue())
+        {
+            currentStamina = GetMaxStaminaValue();
+        }
+
+        if (onStaminaChanged != null)
+            onStaminaChanged();
+    }
+
     public void DecreaseStamianBy(float _stamina)
     {
         currentStamina -= _stamina;
