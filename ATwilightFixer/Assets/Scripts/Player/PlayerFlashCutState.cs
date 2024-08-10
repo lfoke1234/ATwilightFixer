@@ -5,14 +5,11 @@ using UnityEngine;
 public class PlayerFlashCutState : PlayerState
 {
     private List<Enemy> hitEnemies;
-    private HashSet<Enemy> clonesCreated;
     private bool nextTrigger;
-    private bool cloneFlip;
 
     public PlayerFlashCutState(Player _player, PlayerStateMachine _stateMachine, string animBoolName) : base(_player, _stateMachine, animBoolName)
     {
         hitEnemies = new List<Enemy>();
-        clonesCreated = new HashSet<Enemy>();
     }
 
     public override void Enter()
@@ -26,7 +23,6 @@ public class PlayerFlashCutState : PlayerState
     {
         base.Exit();
         hitEnemies.Clear();
-        clonesCreated.Clear();
         nextTrigger = false;
     }
 
@@ -36,48 +32,13 @@ public class PlayerFlashCutState : PlayerState
 
         player.SetZeroVelocity();
 
-        if (triggerCalled && nextTrigger == false)
+        if (triggerCalled && !nextTrigger)
         {
             foreach (Enemy enemy in hitEnemies)
             {
-                if (!clonesCreated.Contains(enemy))
+                if (enemy != null)
                 {
-                    float posX;
-                    Transform enemyPos = enemy.transform;
-
-                    SpriteRenderer enemyRenderer = enemy.GetComponentInChildren<SpriteRenderer>();
-                    if (enemyRenderer == null)
-                    {
-                        Debug.LogWarning("Enemy does not have a SpriteRenderer.");
-                        continue;
-                    }
-
-                    if (player.facingDir == -1)
-                    {
-                        posX = enemy.transform.position.x + enemyRenderer.bounds.size.x / 2f;
-                        cloneFlip = true;
-                    }
-                    else if (player.facingDir == 1)
-                    {
-                        posX = enemy.transform.position.x - enemyRenderer.bounds.size.x / 2f;
-                        cloneFlip = false;
-                    }
-                    else
-                    {
-                        posX = enemy.transform.position.x;
-                    }
-
-                    Vector2 newPosition = new Vector2(posX, enemy.transform.position.y);
-                    if (player.skill.clone != null)
-                    {
-                        player.skill.clone.CreateClone(newPosition, cloneFlip);
-                    }
-                    else
-                    {
-                        Debug.LogWarning("Player skill clone is not set.");
-                    }
-
-                    clonesCreated.Add(enemy);
+                    player.StartCoroutine(ApplyRepeatedDamage(enemy, 10, 0.2f));
                 }
             }
 
@@ -101,7 +62,8 @@ public class PlayerFlashCutState : PlayerState
 
         float maxDistance = player.flashDistance;
 
-        RaycastHit2D[] hits = Physics2D.RaycastAll(origin, direction, maxDistance);
+        Vector2 boxSize = new Vector2(player.transform.localScale.x, player.transform.localScale.y);
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(origin, boxSize, 0, direction, maxDistance);
         float travelDistance = maxDistance;
 
         foreach (RaycastHit2D hit in hits)
@@ -131,5 +93,17 @@ public class PlayerFlashCutState : PlayerState
 
         Vector2 targetPosition = origin + direction * travelDistance;
         player.transform.position = targetPosition;
+    }
+
+    private IEnumerator ApplyRepeatedDamage(Enemy enemy, int hitCount, float interval)
+    {
+        for (int i = 0; i < hitCount; i++)
+        {
+            if (enemy != null)
+            {
+                enemy.stats.TakeDamage(player.stats.damage.GetValue());
+            }
+            yield return new WaitForSeconds(interval);
+        }
     }
 }
