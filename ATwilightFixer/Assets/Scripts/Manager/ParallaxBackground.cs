@@ -2,37 +2,74 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParallaxbackGround : MonoBehaviour
+public class ParallaxBackground : MonoBehaviour
 {
     private GameObject cam;
-    
+
     [SerializeField] private float parallaxEffect;
-    
-    private float xPosition;
-    private float length;
+    [SerializeField] private List<Transform> backgrounds;
+
+    private float viewZoneX; 
+    private int leftIndex;
+    private int rightIndex;
+    private float backgroundWidth;
+    private float lastCameraX;
 
     private void Start()
     {
         cam = GameObject.Find("Main Camera");
 
-        length = GetComponent<SpriteRenderer>().bounds.size.x;
-        xPosition = transform.position.x;
+        backgroundWidth = backgrounds[0].GetComponent<SpriteRenderer>().bounds.size.x;
+        viewZoneX = backgroundWidth / 2;
+
+        leftIndex = 0;
+        rightIndex = backgrounds.Count - 1;
+
+        lastCameraX = cam.transform.position.x;
     }
 
     private void Update()
     {
-        float distanceMoved = cam.transform.position.x * (1 - parallaxEffect); // 벗어났을때의 거리
-        float distanceToMove = cam.transform.position.x * parallaxEffect; // 플레이어의 움직임에 따른 움직임
+        float deltaX = cam.transform.position.x - lastCameraX;
+        lastCameraX = cam.transform.position.x;
 
-        transform.position = new Vector3(xPosition + distanceToMove, transform.position.y);
-
-        if (distanceMoved > xPosition + length)
+        for (int i = 0; i < backgrounds.Count; i++)
         {
-            xPosition = xPosition + length;
+            float parallaxX = deltaX * parallaxEffect;
+            backgrounds[i].position = new Vector3(backgrounds[i].position.x + parallaxX, cam.transform.position.y, backgrounds[i].position.z);
         }
-        else if (distanceMoved < xPosition - length)
+
+        if (cam.transform.position.x > backgrounds[rightIndex].position.x - viewZoneX)
         {
-            xPosition = xPosition - length;
+            ScrollRight();
+        }
+        else if (cam.transform.position.x < backgrounds[leftIndex].position.x + viewZoneX)
+        {
+            ScrollLeft();
+        }
+    }
+
+    private void ScrollRight()
+    {
+        backgrounds[leftIndex].position = new Vector3(backgrounds[rightIndex].position.x + backgroundWidth, cam.transform.position.y, backgrounds[leftIndex].position.z);
+
+        rightIndex = leftIndex;
+        leftIndex++;
+        if (leftIndex >= backgrounds.Count)
+        {
+            leftIndex = 0;
+        }
+    }
+
+    private void ScrollLeft()
+    {
+        backgrounds[rightIndex].position = new Vector3(backgrounds[leftIndex].position.x - backgroundWidth, cam.transform.position.y, backgrounds[rightIndex].position.z);
+
+        leftIndex = rightIndex;
+        rightIndex--;
+        if (rightIndex < 0)
+        {
+            rightIndex = backgrounds.Count - 1;
         }
     }
 }
