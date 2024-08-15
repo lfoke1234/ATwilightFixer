@@ -59,6 +59,7 @@ public class PlayerFlashCutState : PlayerState
 
         LayerMask enemyLayer = LayerMask.GetMask("Enemy");
         LayerMask groundLayer = LayerMask.GetMask("Ground");
+        LayerMask brokenWall = LayerMask.GetMask("BrokenWall");
 
         float maxDistance = player.flashDistance;
 
@@ -70,7 +71,8 @@ public class PlayerFlashCutState : PlayerState
         {
             if (hit.collider != null)
             {
-                if (((1 << hit.collider.gameObject.layer) & groundLayer) != 0)
+                if ((((1 << hit.collider.gameObject.layer) & groundLayer) != 0)
+                    || ((1 << hit.collider.gameObject.layer) & brokenWall) != 0)
                 {
                     travelDistance = hit.distance;
                 }
