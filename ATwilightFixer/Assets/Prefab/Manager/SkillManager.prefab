@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7154817636570709712}
   - component: {fileID: 3220524595586608101}
   - component: {fileID: 5011545728593475990}
+  - component: {fileID: 7722016865689671653}
   - component: {fileID: 1166753894122927004}
   - component: {fileID: 441308764555342503}
   - component: {fileID: 3070806704517507185}
@@ -74,6 +75,32 @@ MonoBehaviour:
   dash3UnlockButton: {fileID: 0}
   damage3: 100
   timer3: 3
+--- !u!114 &7722016865689671653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204162091134322403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df3c8f514e212f45bfb9faf5d08c048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 2
+  amount: 0
+  sliding1Unlocked: 0
+  sliding1UnlockButton: {fileID: 0}
+  damage1: 0
+  timer1: 3
+  sliding2Unlocked: 0
+  sliding2UnlockButton: {fileID: 0}
+  damage2: 50
+  timer2: 3
+  sliding3Unlocked: 0
+  sliding3UnlockButton: {fileID: 0}
+  damage3: 100
+  timer3: 3
 --- !u!114 &1166753894122927004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,8 +116,6 @@ MonoBehaviour:
   coolDown: 0
   amount: 0
   clonePrefab: {fileID: 4733373544230290480, guid: c1638a1512d97014cae759344ce0f116, type: 3}
-  cloneDuration: 1.5
-  canAttack: 1
 --- !u!114 &441308764555342503
 MonoBehaviour:
   m_ObjectHideFlags: 0

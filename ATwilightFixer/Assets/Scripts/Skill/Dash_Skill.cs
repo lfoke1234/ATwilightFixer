@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Dash_Skill : Skill
 {
+    Sliding_Skill sliding;
+
     private Coroutine boost1Coroutine;
     private Coroutine boost2Coroutine;
     private Coroutine boost3Coroutine;
@@ -51,6 +53,8 @@ public class Dash_Skill : Skill
     protected override void Start()
     {
         base.Start();
+        sliding = GetComponent<Sliding_Skill>();
+
         dash1UnlockButton.GetComponent<Button>().onClick.AddListener(UnlockDash1);
         dash2UnlockButton.GetComponent<Button>().onClick.AddListener(UnlockDash2);
         dash3UnlockButton.GetComponent<Button>().onClick.AddListener(UnlockDash3);
@@ -77,6 +81,10 @@ public class Dash_Skill : Skill
 
     private void UnlockDash1()
     {
+        sliding.sliding1Unlocked = false;
+        sliding.sliding2Unlocked = false;
+        sliding.sliding3Unlocked = false;
+
         dash1Unlocked = true;
         dash2Unlocked = false;
         dash3Unlocked = false;
@@ -84,6 +92,10 @@ public class Dash_Skill : Skill
 
     private void UnlockDash2()
     {
+        sliding.sliding1Unlocked = false;
+        sliding.sliding2Unlocked = false;
+        sliding.sliding3Unlocked = false;
+
         dash1Unlocked = false;
         dash2Unlocked = true;
         dash3Unlocked = false;
@@ -91,6 +103,10 @@ public class Dash_Skill : Skill
 
     private void UnlockDash3()
     {
+        sliding.sliding1Unlocked = false;
+        sliding.sliding2Unlocked = false;
+        sliding.sliding3Unlocked = false;
+
         dash1Unlocked = false;
         dash2Unlocked = false;
         dash3Unlocked = true;

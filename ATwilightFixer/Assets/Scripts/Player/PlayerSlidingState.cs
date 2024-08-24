@@ -19,9 +19,9 @@ public class PlayerSlidingState : PlayerState
         player.gameObject.layer = LayerMask.NameToLayer("PlayerDashing");
         AudioManager.instance.PlaySFX(7, null);
 
-        player.skill.dash.Dash1();
-        player.skill.dash.Dash2();
-        player.skill.dash.Dash3();
+        player.skill.sliding.Sliding1();
+        player.skill.sliding.Sliding2();
+        player.skill.sliding.Sliding3();
 
         player.cd.offset = slidColPos;
         player.cd.size = slidColSize;

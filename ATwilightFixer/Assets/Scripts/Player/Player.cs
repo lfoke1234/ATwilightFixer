@@ -272,10 +272,14 @@ public class Player : Entity
             if (dashDir == 0)
                 dashDir = facingDir;
             
-            if (skill.dash.dash3Unlocked == true)
-                stateMachine.ChangeState(slidingState);
-            else
+            if (skill.dash.dash1Unlocked == true ||
+                skill.dash.dash2Unlocked == true ||
+                skill.dash.dash3Unlocked == true)
                 stateMachine.ChangeState(dashState);
+            else if (skill.sliding.sliding1Unlocked == true ||
+                     skill.sliding.sliding2Unlocked == true ||
+                     skill.sliding.sliding3Unlocked == true)
+                stateMachine.ChangeState(slidingState);
         }
     }
 
