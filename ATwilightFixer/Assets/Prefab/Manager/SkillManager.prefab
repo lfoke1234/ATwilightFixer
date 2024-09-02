@@ -92,7 +92,7 @@ MonoBehaviour:
   sliding1Unlocked: 0
   sliding1UnlockButton: {fileID: 0}
   damage1: 0
-  timer1: 3
+  timer1: 2
   sliding2Unlocked: 0
   sliding2UnlockButton: {fileID: 0}
   damage2: 50
