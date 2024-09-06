@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70cf0c3032c6eac4a9453ab267dccdaa, type: 3}
+  m_Name: Story_8_2_2
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: "\uB8E8\uB4DC\uC5D0\uAC8C \uD5A5\uD558\uB358 \uBAAC\uC2A4\uD130 \uC808\uBC18\uC758
+      \uC5B4\uADF8\uB85C\uB97C \uB048 \uC728\uB9AC\uC6B0\uC2A4"
+    speaker: {fileID: 11400000, guid: c59fe0cc86d3b554ab55d8fe4bd55b70, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
+      spriteIndex: 0
+      actionType: 5
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 769a8b588781bf948bff6c93207bd827, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "\u2026[n]...[n]...[n]..."
+    speaker: {fileID: 11400000, guid: 769a8b588781bf948bff6c93207bd827, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "\uC774\uAC8C \uB418\uB294\uAD70\u2026"
+    speaker: {fileID: 11400000, guid: 769a8b588781bf948bff6c93207bd827, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "\uAE30\uCC99\uC744 \uC8FD\uC774\uB294 \uAC8C \uC544\uB2CC \uC18D\uC774\uB294
+      \uAC83. \uC815\uB9D0 \uB0B4\uAC8C \uB3C4\uC801\uC758 \uC7AC\uB2A5\uC774 \uC788\uB294
+      \uAC74\uAC00\u2026"
+    speaker: {fileID: 11400000, guid: 769a8b588781bf948bff6c93207bd827, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "\uD558! \uC774 \uC7AC\uB2A5\uC744 \uB8E8\uB4DC \uB355\uC5D0 \uAE68\uB2EB\uAC8C
+      \uB418\uB294\uAD70."
+    speaker: {fileID: 11400000, guid: 769a8b588781bf948bff6c93207bd827, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "\uC800 \uB9CE\uC740 \uC218\uC758 \uBAAC\uC2A4\uD130\uB4E4 \uB9C8\uC800
+      \uC18D\uC77C \uC904\uC774\uC57C."
+    speaker: {fileID: 11400000, guid: 769a8b588781bf948bff6c93207bd827, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "\uB0B4\uAC00 \uC774\uB7F0 \uAE30\uC220\uC5D0 \uAD00\uC2EC\uC744 \uAC00\uC9C0\uAC8C
+      \uB41C \uACC4\uAE30\uAC00 \uB8E8\uB4DC\uC758 \uAE30\uC220\uC774\uC5C8\uC9C0."
+    speaker: {fileID: 0}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "\uC0C1\uB300\uBC29\uC744 \uC18D\uC774\uACE0 \uD589\uB3D9\uC744 \uCDE8\uD560
+      \uC218 \uC788\uB294 \uAC8C \uB9E4\uB825\uC801\uC778 \uAE30\uC220\uC774\uC5C8\uC9C0.
+      \uBBF8\uAD81\uB3C4 \uBAB0\uB798 \uB4E4\uC5B4\uC62C \uC218 \uC788\uC5C8\uACE0."
+    speaker: {fileID: 11400000, guid: 769a8b588781bf948bff6c93207bd827, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "\uD558\uC9C0\uB9CC \uBAAC\uC2A4\uD130\uB4E4\uC774 \uB2E4\uC2DC \uC624\uAC8C
+      \uB418\uBA74 \uC704\uD5D8\uD558\uB2E4. \uD55C \uBC88 \uC18D\uC740 \uC0C1\uB300\uB97C
+      \uB2E4\uC2DC \uC18D\uC774\uAE30\uB294 \uC5B4\uB824\uC6B4 \uBC95\uC774\uB2C8.
+      \uB8E8\uB4DC\uC5D0\uAC8C \uD569\uB958\uD574\uC57C\u2026"
+    speaker: {fileID: 11400000, guid: 769a8b588781bf948bff6c93207bd827, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 769a8b588781bf948bff6c93207bd827, type: 2}
+      spriteIndex: 0
+      actionType: 5
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "\uD760. \uAD6C\uBA4D\uC778\uAC00. \uC774\uBBF8 \uBE60\uC838\uBC84\uB838\u2026\uAD70\u2026"
+    speaker: {fileID: 11400000, guid: 769a8b588781bf948bff6c93207bd827, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "\uCFF5"
+    speaker: {fileID: 11400000, guid: c59fe0cc86d3b554ab55d8fe4bd55b70, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  background: {fileID: 0}
+  nextScene: {fileID: 0}
