@@ -1,6 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Clone_Skill_Controller : MonoBehaviour
+public class Boss_Clone : MonoBehaviour
 {
     private SpriteRenderer sr;
     private Animator animator;
@@ -82,31 +84,19 @@ public class Clone_Skill_Controller : MonoBehaviour
 
         foreach (var hit in colliders)
         {
-            if (hit.GetComponent<Arrow_Controller>() != null)
+            if (hit.GetComponent<Player>() != null)
             {
-                hit.GetComponent<Arrow_Controller>().FlipArrow();
-            }
-
-            if (hit.GetComponent<Enemy>() != null)
-            {
-                EnemyStats _target = hit.GetComponent<EnemyStats>();
+                PlayerStats _target = hit.GetComponent<PlayerStats>();
                 // ObjectStats _targetObject = hit.GetComponent<ObjectStats>();
 
                 if (_target != null)
                 {
-                    PlayerManager.instance.player.stats.DoDamage(_target);
+                    PlayerManager.instance.player.stats.TakeDamage(10);
                 }
                 // else if (_targetObject != null)
                 // {
                 //     PlayerManager.instance.player.stats.DoTrueDamage(_targetObject);
                 // }
-
-                ItemData_Equipment weaponData = Inventory.Instance.GetEquipment(EquipmentType.Weapon);
-
-                if (weaponData != null)
-                {
-                    weaponData.ExcuteItemEffect();
-                }
             }
         }
     }

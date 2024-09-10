@@ -29,6 +29,30 @@ public class Enemy_EnemyAnimationTrigger : MonoBehaviour
         enemy.AnimationUniqueAttackTrigger();
     }
 
+    #region Boss
+    public void TrackPlayer()
+    {
+        Player player = PlayerManager.instance.player;
+        float posX;
+
+        if (player.facingDir == 1)
+        {
+            posX = -1.5f;
+        }
+        else
+        {
+            posX = 1.5f;
+        }
+
+        if ((enemy.facingDir == -1 && posX < 0) || (enemy.facingDir == 1 && posX > 0))
+        {
+            enemy.Flip();
+        }
+
+        enemy.transform.position = new Vector3(player.transform.position.x + posX, player.transform.position.y);
+    }
+    #endregion
+
     private void OpenCounterWindow() => enemy.OpenCounterAttackWindow();
     private void CloseCounterWindow() => enemy.CloseCounterAttackWindow();
 }
