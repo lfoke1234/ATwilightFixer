@@ -435,7 +435,7 @@ MonoBehaviour:
   isDead: 0
   returnDamage: 0
   level: 0
-  damageStatsModifireWithLevel: 0
+  damageStatsModifireWithLevel: 40
   maxHealthStatsModifireWithLevel: 0
   armorStatsModifireWithLevel: 0
 --- !u!114 &7957691779275156147
