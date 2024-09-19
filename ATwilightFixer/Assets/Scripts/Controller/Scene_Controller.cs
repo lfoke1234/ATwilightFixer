@@ -1,9 +1,11 @@
+using RPG.VisualNovel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Scene_Controller : MonoBehaviour, ISaveManager
 {
-    [SerializeField] private int nextSceneNum;
+    [SerializeField] private bool nextSceneisTitle;
+    [SerializeField] private StoryScene nextNovelScript;
     [SerializeField] private int clearGold;
     protected string currentStageName;
     protected bool clear;
@@ -58,7 +60,15 @@ public class Scene_Controller : MonoBehaviour, ISaveManager
             clear = true;
 
             SaveManager.instance.SaveGame();
-            SceneManager.LoadScene("MainMenu");
+            LoadStageIntro();
+            SceneManager.LoadScene("VisualNovel");
         }
+    }
+
+    private void LoadStageIntro()
+    {
+        NovelScriptManager.Instance.nextPlayScene = nextNovelScript;
+        NovelScriptManager.Instance.nextSceneisTitle = nextSceneisTitle;
+        NovelScriptManager.Instance.nextSceneName = "Null";
     }
 }

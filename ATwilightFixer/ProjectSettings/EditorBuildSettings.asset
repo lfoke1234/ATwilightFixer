@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/VisualNovel/Prologue.unity
     guid: fd17403ca981bbf4cb0e6156fa8719d6
   - enabled: 1
+    path: Assets/Scenes/VisualNovel/VisualNovel.unity
+    guid: 3c457897401b99043a70ba9e3e87a24e
+  - enabled: 1
     path: Assets/Scenes/Stage/Stage 1.unity
     guid: fd7e42a3faa32c846863020c9c5aa024
   - enabled: 1
@@ -23,6 +26,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage/Stage 3.unity
     guid: c244f1ad4ecadcb42bb5e57153bfba09
+  - enabled: 1
+    path: Assets/Scenes/Stage/Stage 4.unity
+    guid: 2f9c5253f730c6045a4a228e937fabd8
+  - enabled: 1
+    path: Assets/Scenes/Stage/Stage 5.unity
+    guid: bee5cf290d01395429f4e8d3b1fd3755
+  - enabled: 1
+    path: Assets/Scenes/Stage/Stage 6.unity
+    guid: 6450d63a0e7f789419efbb5b8642c309
+  - enabled: 1
+    path: Assets/Scenes/Stage/Stage 7.unity
+    guid: f72137ca627f2e348b6fa5e2ec276bb6
+  - enabled: 1
+    path: Assets/Scenes/Stage/Stage 8.unity
+    guid: 06723d787c06e134c89d43093b2f294d
+  - enabled: 1
+    path: Assets/Scenes/Stage/Stage 9.unity
+    guid: 01bc143bd5a63284c8e85fe881ff256b
   - enabled: 1
     path: Assets/Scenes/Stage/Stage 10.unity
     guid: 2eb5b846fd0066041b63125f8e633b8d

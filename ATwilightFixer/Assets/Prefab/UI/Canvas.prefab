@@ -10463,7 +10463,7 @@ RectTransform:
   m_Father: {fileID: 8160219483612563379}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -16001,7 +16001,7 @@ RectTransform:
   m_Father: {fileID: 4823389452380177576}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -17032,7 +17032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ff113095c077c44b7064881d62d5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  donSwitchInGameUI: 000000000100000002000000
+  donSwitchInGameUI: 00000000010000000200000003000000
   fadeScreen: {fileID: 5602248683438978337}
   endText: {fileID: 1876013202313074573}
   restartButton: {fileID: 4362235291493720409}
@@ -17067,7 +17067,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2735047648500952879
 RectTransform:
   m_ObjectHideFlags: 0
