@@ -103,7 +103,7 @@ public class PlayerFlashCutState : PlayerState
         {
             if (enemy != null)
             {
-                enemy.stats.TakeDamage(player.stats.damage.GetValue());
+                enemy.stats.TakeDamage((int)(player.stats.damage.GetValue() * 0.3f));
             }
             yield return new WaitForSeconds(interval);
         }
