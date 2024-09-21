@@ -43,7 +43,6 @@ public class Boss_BasicAttack : EnemyState
         base.Exit();
         // enemy.StartCoroutine("BusyFor", 0.15f);
         comboCounter++;
-        Debug.Log(comboCounter);
         lastTimeAttacked = Time.time;
     }
 

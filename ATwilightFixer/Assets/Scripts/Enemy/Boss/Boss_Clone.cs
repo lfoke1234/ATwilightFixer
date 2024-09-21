@@ -9,7 +9,7 @@ public class Boss_Clone : MonoBehaviour
 
     [SerializeField] private float colorLossingSpeed;
 
-    private bool isEnd;
+    [SerializeField] private bool isEnd;
     [SerializeField] private int exitCount = 5;
     private int lastAttackNumber = -1;
 
