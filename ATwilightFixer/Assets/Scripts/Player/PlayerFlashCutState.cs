@@ -38,7 +38,7 @@ public class PlayerFlashCutState : PlayerState
             {
                 if (enemy != null)
                 {
-                    player.StartCoroutine(ApplyRepeatedDamage(enemy, 10, 0.2f));
+                    player.StartCoroutine(ApplyRepeatedDamage(enemy, player.cutCount, 0.2f));
                 }
             }
 

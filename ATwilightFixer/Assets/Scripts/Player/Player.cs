@@ -48,6 +48,7 @@ public class Player : Entity
 
     [Header("Skill info")]
     public float flashDistance;
+    public int cutCount;
 
     [SerializeField] private float climbCheckDistance;
     public Transform climbCheck;

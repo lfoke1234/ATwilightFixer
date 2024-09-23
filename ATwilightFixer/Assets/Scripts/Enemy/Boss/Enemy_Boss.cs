@@ -15,6 +15,10 @@ public class Enemy_Boss : Enemy
     public GameObject clonePrefab;
     private float lastFlashCutUseTime = -Mathf.Infinity;
 
+    public float spawnThunderCooldown = 5f;
+    public GameObject thunderPrefab;
+    [SerializeField] private Transform thunderSpawnPos;
+    private float lastThunderTime = -Mathf.Infinity;
 
     #region States
 
@@ -50,6 +54,7 @@ public class Enemy_Boss : Enemy
         base.Update();
     }
 
+    #region Skill
     public bool CanUseTrack()
     {
         return Time.time >= lastTrackUseTime + trackCooldown;
@@ -68,6 +73,23 @@ public class Enemy_Boss : Enemy
     public void UseFlashCut()
     {
         lastFlashCutUseTime = Time.time;
+    }
+
+    public void UseSpawnThunder()
+    {
+        lastThunderTime = Time.time;
+    }
+
+    public bool CanUseThunder()
+    {
+        return Time.time >= lastThunderTime + spawnThunderCooldown;
+    }
+    #endregion
+
+    private void SpawnThunder()
+    {
+        float spawnDistance;
+
     }
 
     public override void Die()
