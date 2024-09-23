@@ -31,7 +31,6 @@ public class PlayerAnimationTriggers : MonoBehaviour
 
                 if (_target != null)
                 {
-
                     player.stats.DoDamage(_target);
                 }
                 else if (_targetObject != null)
