@@ -525,6 +525,7 @@ MonoBehaviour:
   slopeCheckPosition: {fileID: 6848386362603576772}
   slopeCheckDistance: 0.79
   flashDistance: 10
+  cutCount: 5
   climbCheckDistance: 0.61
   climbCheck: {fileID: 5548184111364767241}
 --- !u!114 &1994355178689703799

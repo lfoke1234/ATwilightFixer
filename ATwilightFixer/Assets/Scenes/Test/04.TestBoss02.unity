@@ -19188,6 +19188,9 @@ MonoBehaviour:
   trackPlayerDistance: 15
   flashCutCooldown: 10
   clonePrefab: {fileID: 4733373544230290480, guid: bbc644efb2710e84eb86118159230ecb, type: 3}
+  spawnThunderCooldown: 5
+  thunderPrefab: {fileID: 0}
+  thunderSpawnPos: {fileID: 0}
 --- !u!4 &8344972472987529390
 Transform:
   m_ObjectHideFlags: 0
