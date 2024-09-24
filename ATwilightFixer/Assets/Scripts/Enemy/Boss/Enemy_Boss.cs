@@ -18,6 +18,7 @@ public class Enemy_Boss : Enemy
     public float spawnThunderCooldown = 5f;
     public GameObject thunderPrefab;
     [SerializeField] private Transform thunderSpawnPos;
+    [SerializeField] private float thunderSpawnDistance;
     private float lastThunderTime = -Mathf.Infinity;
 
     #region States
@@ -29,6 +30,7 @@ public class Enemy_Boss : Enemy
 
     public Boss_TrackState track { get; private set; }
     public Boss_FlashCutState flashCut { get; private set; }
+    public Boss_SpawnThunderState spawnThunder { get; private set; }
 
     #endregion
 
@@ -41,6 +43,7 @@ public class Enemy_Boss : Enemy
         
         track = new Boss_TrackState(this, stateMachine, "Track", this);
         flashCut = new Boss_FlashCutState(this, stateMachine, "FlashCut", this);
+        spawnThunder = new Boss_SpawnThunderState(this, stateMachine, "Thunder", this);
     }
 
     protected override void Start()
@@ -78,6 +81,7 @@ public class Enemy_Boss : Enemy
     public void UseSpawnThunder()
     {
         lastThunderTime = Time.time;
+        SpawnThunder();
     }
 
     public bool CanUseThunder()
@@ -88,8 +92,11 @@ public class Enemy_Boss : Enemy
 
     private void SpawnThunder()
     {
-        float spawnDistance;
-
+        for (int i = 0; i < 4; i++)
+        {
+            float randomPos = Random.Range(-thunderSpawnDistance, thunderSpawnDistance);
+            Instantiate(thunderPrefab, new Vector2(transform.position.x + randomPos, transform.position.y), Quaternion.identity);
+        }
     }
 
     public override void Die()

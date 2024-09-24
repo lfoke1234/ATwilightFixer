@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
@@ -49,6 +50,8 @@ public class Boss_BattleState : EnemyState
         enemy.SetVelocity(enemy.moveSpeed * moveDir, rb.velocity.y);
         #endregion
 
+        enemy.stateMachine.ChangeState(enemy.spawnThunder);
+
         if (Vector2.Distance(enemy.transform.position, player.transform.position) > enemy.trackPlayerDistance && enemy.CanUseTrack())
         {
             enemy.stateMachine.ChangeState(enemy.track);
@@ -56,7 +59,7 @@ public class Boss_BattleState : EnemyState
 
         if (enemy.IsPlayerInAttackRange())
         {
-            int random = Random.Range(0, 2);
+            int random = Random.Range(0, 3);
 
             if (random == 0)
             {
@@ -65,6 +68,10 @@ public class Boss_BattleState : EnemyState
             else if (random == 1 && enemy.CanUseFlashCut())
             {
                 enemy.stateMachine.ChangeState(enemy.flashCut);
+            }
+            else if (random == 2 && enemy.CanUseThunder())
+            {
+                enemy.stateMachine.ChangeState(enemy.spawnThunder);
             }
             else
                 enemy.stateMachine.ChangeState(enemy.idle);
