@@ -576,7 +576,7 @@ MonoBehaviour:
   boxSize: {x: 15, y: 0.5}
   slimeType: 0
   childAmount: 2
-  slimePrefab: {fileID: 125139255398631740, guid: 800e77f1841953b4ebefe5cb6c48f445, type: 3}
+  slimePrefab: {fileID: 125139255398631740, guid: 63e619c4c0c8bb94f924a69ece446ffb, type: 3}
   minCreateVelocity: {x: 5, y: 5}
   maxCreateVelocity: {x: 8, y: 8}
 --- !u!114 &6028002166583441011
@@ -604,7 +604,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   damage:
-    baseValue: 10
+    baseValue: 130
     modifiers: 
   trueDamage:
     baseValue: 0
@@ -619,7 +619,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   maxHealth:
-    baseValue: 100
+    baseValue: 1040
     modifiers: 
   maxHiddenHealth:
     baseValue: 0
@@ -628,7 +628,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   armor:
-    baseValue: 0
+    baseValue: 50
     modifiers: 
   evasion:
     baseValue: 0
