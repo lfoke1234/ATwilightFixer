@@ -2438,10 +2438,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2694311965992723004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 205, y: -125}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4269531612902500338
 CanvasRenderer:
@@ -2465,9 +2465,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillImage: {fileID: 2064849144045862922}
   skillName: "\uAE30\uBCF8 \uB300\uC26C"
-  skillDescription: "\uC77C\uC815 \uAC70\uB9AC\uB9CC\uD07C \uB3CC\uC9C4\uD558\uBA70
-    \uC801\uC758 \uACF5\uACA9\uC744 \uBB34\uC2DC\uD569\uB2C8\uB2E4.\n\uB9C8\uB098
-    \uC18C\uBAA8\uB7C9: 0"
+  skillDescription: "\uC9E7\uC740 \uAC70\uB9AC\uB97C \uB3CC\uC9C4\uD55C\uB2E4.\n\nMP:
+    0\n\uCFE8\uD0C0\uC784: 3"
   lockedSkillColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
   canUnlock: 1
   unlocked: 0
@@ -6125,10 +6124,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2694311965992723004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 450, y: -125}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1803552571639005062
 CanvasRenderer:
@@ -6152,10 +6151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillImage: {fileID: 590403959128908554}
   skillName: "\uBC84\uD504 \uB300\uC26C"
-  skillDescription: "\uC77C\uC815 \uAC70\uB9AC\uB9CC\uD07C \uB3CC\uC9C4\uD558\uBA70
-    \uC801\uC758 \uACF5\uACA9\uC744 \uBB34\uC2DC\uD569\uB2C8\uB2E4.\n\uACF5\uACA9\uB825\uC744
-    x\uB9CC\uD07C \uC0C1\uC2B9\uC2DC\uD0B5\uB2C8\uB2E4.\n\uB9C8\uB098 \uC18C\uBAA8\uB7C9:
-    ?"
+  skillDescription: "\uC9E7\uC740 \uAC70\uB9AC\uB97C \uB3CC\uC9C4\uD558\uACE0 50\uC758
+    \uACF5\uACA9\uB825\uC744 \uC5BB\uB294\uB2E4.\n\nMP: 20\n\uCFE8\uD0C0\uC784: 3"
   lockedSkillColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
   canUnlock: 1
   unlocked: 0
@@ -8231,10 +8228,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2694311965992723004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 695, y: -125}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6411206968310311733
 CanvasRenderer:
@@ -8258,10 +8255,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillImage: {fileID: 1188869731238402817}
   skillName: "\uBC84\uD504 \uB300\uC26C2"
-  skillDescription: "\uC77C\uC815 \uAC70\uB9AC\uB9CC\uD07C \uB3CC\uC9C4\uD558\uBA70
-    \uC801\uC758 \uACF5\uACA9\uC744 \uBB34\uC2DC\uD569\uB2C8\uB2E4.\n\uACF5\uACA9\uB825\uC744
-    x\uB9CC\uD07C \uC0C1\uC2B9\uC2DC\uD0B5\uB2C8\uB2E4.\n\uB9C8\uB098 \uC18C\uBAA8\uB7C9:
-    ?"
+  skillDescription: "\uC9E7\uC740 \uAC70\uB9AC\uB97C \uB3CC\uC9C4\uD558\uACE0 100\uC758
+    \uACF5\uACA9\uB825\uC744 \uC5BB\uB294\uB2E4.\n\nMP: 40\n\uCFE8\uD0C0\uC784: 3"
   lockedSkillColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
   canUnlock: 1
   unlocked: 0
@@ -10463,7 +10458,7 @@ RectTransform:
   m_Father: {fileID: 8160219483612563379}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12787,10 +12782,10 @@ RectTransform:
   - {fileID: 474740781271583282}
   m_Father: {fileID: 5285454958681069613}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1170, y: -50}
-  m_SizeDelta: {x: 240, y: 88}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7128265924627977806
 CanvasRenderer:
@@ -12920,10 +12915,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2694311965992723004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 205, y: -405}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7684081046552526075
 CanvasRenderer:
@@ -12947,10 +12942,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillImage: {fileID: 5046296390491177738}
   skillName: "\uC2AC\uB77C\uC774\uB529"
-  skillDescription: "\uC77C\uC815 \uAC70\uB9AC\uB9CC\uD07C \uB3CC\uC9C4\uD558\uBA70
-    \uC801\uC758 \uACF5\uACA9\uC744 \uBB34\uC2DC\uD569\uB2C8\uB2E4.\n\uACF5\uACA9\uB825\uC744
-    x\uB9CC\uD07C \uC0C1\uC2B9\uC2DC\uD0B5\uB2C8\uB2E4.\n\uB9C8\uB098 \uC18C\uBAA8\uB7C9:
-    ?"
+  skillDescription: "\uC9E7\uC740 \uAC70\uB9AC\uB97C \uBBF8\uB044\uB7EC\uC9C0\uBA70
+    \uB098\uC544\uAC04\uB2E4.\n\r\nMP: 0\n\uCFE8\uD0C0\uC784 : 3"
   lockedSkillColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
   canUnlock: 1
   unlocked: 0
@@ -13106,10 +13099,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2694311965992723004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 695, y: -685}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2479636374038998547
 CanvasRenderer:
@@ -16001,7 +15994,7 @@ RectTransform:
   m_Father: {fileID: 4823389452380177576}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -16732,10 +16725,10 @@ RectTransform:
   - {fileID: 890264826933959091}
   m_Father: {fileID: 5285454958681069613}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 900, y: -50}
-  m_SizeDelta: {x: 240, y: 88}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1703533988361245992
 CanvasRenderer:
@@ -18199,10 +18192,10 @@ RectTransform:
   - {fileID: 8950372841159512242}
   m_Father: {fileID: 5285454958681069613}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 630, y: -50}
-  m_SizeDelta: {x: 240, y: 88}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5601146439553302930
 CanvasRenderer:
@@ -21596,7 +21589,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.000036239624, y: -0.000030517578}
-  m_SizeDelta: {x: -88, y: 785}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &3831218003731704083
 MonoBehaviour:
@@ -24132,8 +24125,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 6636310327086582198}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.8178344}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0.32484078}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -24342,10 +24335,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2694311965992723004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 695, y: -405}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7502814578195390105
 CanvasRenderer:
@@ -24369,10 +24362,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillImage: {fileID: 1835947013123148852}
   skillName: "\uBC84\uD504 \uC2AC\uB77C\uC774\uB5292"
-  skillDescription: "\uC77C\uC815 \uAC70\uB9AC\uB9CC\uD07C \uB3CC\uC9C4\uD558\uBA70
-    \uC801\uC758 \uACF5\uACA9\uC744 \uBB34\uC2DC\uD569\uB2C8\uB2E4.\n\uACF5\uACA9\uB825\uC744
-    x\uB9CC\uD07C \uC0C1\uC2B9\uC2DC\uD0B5\uB2C8\uB2E4.\n\uB9C8\uB098 \uC18C\uBAA8\uB7C9:
-    ?"
+  skillDescription: "\uC9E7\uC740 \uAC70\uB9AC\uB97C \uBBF8\uB044\uB7EC\uC9C0\uBA70
+    \uB098\uC544\uAC04\uB2E4.\n\uC774\uD6C4 10\uCD08\uAC04 100\uC758 \uACF5\uACA9\uB825\uC744
+    \uC5BB\uB294\uB2E4\n\r\nMP: 20\t\n\uCFE8\uD0C0\uC784 : 3"
   lockedSkillColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
   canUnlock: 1
   unlocked: 0
@@ -24491,10 +24483,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2694311965992723004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 205, y: -685}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6790196763283362480
 CanvasRenderer:
@@ -24635,10 +24627,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2694311965992723004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 450, y: -685}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6502677611461568049
 CanvasRenderer:
@@ -24900,10 +24892,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2694311965992723004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 450, y: -405}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6205493694464077190
 CanvasRenderer:
@@ -24927,10 +24919,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillImage: {fileID: 6073744124675639307}
   skillName: "\uBC84\uD504 \uC2AC\uB77C\uC774\uB529"
-  skillDescription: "\uC77C\uC815 \uAC70\uB9AC\uB9CC\uD07C \uB3CC\uC9C4\uD558\uBA70
-    \uC801\uC758 \uACF5\uACA9\uC744 \uBB34\uC2DC\uD569\uB2C8\uB2E4.\n\uACF5\uACA9\uB825\uC744
-    x\uB9CC\uD07C \uC0C1\uC2B9\uC2DC\uD0B5\uB2C8\uB2E4.\n\uB9C8\uB098 \uC18C\uBAA8\uB7C9:
-    ?"
+  skillDescription: "\uC9E7\uC740 \uAC70\uB9AC\uB97C \uBBF8\uB044\uB7EC\uC9C0\uBA70
+    \uB098\uC544\uAC04\uB2E4.\n\uC774\uD6C4 10\uCD08\uAC04 50\uC758 \uACF5\uACA9\uB825\uC744
+    \uC5BB\uB294\uB2E4\n\r\nMP: 20\t\n\uCFE8\uD0C0\uC784 : 3"
   lockedSkillColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
   canUnlock: 1
   unlocked: 0
@@ -25493,9 +25484,9 @@ RectTransform:
   m_Father: {fileID: 451430082999390266}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &5173062081972843909
 CanvasRenderer:

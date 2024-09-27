@@ -14,6 +14,7 @@ public class Boss_SpawnEneiesState : EnemyState
     public override void Enter()
     {
         base.Enter();
+        isTrigged = false;
     }
 
     public override void Exit()
@@ -27,7 +28,7 @@ public class Boss_SpawnEneiesState : EnemyState
 
         if (triggerCalled && isTrigged == false)
         {
-            enemy.UseSpawnThunder();
+            enemy.UseSpawnEnemies();
             triggerCalled = false;
             isTrigged = true;
         }

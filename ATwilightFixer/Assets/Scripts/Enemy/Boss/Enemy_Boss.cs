@@ -120,12 +120,11 @@ public class Enemy_Boss : Enemy
 
     private void SpawnEnemies()
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < enemies.Length; i++)
         {
-            int randonEnemy = Random.Range(0, enemies.Length);
             float randomPos = Random.Range(-thunderSpawnDistance, thunderSpawnDistance);
             Vector2 spawnPosition = new Vector2(thunderSpawnPos.position.x + randomPos, thunderSpawnPos.position.y);
-            Instantiate(enemies[randonEnemy], spawnPosition, Quaternion.identity, null);
+            Instantiate(enemies[i], spawnPosition, Quaternion.identity, null);
         }
     }
 

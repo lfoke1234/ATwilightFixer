@@ -30,7 +30,7 @@ public class Boss_TrackState : EnemyState
 
         if (triggerCalled)
         {
-            enemy.stateMachine.ChangeState(enemy.flashCut);
+            enemy.stateMachine.ChangeState(enemy.battle);
         }
     }
 }
