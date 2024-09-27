@@ -73,6 +73,7 @@ public class Boss_Clone : MonoBehaviour
         else if (exitCount <= 0)
         {
             isEnd = true;
+            animator.SetTrigger("End");
         }
     }
 
@@ -99,5 +100,10 @@ public class Boss_Clone : MonoBehaviour
                 // }
             }
         }
+    }
+
+    private void DestroyColne()
+    {
+        Destroy(gameObject);    
     }
 }

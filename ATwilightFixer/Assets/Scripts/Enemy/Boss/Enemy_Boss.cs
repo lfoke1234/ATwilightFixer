@@ -21,6 +21,11 @@ public class Enemy_Boss : Enemy
     [SerializeField] private float thunderSpawnDistance;
     private float lastThunderTime = -Mathf.Infinity;
 
+    
+    public float spawnEnemiesCooldown = 5f;
+    public GameObject[] enemies;
+    [SerializeField] private float enemiesSpawnDistance;
+    private float lastEnemiesTime = -Mathf.Infinity;
     #region States
 
     public Boss_IdleState idle { get; private set; }
@@ -31,6 +36,7 @@ public class Enemy_Boss : Enemy
     public Boss_TrackState track { get; private set; }
     public Boss_FlashCutState flashCut { get; private set; }
     public Boss_SpawnThunderState spawnThunder { get; private set; }
+    public Boss_SpawnEneiesState spawnEnemies { get; private set; }
 
     #endregion
 
@@ -44,6 +50,7 @@ public class Enemy_Boss : Enemy
         track = new Boss_TrackState(this, stateMachine, "Track", this);
         flashCut = new Boss_FlashCutState(this, stateMachine, "FlashCut", this);
         spawnThunder = new Boss_SpawnThunderState(this, stateMachine, "Thunder", this);
+        spawnEnemies = new Boss_SpawnEneiesState(this, stateMachine, "Enemies", this);
     }
 
     protected override void Start()
@@ -88,6 +95,17 @@ public class Enemy_Boss : Enemy
     {
         return Time.time >= lastThunderTime + spawnThunderCooldown;
     }
+
+    public void UseSpawnEnemies()
+    {
+        lastEnemiesTime = Time.time;
+        SpawnEnemies();
+    }
+
+    public bool CanUseSpawnEnemies()
+    {
+        return Time.time >= lastEnemiesTime + spawnEnemiesCooldown;
+    }
     #endregion
 
     private void SpawnThunder()
@@ -95,7 +113,19 @@ public class Enemy_Boss : Enemy
         for (int i = 0; i < 4; i++)
         {
             float randomPos = Random.Range(-thunderSpawnDistance, thunderSpawnDistance);
-            Instantiate(thunderPrefab, new Vector2(transform.position.x + randomPos, transform.position.y), Quaternion.identity);
+            Vector2 spawnPosition = new Vector2(thunderSpawnPos.position.x + randomPos, thunderSpawnPos.position.y);
+            Instantiate(thunderPrefab, spawnPosition, Quaternion.identity, null);
+        }
+    }
+
+    private void SpawnEnemies()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            int randonEnemy = Random.Range(0, enemies.Length);
+            float randomPos = Random.Range(-thunderSpawnDistance, thunderSpawnDistance);
+            Vector2 spawnPosition = new Vector2(thunderSpawnPos.position.x + randomPos, thunderSpawnPos.position.y);
+            Instantiate(enemies[randonEnemy], spawnPosition, Quaternion.identity, null);
         }
     }
 

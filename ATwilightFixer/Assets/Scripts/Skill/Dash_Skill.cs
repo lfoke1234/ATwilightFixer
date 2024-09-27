@@ -30,10 +30,8 @@ public class Dash_Skill : Skill
     [SerializeField] private int damage3;
     [SerializeField] private int timer3;
 
-    public override void UseSkill()
+    public override bool CanUseSkill()
     {
-        base.UseSkill();
-
         if (dash1Unlocked)
         {
             amount = 0;
@@ -47,6 +45,28 @@ public class Dash_Skill : Skill
             amount = 40;
         }
 
+        if (coolDownTimer < 0 && player.stats.currentStamina > amount)
+        {
+            coolDownTimer = coolDown;
+            UseSkill();
+            return true;
+        }
+        else if (coolDownTimer > 0)
+        {
+            player.fx.CreatePopUpText("쿨타임 중");
+        }
+        else if (amount > player.stats.currentStamina)
+        {
+            player.fx.CreatePopUpText("MP 부족");
+        }
+
+        return false;
+    }
+
+    public override void UseSkill()
+    {
+        base.UseSkill();
+        Debug.Log("UseDash : " + amount);
         player.stats.DecreaseStamianBy(amount);
     }
 

@@ -70,6 +70,7 @@ public class Clone_Skill_Controller : MonoBehaviour
         }
         else if (exitCount <= 0)
         {
+            animator.SetBool("End", true);
             isEnd = true;
         }
     }
@@ -109,5 +110,10 @@ public class Clone_Skill_Controller : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void DestroyClone()
+    {
+        Destroy(gameObject);
     }
 }

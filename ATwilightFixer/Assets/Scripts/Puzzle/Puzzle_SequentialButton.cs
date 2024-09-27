@@ -34,7 +34,6 @@ public class Puzzle_SequentialButton : MonoBehaviour
     {
         if (!isCleard)
         {
-            // currentButtonIndex가 buttons.Length보다 크지 않도록 확인
             if (currentButtonIndex < buttons.Length && IsPlayerNearby(buttons[currentButtonIndex]) && IsActionTriggered("Interaction"))
             {
                 TriggerButton(currentButtonIndex);
@@ -80,7 +79,7 @@ public class Puzzle_SequentialButton : MonoBehaviour
 
     private void TriggerIncorrectButton(int buttonIndex)
     {
-        buttonRenderers[buttonIndex].sprite = leverOnSprite; // 틀린 레버도 스프라이트 변경
+        buttonRenderers[buttonIndex].sprite = leverOnSprite;
         puzzleFailed = true;
         Debug.Log("Puzzle failed!");
     }

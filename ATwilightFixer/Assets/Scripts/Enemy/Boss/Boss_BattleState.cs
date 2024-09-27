@@ -50,8 +50,6 @@ public class Boss_BattleState : EnemyState
         enemy.SetVelocity(enemy.moveSpeed * moveDir, rb.velocity.y);
         #endregion
 
-        enemy.stateMachine.ChangeState(enemy.spawnThunder);
-
         if (Vector2.Distance(enemy.transform.position, player.transform.position) > enemy.trackPlayerDistance && enemy.CanUseTrack())
         {
             enemy.stateMachine.ChangeState(enemy.track);
@@ -59,7 +57,7 @@ public class Boss_BattleState : EnemyState
 
         if (enemy.IsPlayerInAttackRange())
         {
-            int random = Random.Range(0, 3);
+            int random = Random.Range(0, 4);
 
             if (random == 0)
             {
@@ -72,6 +70,10 @@ public class Boss_BattleState : EnemyState
             else if (random == 2 && enemy.CanUseThunder())
             {
                 enemy.stateMachine.ChangeState(enemy.spawnThunder);
+            }
+            else if (random == 3 && enemy.CanUseSpawnEnemies())
+            {
+                enemy.stateMachine.ChangeState(enemy.spawnEnemies);
             }
             else
                 enemy.stateMachine.ChangeState(enemy.idle);

@@ -1,5 +1,6 @@
 using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -48,13 +49,16 @@ public class UI_InGame : MonoBehaviour
     {
         currentGold.text = PlayerManager.instance.GetCurrency().ToString("#,#");
 
-        if (Input.GetKeyDown(KeyCode.Z))
-            SetCooldownOf(dashImage);
-        if (Input.GetKeyDown(KeyCode.S))
-            SetCooldownOf(slashImage);
+        // if (Input.GetKeyDown(KeyCode.Z))
+        //     SetCooldownOf(dashImage);
+        // if (Input.GetKeyDown(KeyCode.S))
+        //     SetCooldownOf(slashImage);
 
-        CheckCooldownOf(dashImage, skills.dash.coolDown);
-        CheckCooldownOf(slashImage, skills.slash.coolDown);
+        CheckSkillCooldown(dashImage, skills.dash.coolDownTimer, skills.dash.coolDown);
+        CheckSkillCooldown(slashImage, skills.slash.coolDownTimer, skills.slash.coolDown);
+
+        // CheckCooldownOf(dashImage, skills.dash.coolDown);
+        // CheckCooldownOf(slashImage, skills.slash.coolDown);
 
         #region Update QuickSlot
         UpdateQuickSlotIcon(0, quickSlot1);
@@ -117,6 +121,11 @@ public class UI_InGame : MonoBehaviour
     {
         if (_image.fillAmount > 0)
             _image.fillAmount -= 1 / _cooldown * Time.deltaTime;
+    }
+
+    private void CheckSkillCooldown(Image _image, float _timer, float _cooldown)
+    {
+        _image.fillAmount = _timer / _cooldown;
     }
 
     private void UpdateQuickSlotIcon(int slotIndex, Image quickSlotImage)
