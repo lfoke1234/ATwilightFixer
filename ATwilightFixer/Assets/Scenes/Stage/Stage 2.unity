@@ -82649,8 +82649,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d591b0b8fc91c48ae3ca38c4c44a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneisTitle: 0
-  nextNovelScript: {fileID: 0}
+  nextSceneisTitle: 1
+  nextNovelScript: {fileID: 11400000, guid: ffcaa50dff5247b4394f559aadab9e8d, type: 2}
   clearGold: 700
 --- !u!1 &1888312148
 GameObject:
