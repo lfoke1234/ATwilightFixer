@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8622827475198979529}
   - component: {fileID: 3152890206181695914}
   m_Layer: 0
-  m_Name: BGM_the fallen
+  m_Name: Stage6n8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6691179864954814377, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
-  m_audioClip: {fileID: 8300000, guid: cda7c87295c706745a70be9029f09920, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9e4c842d446f706449fe3a4dff1bf66e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 2355087148935419656}
   - component: {fileID: 7630665832066408367}
   m_Layer: 0
-  m_Name: BGM_man of the hour
+  m_Name: Stage3n4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -426,7 +426,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6691179864954814377, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 68f35136d7fd3ea478ded3393fb9fe1f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0acdce4610b26ec499ce0c6aebad7866, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -717,7 +717,7 @@ GameObject:
   - component: {fileID: 690626990615179519}
   - component: {fileID: 2434803358374383882}
   m_Layer: 0
-  m_Name: BGM_the village
+  m_Name: Stage9n10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -748,7 +748,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6691179864954814377, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4f7e3b4efbf7a1b46aaf3f752b82707a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c40e183bdbf7fd54c935753d688fd41b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1269,7 +1269,7 @@ GameObject:
   - component: {fileID: 1588267723169060352}
   - component: {fileID: 124442817757483894}
   m_Layer: 0
-  m_Name: BGM_crawl in the dark
+  m_Name: Stage1n2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1300,7 +1300,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6691179864954814377, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 8b79e962044a26741976608820e73518, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e93cb20c171122548bb7faecf9cb6ddf, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1562,7 +1562,7 @@ GameObject:
   - component: {fileID: 4163494518891950113}
   - component: {fileID: 3745972942583935958}
   m_Layer: 0
-  m_Name: BGM_a fateful encounter
+  m_Name: Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1593,7 +1593,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6691179864954814377, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 24452ade428f4c0448a6b4abacbe78c4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2e4f80103ff476142b85f758a2673ef7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1818,7 +1818,7 @@ GameObject:
   - component: {fileID: 981934776456860742}
   - component: {fileID: 5082097250812509526}
   m_Layer: 0
-  m_Name: BGM_nemesis
+  m_Name: Stage5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1849,7 +1849,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6691179864954814377, guid: b7725e6b8fda8d845bed26b071ee56d1, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b7e50e520924e3a458ddd47dfe5e54ce, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b3912abb2b30d3242bc04a134d29b1df, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

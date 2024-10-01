@@ -26,6 +26,8 @@ public class Enemy_Boss : Enemy
     public GameObject[] enemies;
     [SerializeField] private float enemiesSpawnDistance;
     private float lastEnemiesTime = -Mathf.Infinity;
+
+    public bool startBattle;
     #region States
 
     public Boss_IdleState idle { get; private set; }

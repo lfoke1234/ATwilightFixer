@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StrengthPatten : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class StrengthPatten : MonoBehaviour
     [SerializeField] private GameObject chainSpawner;
     [SerializeField] private GameObject bulletSpawner;
     [SerializeField] private GameObject potal;
+    [SerializeField] private GameObject timeline;
  
     [SerializeField] private bool isActive;
 
@@ -51,7 +53,17 @@ public class StrengthPatten : MonoBehaviour
             }
             bulletSpawner.SetActive(false);
             chainSpawner.SetActive(false);
-            potal.SetActive(true);
+
+            Scene currentScene = SceneManager.GetActiveScene();
+
+            if (currentScene.name == "Stage 15")
+            {
+                timeline.SetActive(true);
+            }
+            else
+            {
+                potal.SetActive(true);
+            }
         }
     }
 

@@ -22,7 +22,7 @@ public class Boss_IdleState : EnemyState
         base.Update();
         enemy.SetZeroVelocity();
 
-        if (stateTimer <= 0)
+        if (stateTimer <= 0 && enemy.startBattle)
         {
             enemy.stateMachine.ChangeState(enemy.battle);
         }
