@@ -31,19 +31,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        // if (Input.GetKeyDown(KeyCode.R))
-        // {
-        //     RestartScene();
-        // }
-        // 
-        // if (Input.GetKeyDown(KeyCode.D))
-        // {
-        //     PlayerManager.instance.player.stateMachine.ChangeState(PlayerManager.instance.player.deadState);
-        // }
-
-    }
 
     public void RestartScene()
     {
