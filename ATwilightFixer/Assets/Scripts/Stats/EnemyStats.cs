@@ -14,7 +14,6 @@ public class EnemyStats : CharacterStats
 
     private ItemDrop myDropSystem;
 
-    [SerializeField] private GameObject end;
 
     protected override void Start()
     {
@@ -88,7 +87,6 @@ public class EnemyStats : CharacterStats
     protected override void Die()
     {
         base.Die();
-        end.SetActive(true);
         enemy.Die();
 
         myDropSystem.GenerateDrop();
