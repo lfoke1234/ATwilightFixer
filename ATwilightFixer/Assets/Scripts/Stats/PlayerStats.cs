@@ -26,6 +26,8 @@ public class PlayerStats : CharacterStats, ISaveManager
 
     #region Add modifire with level
 
+    
+
     private void DamageModify(Stat _stat)
     {
         for (int i = 1; i < level; i++)
@@ -55,13 +57,71 @@ public class PlayerStats : CharacterStats, ISaveManager
             _stat.AddModifiers(modifire);
         }
     }
+
+
     private void ApplyLevelModifires()
     {
         DamageModify(damage);
         HealthModify(maxHealth);
         ArmorModify(armor);
     }
+    #endregion
 
+    #region Dev
+    private void DamageModify1(Stat _stat)
+    {
+        int modifire = damageStatsModifireWithLevel;
+
+        _stat.AddModifiers(modifire);
+    }
+
+    private void HealthModify1(Stat _stat)
+    {
+        int modifire = maxHealthStatsModifireWithLevel;
+
+        _stat.AddModifiers(modifire);
+    }
+
+    private void ArmorModify1(Stat _stat)
+    {
+        int modifire = armorStatsModifireWithLevel;
+
+        _stat.AddModifiers(modifire);
+    }
+
+    private void DamageDeModify1(Stat _stat)
+    {
+        int modifire = damageStatsModifireWithLevel;
+
+        _stat.RemoveModifiers(modifire);
+    }
+
+    private void HealthDeModify1(Stat _stat)
+    {
+        int modifire = maxHealthStatsModifireWithLevel;
+
+        _stat.RemoveModifiers(modifire);
+    }
+
+    private void ArmorDeModify1(Stat _stat)
+    {
+        int modifire = armorStatsModifireWithLevel;
+
+        _stat.RemoveModifiers(modifire);
+    }
+    public void LevelUP()
+    {
+        DamageModify1(damage);
+        HealthModify1(maxHealth);
+        ArmorModify1(armor);
+    }
+
+    public void LevelDown()
+    {
+        DamageDeModify1(damage);
+        HealthDeModify1(maxHealth);
+        ArmorDeModify1(armor);
+    }
     #endregion
 
     public override void TakeDamage(int _damage)

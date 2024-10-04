@@ -1,3 +1,4 @@
+using RPG.VisualNovel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,6 +8,9 @@ public class TitleButton : MonoBehaviour, ISaveManager
     [SerializeField] private Button start;
     [SerializeField] private Button option;
     [SerializeField] private Button quit;
+
+    [SerializeField] private bool nextSceneisTitle;
+    [SerializeField] private StoryScene nextNovelScript;
     private bool isClearTutorial;
 
     public void LoadData(GameData _data)
@@ -28,7 +32,10 @@ public class TitleButton : MonoBehaviour, ISaveManager
     {
         if (isClearTutorial == false)
         {
-            SceneManager.LoadScene("Prologue");
+            NovelScriptManager.Instance.nextPlayScene = nextNovelScript;
+            NovelScriptManager.Instance.nextSceneisTitle = false;
+            NovelScriptManager.Instance.nextSceneName = "Stage 1";
+            SceneManager.LoadScene("VisualNovel");
         }
         else
         {
