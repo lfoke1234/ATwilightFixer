@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -164,6 +165,8 @@ public class Player : Entity
         stateMachine.currentState.Update();
         CheckForDashInput();
 
+        TestDev();
+
         #region Quick Slot
         if (IsActionTriggered("QuickSlot01"))
         {
@@ -186,6 +189,24 @@ public class Player : Entity
             Inventory.Instance.UseQuickSlot(5);
         }
         #endregion
+    }
+
+    private void TestDev()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            stats.returnDamage = !stats.returnDamage;
+        }
+
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            this.GetComponent<PlayerStats>().LevelUP();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            this.GetComponent<PlayerStats>().LevelDown();
+        }
     }
 
     #region ChangeSpeed
