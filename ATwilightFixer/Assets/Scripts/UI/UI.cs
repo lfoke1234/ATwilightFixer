@@ -244,6 +244,11 @@ public class UI : MonoBehaviour, ISaveManager
         PlayerManager.instance.player.ResetPlayer();
     }
 
+    public void TimeScale()
+    {
+        GameManager.Instance.PausueGame(false);
+    }
+
     public void LoadData(GameData _data)
     {
         foreach (KeyValuePair<string, float> pair in _data.volumSettings)

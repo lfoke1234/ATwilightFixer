@@ -28,6 +28,8 @@ public class Enemy_Boss : Enemy
     private float lastEnemiesTime = -Mathf.Infinity;
 
     public bool startBattle;
+    [SerializeField] private GameObject end;
+
     #region States
 
     public Boss_IdleState idle { get; private set; }
@@ -39,6 +41,8 @@ public class Enemy_Boss : Enemy
     public Boss_FlashCutState flashCut { get; private set; }
     public Boss_SpawnThunderState spawnThunder { get; private set; }
     public Boss_SpawnEneiesState spawnEnemies { get; private set; }
+
+    public Boss_DeadState dead { get; private set; }
 
     #endregion
 
@@ -53,6 +57,8 @@ public class Enemy_Boss : Enemy
         flashCut = new Boss_FlashCutState(this, stateMachine, "FlashCut", this);
         spawnThunder = new Boss_SpawnThunderState(this, stateMachine, "Thunder", this);
         spawnEnemies = new Boss_SpawnEneiesState(this, stateMachine, "Enemies", this);
+
+        dead = new Boss_DeadState(this, stateMachine, "Dead", this);
     }
 
     protected override void Start()
@@ -133,5 +139,8 @@ public class Enemy_Boss : Enemy
     public override void Die()
     {
         base.Die();
+        end.SetActive(true);
+        stateMachine.ChangeState(dead);
+        Destroy(gameObject, 2f);
     }
 }

@@ -315,6 +315,7 @@ public class Player : Entity
     public void ResetPlayer()
     {
         SpawnManager.Instance.MovePlayerToSpawnPoint();
+        GetComponentInChildren<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         stateMachine.ChangeState(idleState);
         stats.currentHealth = stats.GetMaxHealthValue();
         stats.currentStamina = stats.GetMaxStaminaValue();

@@ -125311,7 +125311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStr: 0
-  damage: 10
+  damage: 150
   spawner: {fileID: 3519494292169712831, guid: 3ecb3b5397eb07e4ba3b8710db5907d5, type: 3}
   distance: 3
   timer: 5
