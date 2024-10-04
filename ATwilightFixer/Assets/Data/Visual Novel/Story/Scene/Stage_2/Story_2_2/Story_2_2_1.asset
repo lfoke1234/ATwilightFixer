@@ -170,5 +170,5 @@ MonoBehaviour:
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 9a818722b5553454aadda61a20e6a449, type: 3}
   nextScene: {fileID: 0}

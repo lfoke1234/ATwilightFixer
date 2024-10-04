@@ -63,7 +63,7 @@ MonoBehaviour:
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
-  - text: ": \uADF8\uB7EC\uBA74 \uD63C\uC790 \uB4E4\uC5B4\uAC00\uAC8C?"
+  - text: "\uADF8\uB7EC\uBA74 \uD63C\uC790 \uB4E4\uC5B4\uAC00\uAC8C?"
     speaker: {fileID: 11400000, guid: 1a686b430ab517342a58061e99772d16, type: 2}
     actions: []
     music: {fileID: 0}
@@ -168,5 +168,5 @@ MonoBehaviour:
       moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 23d974711c06b1145814e4ff1321fc46, type: 3}
   nextScene: {fileID: 11400000, guid: 4629f9cdeb32efb459437020c8d02e4d, type: 2}
