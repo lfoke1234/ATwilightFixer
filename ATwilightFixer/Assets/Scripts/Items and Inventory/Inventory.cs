@@ -14,9 +14,20 @@ public class Inventory : MonoBehaviour, ISaveManager
     #region EquipmentItem
     public ItemData_Equipment level1Sword;
     public ItemData_Equipment level2Sword;
+    public ItemData_Equipment level3Sword;
+    public ItemData_Equipment level4Sword;
     public ItemData_Equipment level1Armor;
+    public ItemData_Equipment level2Armor;
+    public ItemData_Equipment level3Armor;
+    public ItemData_Equipment level4Armor;
     public ItemData_Equipment level1Shoose;
+    public ItemData_Equipment level2Shoose;
+    public ItemData_Equipment level3Shoose;
+    public ItemData_Equipment level4Shoose;
     public ItemData_Equipment level1Gloves;
+    public ItemData_Equipment level2Gloves;
+    public ItemData_Equipment level3Gloves;
+    public ItemData_Equipment level4Gloves;
     #endregion
 
     public List<ItemData> startingItems;
@@ -215,8 +226,32 @@ public class Inventory : MonoBehaviour, ISaveManager
     {
         EquipItem(level1Sword);
     }
+    public void EquipLevel2Sword()
+    {
+        EquipItem(level1Sword);
+    }
+    public void EquipLevel3Sword()
+    {
+        EquipItem(level1Sword);
+    }
+    public void EquipLevel4Sword()
+    {
+        EquipItem(level1Sword);
+    }
 
     public void EquipLevel1Gloves()
+    {
+        EquipItem(level1Gloves);
+    }
+    public void EquipLevel2Gloves()
+    {
+        EquipItem(level1Gloves);
+    }
+    public void EquipLevel3Gloves()
+    {
+        EquipItem(level1Gloves);
+    }
+    public void EquipLevel4Gloves()
     {
         EquipItem(level1Gloves);
     }
@@ -225,15 +260,34 @@ public class Inventory : MonoBehaviour, ISaveManager
     {
         EquipItem(level1Shoose);
     }
+    public void EquipLevel2Shoose()
+    {
+        EquipItem(level1Shoose);
+    }
+    public void EquipLevel3Shoose()
+    {
+        EquipItem(level1Shoose);
+    }
+    public void EquipLevel4Shoose()
+    {
+        EquipItem(level1Shoose);
+    }
 
     public void EquipLevel1Armor()
     {
         EquipItem(level1Armor);
     }
-
-    public void EquipLevel2Sword()
+    public void EquipLevel2Armor()
     {
-        EquipItem(level2Sword);
+        EquipItem(level1Armor);
+    }
+    public void EquipLevel3Armor()
+    {
+        EquipItem(level1Armor);
+    }
+    public void EquipLevel4Armor()
+    {
+        EquipItem(level1Armor);
     }
 
     #endregion
