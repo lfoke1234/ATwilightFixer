@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d6c55f6f909e2f43b3c31084ec13d45, type: 3}
-  m_Name: Gloves
+  m_Name: Shose 2
   m_EditorClassIdentifier: 
   itemType: 1
-  itemName: Thunder claw
-  icon: {fileID: 21300000, guid: 0e123cfdc54a3ca4684816a34167a566, type: 3}
-  itemDescription: Amulet
+  itemName: Shoose 2
+  icon: {fileID: 21300000, guid: ff425de32f54b5d41b3913831f52a284, type: 3}
+  itemPrice: 0
+  itemDescription: "\uACE0\uAE09 \uC2E0\uBC1C"
+  itemID: 6e3c18b4530cd86479634a3a0428b47c
   dropChance: 0
-  equipmentType: 2
+  equipmentType: 3
   itemCooldown: 0
-  itemEffects:
-  - {fileID: 11400000, guid: eb95cbe44bca38147a195030b1d1276f, type: 2}
+  itemEffects: []
   strength: 0
   agility: 0
   intelligence: 0

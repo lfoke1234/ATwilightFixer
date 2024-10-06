@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63db483f41306844895503699f5c9569, type: 3}
   m_Name: Heroine
   m_EditorClassIdentifier: 
-  speakerName: "\uD788\uB85C\uC778"
+  speakerName: "\uD50C\uB808\uC544"
   textColor: {r: 1, g: 0, b: 0.5498705, a: 0}
   sprites:
   - {fileID: 21300000, guid: 1e5c1db71c5f1ff4f87e0d0cd3c49dd9, type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EmptyScene
   m_EditorClassIdentifier: 
   sentences:
-  - text: 
+  - text: "\uC544\uC9C1 \uBBF8\uC644\uC131\uC778 \uC2A4\uD1A0\uB9AC \uC785\uB2C8\uB2E4."
     speaker: {fileID: 11400000, guid: c59fe0cc86d3b554ab55d8fe4bd55b70, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: c59fe0cc86d3b554ab55d8fe4bd55b70, type: 2}

@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5773312361732491375}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.580965, y: -0.4247529, z: 0.030812616}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -45,10 +45,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level1Sword: {fileID: 11400000, guid: dbf7ab7b1742a37469a05034f3c74662, type: 2}
-  level2Sword: {fileID: 11400000, guid: 3262cf7dae0fe8d4e9d3c9bdd6420eec, type: 2}
-  level1Armor: {fileID: 11400000, guid: fd0c43e93459b5f4996d9147d1420340, type: 2}
-  level1Shoose: {fileID: 11400000, guid: f7452c36185542b43bda6d4aaa0e53de, type: 2}
-  level1Gloves: {fileID: 11400000, guid: f72f2d211c78f2947b38efc2736687f8, type: 2}
+  level2Sword: {fileID: 11400000, guid: 675cca7721cf04145b2ed403f0c3c87c, type: 2}
+  level3Sword: {fileID: 11400000, guid: fb11a14c7c89de44292cc7ea4494331d, type: 2}
+  level4Sword: {fileID: 11400000, guid: 29d90638469596540841245bec2bae70, type: 2}
+  level1Armor: {fileID: 11400000, guid: 1365cdefb6a710248aa1e070d096d44f, type: 2}
+  level2Armor: {fileID: 11400000, guid: 5a534ba06e537f545a184757ecb79710, type: 2}
+  level3Armor: {fileID: 11400000, guid: 83f6371598b82f0458400ff487bf4144, type: 2}
+  level4Armor: {fileID: 11400000, guid: 0aaa2ded7ac79e843ad12a379582b5ee, type: 2}
+  level1Shoose: {fileID: 11400000, guid: d20d0ddc3e13e95489ca5dd7e8690325, type: 2}
+  level2Shoose: {fileID: 11400000, guid: 6e3c18b4530cd86479634a3a0428b47c, type: 2}
+  level3Shoose: {fileID: 11400000, guid: 2f286a9dbf495cd41bf0a9540a3aad61, type: 2}
+  level4Shoose: {fileID: 11400000, guid: f7452c36185542b43bda6d4aaa0e53de, type: 2}
+  level1Gloves: {fileID: 11400000, guid: 4888a8ce75ec235449e5d0af48793705, type: 2}
+  level2Gloves: {fileID: 11400000, guid: 983c05e5e572eaa4cbe5c345fb0a0614, type: 2}
+  level3Gloves: {fileID: 11400000, guid: 47bb95c916f6c4d4793e663388e0a968, type: 2}
+  level4Gloves: {fileID: 11400000, guid: f72f2d211c78f2947b38efc2736687f8, type: 2}
   startingItems: []
   startEquipItemData: []
   equipment: []

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d6c55f6f909e2f43b3c31084ec13d45, type: 3}
-  m_Name: Armor
+  m_Name: Shose 1
   m_EditorClassIdentifier: 
   itemType: 1
-  itemName: "\uAC11\uC637"
-  icon: {fileID: 21300000, guid: 2f1eaeeaad36ee5469eff7ff158f37ba, type: 3}
+  itemName: Shoose 1
+  icon: {fileID: 21300000, guid: ff425de32f54b5d41b3913831f52a284, type: 3}
   itemPrice: 0
-  itemDescription: "\uB2E8\uB2E8\uD55C \uAC11\uC637\uC774\uB2E4."
-  itemID: fd0c43e93459b5f4996d9147d1420340
-  dropChance: 100
-  equipmentType: 1
+  itemDescription: "\uD3C9\uBC94\uD55C \uC2E0\uBC1C"
+  itemID: d20d0ddc3e13e95489ca5dd7e8690325
+  dropChance: 0
+  equipmentType: 3
   itemCooldown: 0
   itemEffects: []
   strength: 0
@@ -31,8 +31,8 @@ MonoBehaviour:
   trueDamage: 0
   critChacne: 0
   critPower: 0
-  health: 15
-  stamina: 10
+  health: 0
+  stamina: 0
   armor: 0
   evasion: 0
   magicResistance: 0

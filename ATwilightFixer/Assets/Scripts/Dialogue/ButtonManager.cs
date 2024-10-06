@@ -18,6 +18,7 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private StoryScene stage13;
     [SerializeField] private StoryScene stage14;
     [SerializeField] private StoryScene stage15;
+    [SerializeField] private StoryScene error;
     
 
     public void Stage1(bool skip)
@@ -36,7 +37,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (skip == false)
         {
-            NovelInfoSet(false, "Stage 2", stage01);
+            NovelInfoSet(false, "Stage 2", stage02);
             SaveManager.instance.LoadGame();
         }
         else
@@ -48,7 +49,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (skip == false)
         {
-            NovelInfoSet(false, "Stage 3", stage01);
+            NovelInfoSet(false, "Stage 3", stage03);
             SaveManager.instance.LoadGame();
         }
         else
@@ -61,7 +62,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (skip == false)
         {
-            NovelInfoSet(false, "Stage 4", stage01);
+            NovelInfoSet(false, "Stage 4", stage04);
             SaveManager.instance.LoadGame();
         }
         else
@@ -74,7 +75,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (skip == false)
         {
-            NovelInfoSet(false, "Stage 5", stage01);
+            NovelInfoSet(false, "Stage 5", stage05);
             SaveManager.instance.LoadGame();
         }
         else
@@ -86,7 +87,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (skip == false)
         {
-            NovelInfoSet(false, "Stage 6", stage01);
+            NovelInfoSet(false, "Stage 6", stage06);
             SaveManager.instance.LoadGame();
         }
         else
@@ -98,7 +99,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (skip == false)
         {
-            NovelInfoSet(false, "Stage 7", stage01);
+            NovelInfoSet(false, "Stage 7", stage07);
             SaveManager.instance.LoadGame();
         }
         else
@@ -110,7 +111,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (skip == false)
         {
-            NovelInfoSet(false, "Stage 8", stage01);
+            NovelInfoSet(false, "Stage 8", stage08);
             SaveManager.instance.LoadGame();
         }
         else
@@ -122,7 +123,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (skip == false)
         {
-            NovelInfoSet(false, "Stage 9", stage01);
+            NovelInfoSet(false, "Stage 9", stage09);
             SaveManager.instance.LoadGame();
         }
         else
@@ -134,7 +135,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (skip == false)
         {
-            NovelInfoSet(false, "Stage 10", stage01);
+            NovelInfoSet(false, "Stage 10", stage10);
             SaveManager.instance.LoadGame();
         }
         else
@@ -146,7 +147,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (skip == false)
         {
-            NovelInfoSet(false, "Stage 11", stage01);
+            NovelInfoSet(false, "Stage 11", stage11);
             SaveManager.instance.LoadGame();
         }
         else
@@ -158,7 +159,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (skip == false)
         {
-            NovelInfoSet(false, "Stage 12", stage01);
+            NovelInfoSet(false, "Stage 12", stage12);
             SaveManager.instance.LoadGame();
         }
         else
@@ -170,7 +171,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (skip == false)
         {
-            NovelInfoSet(false, "Stage 13", stage01);
+            NovelInfoSet(false, "Stage 13", stage13);
             SaveManager.instance.LoadGame();
         }
         else
@@ -182,7 +183,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (skip == false)
         {
-            NovelInfoSet(false, "Stage 14", stage01);
+            NovelInfoSet(false, "Stage 14", stage14);
             SaveManager.instance.LoadGame();
         }
         else
@@ -194,7 +195,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (skip == false)
         {
-            NovelInfoSet(false, "Stage 15", stage01);
+            NovelInfoSet(false, "Stage 15", stage15);
             SaveManager.instance.LoadGame();
         }
         else
@@ -213,6 +214,12 @@ public class ButtonManager : MonoBehaviour
         NovelScriptManager.Instance.nextSceneisTitle = title;
         NovelScriptManager.Instance.nextPlayScene = scene;
         NovelScriptManager.Instance.nextSceneName = stageName;
+
+        if (scene == null)
+        {
+            NovelScriptManager.Instance.nextPlayScene = error;
+        }
+
         SceneManager.LoadScene("VisualNovel");
     }
 
