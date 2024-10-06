@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70cf0c3032c6eac4a9453ab267dccdaa, type: 3}
-  m_Name: Story_15_2_1
+  m_Name: Story_10_1_1 1
   m_EditorClassIdentifier: 
   sentences: []
-  background: {fileID: 0}
-  nextScene: {fileID: 0}
+  background: {fileID: 21300000, guid: 93bdfbeb9d1717442855b2da0e0c5bb2, type: 3}
+  nextScene: {fileID: 11400000, guid: ceeb6accf31874c48b11f352897d04d1, type: 2}

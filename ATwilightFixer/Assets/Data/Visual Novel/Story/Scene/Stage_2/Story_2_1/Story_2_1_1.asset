@@ -90,7 +90,12 @@ MonoBehaviour:
       \uC548 \uB4E4\uC5B4\uC8FC\uBA74 \uADC0\uCC2E\uAC8C \uAD74 \uD14C\uB2C8\uAE4C
       \uBD84\uBA85"
     speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
+      spriteIndex: 0
+      actionType: 5
+      coords: {x: 0, y: 0}
+      moveSpeed: 1
     music: {fileID: 0}
     sound: {fileID: 0}
   background: {fileID: 21300000, guid: 23d974711c06b1145814e4ff1321fc46, type: 3}

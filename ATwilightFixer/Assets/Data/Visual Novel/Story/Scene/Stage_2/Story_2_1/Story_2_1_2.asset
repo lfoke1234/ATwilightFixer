@@ -104,7 +104,17 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: "\uC640\uC544~\u266A"
     speaker: {fileID: 11400000, guid: 1a686b430ab517342a58061e99772d16, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
+      spriteIndex: 0
+      actionType: 5
+      coords: {x: 0, y: 0}
+      moveSpeed: 1
+    - speaker: {fileID: 11400000, guid: 1a686b430ab517342a58061e99772d16, type: 2}
+      spriteIndex: 0
+      actionType: 5
+      coords: {x: 0, y: 0}
+      moveSpeed: 1
     music: {fileID: 0}
     sound: {fileID: 0}
   background: {fileID: 21300000, guid: 9a818722b5553454aadda61a20e6a449, type: 3}
