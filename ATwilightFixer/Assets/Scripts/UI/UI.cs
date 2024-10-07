@@ -262,6 +262,12 @@ public class UI : MonoBehaviour, ISaveManager
 
     }
 
+    public void SaveandExit()
+    {
+        SaveManager.instance.SaveGame();
+        Application.Quit();
+    }
+
     public void SaveData(ref GameData _data)
     {
         _data.volumSettings.Clear();
