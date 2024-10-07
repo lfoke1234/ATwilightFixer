@@ -20,6 +20,7 @@ public class Boss_SpawnThunderState : EnemyState
     public override void Exit()
     {
         base.Exit();
+        isTrigged = false;
     }
 
     public override void Update()

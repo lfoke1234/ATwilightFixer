@@ -92,7 +92,7 @@ public class Boss_Clone : MonoBehaviour
 
                 if (_target != null)
                 {
-                    PlayerManager.instance.player.stats.TakeDamage(10);
+                    PlayerManager.instance.player.stats.TakeDamage((int)(PlayerManager.instance.player.stats.GetMaxHealthValue() * 0.07f));
                 }
                 // else if (_targetObject != null)
                 // {

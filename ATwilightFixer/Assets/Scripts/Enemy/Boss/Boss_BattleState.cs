@@ -51,6 +51,27 @@ public class Boss_BattleState : EnemyState
             enemy.stateMachine.ChangeState(enemy.track);
         }
 
+        if(enemy.IsPlayerDetected())
+        {
+            int random = Random.Range(0, 3);
+
+            if (random == 0 && enemy.CanUseFlashCut())
+            {
+                enemy.stateMachine.ChangeState(enemy.flashCut);
+                return;
+            }
+            else if (random == 1 && enemy.CanUseThunder())
+            {
+                enemy.stateMachine.ChangeState(enemy.spawnThunder);
+                return;
+            }
+            else if (random == 2 && enemy.CanUseSpawnEnemies())
+            {
+                enemy.stateMachine.ChangeState(enemy.spawnEnemies);
+                return;
+            }
+        }
+
         if (enemy.IsPlayerInAttackRange())
         {
             int random = Random.Range(0, 4);
