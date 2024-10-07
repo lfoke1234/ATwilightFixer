@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckEnemyInArea : MonoBehaviour
 {
-    private float timer;
+    [SerializeField] private float timer;
 
     [SerializeField] private GameObject door;
 
