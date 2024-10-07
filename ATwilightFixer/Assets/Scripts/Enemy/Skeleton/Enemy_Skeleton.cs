@@ -62,7 +62,7 @@ public class Enemy_Skeleton : Enemy
         stateMachine.ChangeState(deadState);
 
         fx.ScreenShake(new Vector3(testspeed, testduration));
-        fx.GameSpeedControll(0.6f, 0.3f);
+        //fx.GameSpeedControll(0.6f, 0.3f);
 
         StartCoroutine(DestroyAfterDelay(1f));
     }

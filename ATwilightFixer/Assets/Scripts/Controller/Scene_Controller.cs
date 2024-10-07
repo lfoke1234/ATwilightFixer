@@ -1,4 +1,5 @@
 using RPG.VisualNovel;
+using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,7 +7,7 @@ public class Scene_Controller : MonoBehaviour, ISaveManager
 {
     [SerializeField] private bool nextSceneisTitle;
     [SerializeField] private StoryScene nextNovelScript;
-    [SerializeField] private int clearGold;
+    [SerializeField] protected int clearGold;
     protected string currentStageName;
     protected bool clear;
 
@@ -44,7 +45,7 @@ public class Scene_Controller : MonoBehaviour, ISaveManager
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Player>() != null)
         {
@@ -65,7 +66,7 @@ public class Scene_Controller : MonoBehaviour, ISaveManager
         }
     }
 
-    private void LoadStageIntro()
+    protected void LoadStageIntro()
     {
         NovelScriptManager.Instance.nextPlayScene = nextNovelScript;
         NovelScriptManager.Instance.nextSceneisTitle = nextSceneisTitle;
