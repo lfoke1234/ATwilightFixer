@@ -94,7 +94,12 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: Zzz
     speaker: {fileID: 11400000, guid: c59fe0cc86d3b554ab55d8fe4bd55b70, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
+      spriteIndex: 0
+      actionType: 5
+      coords: {x: 0, y: 0}
+      moveSpeed: 1
     music: {fileID: 0}
     sound: {fileID: 0}
   background: {fileID: 0}

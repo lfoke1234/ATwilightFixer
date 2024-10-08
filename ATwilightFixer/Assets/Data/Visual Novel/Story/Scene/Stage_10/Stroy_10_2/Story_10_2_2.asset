@@ -20,7 +20,12 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: "\uC73C\uC74C...Zzz"
     speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 0, y: 0}
+      moveSpeed: 1
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "\uC624\uC9C1 \uB8E8\uB4DC\uB9CC\uC774 \uC7A0\uB4E4\uC5B4 \uC788\uB294
@@ -45,12 +50,7 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: "\uD50C\uB808\uC544!"
     speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
-    actions:
-    - speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
-      spriteIndex: 0
-      actionType: 1
-      coords: {x: 0, y: 0}
-      moveSpeed: 1
+    actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "\uCF85"
@@ -60,7 +60,12 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: "\uADF8 \uC74C\uC2DD\uC740 \uB0B4\uAEBC\uC57C...Zzz"
     speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
+      spriteIndex: 0
+      actionType: 5
+      coords: {x: 0, y: 0}
+      moveSpeed: 1
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: ...!!!
