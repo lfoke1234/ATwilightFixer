@@ -56,20 +56,6 @@ public class PuzzleController : MonoBehaviour
         }
     }
 
-    // text를 각각 할당시켜줘야해서 바꿈 문제 생길시 이걸로 바꾸고 각각 할당 시켜주기
-    // private void ActivetextCheck()
-    // {
-    //     if (isPlayerDetected())
-    //     {
-    //         text.transform.position = new Vector2(transform.position.x, transform.position.y + spriteRenderer.sprite.bounds.size.y / 2 + 1f);
-    //         text.SetActive(true);
-    //     }
-    //     else
-    //     {
-    //         text.SetActive(false);
-    //     }
-    // }
-
     protected bool isPlayerDetected() => (Vector2.Distance(transform.position, PlayerManager.instance.player.transform.position) <= distanceToPlayer);
     #endregion
 

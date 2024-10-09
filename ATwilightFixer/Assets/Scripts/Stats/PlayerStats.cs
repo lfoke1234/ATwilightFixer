@@ -26,7 +26,8 @@ public class PlayerStats : CharacterStats, ISaveManager
 
     #region Add modifire with level
 
-    
+    public void Level1Up() => level++;
+    public void Level1Down() => level--;
 
     private void DamageModify(Stat _stat)
     {
@@ -145,11 +146,12 @@ public class PlayerStats : CharacterStats, ISaveManager
 
     public void LoadData(GameData _data)
     {
-
+        level = _data.level;
+        ApplyLevelModifires();
     }
 
     public void SaveData(ref GameData _data)
     {
-
+        _data.level = level;
     }
 }

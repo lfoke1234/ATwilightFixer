@@ -11,12 +11,18 @@ public class Projectile_Controller : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
 
     private float timer = 3;
-
+    private bool rotation;
+    [SerializeField] private float speed;
     private CharacterStats stats;
 
     private void Update()
     {
         timer -= Time.deltaTime;
+
+        if (rotation == false)
+        {
+            transform.Rotate(0, 0, speed * Time.deltaTime);
+        }
     }
 
     public void SetupParabolicMotionToTarget(Vector3 targetPosition, float gravityScale, CharacterStats _stats)
@@ -52,6 +58,7 @@ public class Projectile_Controller : MonoBehaviour
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             StuckInto(collision);
+            rotation = true;
         }
         else if (timer <= 0)
         {

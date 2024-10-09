@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 
 
 [Serializable]
@@ -13,7 +12,7 @@ public class InventoryItem
         data = _newItemData;
         AddStack();
     }
-    
+
     public void AddStack() => stackSize++;
     public void RemoveStack() => stackSize--;
 }

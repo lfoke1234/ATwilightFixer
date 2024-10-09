@@ -52,6 +52,14 @@ public class EntityFX : MonoBehaviour
         newText.GetComponent<TextMeshPro>().text = _text;
     }
 
+    public void CreateDamagePopUpText(string _text)
+    {
+        float size = GetComponentInChildren<SpriteRenderer>().bounds.size.y / 2;
+        GameObject newText = Instantiate(popUpTextPrefab, new Vector2(transform.position.x, transform.position.y + size), Quaternion.identity);
+
+        newText.GetComponent<TextMeshPro>().text = _text;
+    }
+
     #region Screen Shake
     public void ScreenShake(Vector3 _shakePower)
     {
@@ -104,11 +112,7 @@ public class EntityFX : MonoBehaviour
             sr.color = Color.gray;
     }
 
-    private void CancelColorChange()
-    {
-        CancelInvoke();
-        sr.color = Color.white;
-    }
+
 
     public void CreatHitFX(Transform _target, bool _isSpecial)
     {
@@ -134,6 +138,12 @@ public class EntityFX : MonoBehaviour
     }
 
     #region AilmentColorChange
+    private void CancelColorChange()
+    {
+        CancelInvoke();
+        sr.color = Color.white;
+    }
+
     public void poisonFxFor(float _second)
     {
         InvokeRepeating("posionColorFx", 0, 0.3f);

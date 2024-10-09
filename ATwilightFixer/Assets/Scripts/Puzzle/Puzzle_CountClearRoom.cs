@@ -53,15 +53,11 @@ public class Puzzle_CountClearRoom : MonoBehaviour
                 {
                     UpdateGuideText("오른쪽으로 이동", new Vector2(player.x, player.y + 3f));
                     col.offset = colOffset1;
-                    // guideObj2.transform.position = new Vector2(player.x, player.y + 3f);
-                    // guideObj2.SetActive(true);
                 }
                 else
                 {
                     UpdateGuideText("왼쪽으로 이동", new Vector2(player.x, player.y + 3f));
                     col.offset = colOffset2;
-                    //guideObj1.transform.position = new Vector2(player.x, player.y + 3f);
-                    //guideObj1.SetActive(true);
                 }
                 isActive = false;
             }

@@ -36,14 +36,6 @@ namespace RPG.VisualNovel
                 backgroundController.SetImage(storyScene.background);
                 PlayAudio(storyScene.sentences[0]);
             }
-
-            // if (currentScene is StoryScene)
-            // {
-            //     StoryScene storyScene = currentScene as StoryScene;
-            //     bottomBar.PlayScene(storyScene);
-            //     backgroundController.SetImage(storyScene.background);
-            //     PlayAudio(storyScene.sentences[0]);
-            // }
         }
 
         void Update()

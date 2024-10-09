@@ -323,7 +323,6 @@ public class CharacterStats : MonoBehaviour
 
         if (currentHealth <= 0 && !isDead)
             Die();
-
     }
 
 
@@ -361,7 +360,7 @@ public class CharacterStats : MonoBehaviour
         currentHealth -= _damage;
 
         if (_damage > 0)
-            fx.CreatePopUpText(_damage.ToString());
+            fx.CreateDamagePopUpText(_damage.ToString());
 
         if (onHealthChanged != null)
             onHealthChanged();

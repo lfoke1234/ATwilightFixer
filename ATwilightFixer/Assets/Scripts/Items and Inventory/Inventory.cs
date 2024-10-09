@@ -11,25 +11,6 @@ public class Inventory : MonoBehaviour, ISaveManager
 {
     public static Inventory Instance;
 
-    #region EquipmentItem
-    public ItemData_Equipment level1Sword;
-    public ItemData_Equipment level2Sword;
-    public ItemData_Equipment level3Sword;
-    public ItemData_Equipment level4Sword;
-    public ItemData_Equipment level1Armor;
-    public ItemData_Equipment level2Armor;
-    public ItemData_Equipment level3Armor;
-    public ItemData_Equipment level4Armor;
-    public ItemData_Equipment level1Shoose;
-    public ItemData_Equipment level2Shoose;
-    public ItemData_Equipment level3Shoose;
-    public ItemData_Equipment level4Shoose;
-    public ItemData_Equipment level1Gloves;
-    public ItemData_Equipment level2Gloves;
-    public ItemData_Equipment level3Gloves;
-    public ItemData_Equipment level4Gloves;
-    #endregion
-
     public List<ItemData> startingItems;
     public List<ItemData> startEquipItemData;
 
@@ -72,6 +53,24 @@ public class Inventory : MonoBehaviour, ISaveManager
     public List<InventoryItem> loadedItems;
     public List<ItemData_Equipment> loadedEquipment;
     public List<InventoryItem> loadUsable;
+    #region EquipmentItem
+    public ItemData_Equipment level1Sword;
+    public ItemData_Equipment level2Sword;
+    public ItemData_Equipment level3Sword;
+    public ItemData_Equipment level4Sword;
+    public ItemData_Equipment level1Armor;
+    public ItemData_Equipment level2Armor;
+    public ItemData_Equipment level3Armor;
+    public ItemData_Equipment level4Armor;
+    public ItemData_Equipment level1Shoose;
+    public ItemData_Equipment level2Shoose;
+    public ItemData_Equipment level3Shoose;
+    public ItemData_Equipment level4Shoose;
+    public ItemData_Equipment level1Gloves;
+    public ItemData_Equipment level2Gloves;
+    public ItemData_Equipment level3Gloves;
+    public ItemData_Equipment level4Gloves;
+    #endregion
 
     private void Awake()
     {
@@ -228,15 +227,15 @@ public class Inventory : MonoBehaviour, ISaveManager
     }
     public void EquipLevel2Sword()
     {
-        EquipItem(level1Sword);
+        EquipItem(level2Sword);
     }
     public void EquipLevel3Sword()
     {
-        EquipItem(level1Sword);
+        EquipItem(level3Sword);
     }
     public void EquipLevel4Sword()
     {
-        EquipItem(level1Sword);
+        EquipItem(level4Sword);
     }
 
     public void EquipLevel1Gloves()
@@ -245,15 +244,15 @@ public class Inventory : MonoBehaviour, ISaveManager
     }
     public void EquipLevel2Gloves()
     {
-        EquipItem(level1Gloves);
+        EquipItem(level2Gloves);
     }
     public void EquipLevel3Gloves()
     {
-        EquipItem(level1Gloves);
+        EquipItem(level3Gloves);
     }
     public void EquipLevel4Gloves()
     {
-        EquipItem(level1Gloves);
+        EquipItem(level4Gloves);
     }
 
     public void EquipLevel1Shoose()
@@ -262,15 +261,15 @@ public class Inventory : MonoBehaviour, ISaveManager
     }
     public void EquipLevel2Shoose()
     {
-        EquipItem(level1Shoose);
+        EquipItem(level2Shoose);
     }
     public void EquipLevel3Shoose()
     {
-        EquipItem(level1Shoose);
+        EquipItem(level3Shoose);
     }
     public void EquipLevel4Shoose()
     {
-        EquipItem(level1Shoose);
+        EquipItem(level4Shoose);
     }
 
     public void EquipLevel1Armor()
@@ -279,15 +278,15 @@ public class Inventory : MonoBehaviour, ISaveManager
     }
     public void EquipLevel2Armor()
     {
-        EquipItem(level1Armor);
+        EquipItem(level2Armor);
     }
     public void EquipLevel3Armor()
     {
-        EquipItem(level1Armor);
+        EquipItem(level3Armor);
     }
     public void EquipLevel4Armor()
     {
-        EquipItem(level1Armor);
+        EquipItem(level4Armor);
     }
 
     #endregion

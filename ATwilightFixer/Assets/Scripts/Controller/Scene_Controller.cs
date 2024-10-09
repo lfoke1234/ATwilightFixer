@@ -1,5 +1,4 @@
 using RPG.VisualNovel;
-using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -52,6 +51,7 @@ public class Scene_Controller : MonoBehaviour, ISaveManager
             if (!clear)
             {
                 PlayerManager.instance.currency += clearGold;
+                PlayerManager.instance.player.GetComponent<PlayerStats>().Level1Up();
             }
             else
             {

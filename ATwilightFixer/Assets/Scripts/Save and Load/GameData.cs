@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameData
 {
     public int currency;
+    public int level;
 
     public SerializableDictionary<string, bool> skillCanUnlock;
     public SerializableDictionary<string, bool> skillUnlocked;
@@ -22,6 +23,7 @@ public class GameData
     public GameData()
     {
         this.currency = 0;
+        this.level = 0;
 
         skillCanUnlock = new SerializableDictionary<string, bool>();
         skillUnlocked = new SerializableDictionary<string, bool>();

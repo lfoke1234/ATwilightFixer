@@ -74,12 +74,6 @@ public class SaveManager : MonoBehaviour
         {
             saveManager.LoadData(gameData);
         }
-
-        // saveManagers = FindAllSaveManagers(); // saveManagers¸¦ °»½Å
-        // foreach (ISaveManager saveManager in saveManagers)
-        // {
-        //     saveManager.LoadData(gameData);
-        // }
     }
 
     public void SaveGame()

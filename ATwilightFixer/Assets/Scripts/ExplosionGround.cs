@@ -10,7 +10,6 @@ public class ExplosionGround : MonoBehaviour
     public void ExplodeInTimeLine()
     {
         Explode(this.transform.position, radious, force);
-        
     }
 
     private void Explode(Vector2 explosionPoint, float explosionRadius, float explosionForce)

@@ -3280,7 +3280,7 @@ Transform:
   m_GameObject: {fileID: 646521554}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.98, y: 0.01, z: 0}
+  m_LocalPosition: {x: -0.5, y: 0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3801,17 +3801,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1490964644}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &768425132 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4964564587021903608, guid: 1d06f06c630aed6448f6fcf6814c2258, type: 3}
-  m_PrefabInstance: {fileID: 561234749}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 654442b122acb57499af7f3e099fa417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &769342244
 GameObject:
   m_ObjectHideFlags: 0
@@ -102147,17 +102136,6 @@ Canvas:
   m_SortingLayerID: 1195303879
   m_SortingOrder: 10
   m_TargetDisplay: 0
---- !u!114 &1595526515 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8397181824332871703, guid: 1d06f06c630aed6448f6fcf6814c2258, type: 3}
-  m_PrefabInstance: {fileID: 561234749}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 654442b122acb57499af7f3e099fa417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1604246646
 GameObject:
   m_ObjectHideFlags: 0
@@ -102577,17 +102555,6 @@ Transform:
   - {fileID: 992207356}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1679282261 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6056563807839844614, guid: 1d06f06c630aed6448f6fcf6814c2258, type: 3}
-  m_PrefabInstance: {fileID: 561234749}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 654442b122acb57499af7f3e099fa417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1692582747
 GameObject:
   m_ObjectHideFlags: 0
@@ -104232,7 +104199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSceneisTitle: 1
   nextNovelScript: {fileID: 11400000, guid: 7d51050803675e340bea7d385c3d097b, type: 2}
-  clearGold: 700
+  clearGold: 750
 --- !u!1 &1888312148
 GameObject:
   m_ObjectHideFlags: 0
@@ -104834,6 +104801,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c764ca9a3ac2a42bc385ec87550334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingItems: []
+  startEquipItemData: []
+  equipment: []
+  inventory: []
+  stash: []
+  usable: []
+  inventorySlotParent: {fileID: 307264805}
+  stashSlotParent: {fileID: 1387026946}
+  EquipmentSlotParnet: {fileID: 1529263517}
+  statSlotParnet: {fileID: 1343553748}
+  quickSlotParent: {fileID: 307854259}
+  itemDataBase: []
+  loadedItems: []
+  loadedEquipment: []
+  loadUsable: []
   level1Sword: {fileID: 11400000, guid: dbf7ab7b1742a37469a05034f3c74662, type: 2}
   level2Sword: {fileID: 11400000, guid: 3262cf7dae0fe8d4e9d3c9bdd6420eec, type: 2}
   level3Sword: {fileID: 0}
@@ -104850,21 +104832,6 @@ MonoBehaviour:
   level2Gloves: {fileID: 0}
   level3Gloves: {fileID: 0}
   level4Gloves: {fileID: 0}
-  startingItems: []
-  startEquipItemData: []
-  equipment: []
-  inventory: []
-  stash: []
-  usable: []
-  inventorySlotParent: {fileID: 307264805}
-  stashSlotParent: {fileID: 1387026946}
-  EquipmentSlotParnet: {fileID: 1529263517}
-  statSlotParnet: {fileID: 1343553748}
-  quickSlotParent: {fileID: 307854259}
-  itemDataBase: []
-  loadedItems: []
-  loadedEquipment: []
-  loadUsable: []
 --- !u!4 &2041574681
 Transform:
   m_ObjectHideFlags: 0
@@ -105769,15 +105736,15 @@ PrefabInstance:
     - target: {fileID: 3070806704517507185, guid: 6fb7c5cccc366c14fb812e612329d076, type: 3}
       propertyPath: firstSlashButton
       value: 
-      objectReference: {fileID: 1595526515}
+      objectReference: {fileID: 0}
     - target: {fileID: 3070806704517507185, guid: 6fb7c5cccc366c14fb812e612329d076, type: 3}
       propertyPath: thirdSlashButton
       value: 
-      objectReference: {fileID: 768425132}
+      objectReference: {fileID: 0}
     - target: {fileID: 3070806704517507185, guid: 6fb7c5cccc366c14fb812e612329d076, type: 3}
       propertyPath: secondSlashButton
       value: 
-      objectReference: {fileID: 1679282261}
+      objectReference: {fileID: 0}
     - target: {fileID: 5011545728593475990, guid: 6fb7c5cccc366c14fb812e612329d076, type: 3}
       propertyPath: dash1UnlockButton
       value: 
@@ -105988,6 +105955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d108a88c47b944794bfbc7d017d290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
   door: {fileID: 535518991}
   boxSize: {x: 87.9, y: -29.24}
   area: {fileID: 1267613068323200}

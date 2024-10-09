@@ -149,10 +149,6 @@ namespace RPG.VisualNovel
             {
                 FindObjectOfType<GameController>().PlayScene(currentScene.nextScene);
             }
-            else
-            {
-                Debug.LogWarning("다음 씬으로 이동할 수 없습니다.");
-            }
         }
 
 

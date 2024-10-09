@@ -102,6 +102,7 @@ MonoBehaviour:
   targetLayerName: Player
   xVelocity: 0
   rb: {fileID: 6484886418318257237}
+  speed: 300
 --- !u!50 &6484886418318257237
 Rigidbody2D:
   serializedVersion: 4

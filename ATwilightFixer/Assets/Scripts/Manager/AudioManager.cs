@@ -54,19 +54,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    // private void ConfigureSceneBGMMap()
-    // {
-    //     sceneBGMMap[3] = 6;
-    // }
-    // 
-    // private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    // {
-    //     if (sceneBGMMap.TryGetValue(scene.buildIndex, out int bgmIndex))
-    //     {
-    //         PlayBGM(bgmIndex);
-    //     }
-    // }
-
     public void PlaySFX(int _sfxIndex, Transform _transform)
     {
         if (canPlaySFX == false)
@@ -92,6 +79,7 @@ public class AudioManager : MonoBehaviour
     {
         StartCoroutine(DecreaseVolume(sfx[_index]));
     }
+
     private IEnumerator DecreaseVolume(AudioSource _audio)
     {
         float defaultVolume = _audio.volume;
