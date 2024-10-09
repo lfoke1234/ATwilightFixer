@@ -67,7 +67,7 @@ MonoBehaviour:
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
-  - text: "\uBD84\uBA85 \uB2E4 \uB05D\uC77C\uD150\uB370...[n]\uBB54\uAC00 \uCC1D\uCC1D\uD558\uB2E8
+  - text: "\uBD84\uBA85 \uB2E4 \uB05D\uC77C \uD150\uB370...[n]\uBB54\uAC00 \uCC1D\uCC1D\uD558\uB2E8
       \uB9D0\uC774\uC57C."
     speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
     actions: []
@@ -147,7 +147,7 @@ MonoBehaviour:
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
-  - text: "(\uB8E8,,,\uB4DC...)"
+  - text: "(\uB8E8...\uB4DC...)"
     speaker: {fileID: 11400000, guid: c59fe0cc86d3b554ab55d8fe4bd55b70, type: 2}
     actions: []
     music: {fileID: 0}
@@ -189,6 +189,11 @@ MonoBehaviour:
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
+  - text: (...)
+    speaker: {fileID: 11400000, guid: c59fe0cc86d3b554ab55d8fe4bd55b70, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
   - text: "(\uBBF8\uAD81\uC740 \uB05D\uB098\uC9C0 \uC54A\uB294\uB2E4!)"
     speaker: {fileID: 11400000, guid: c59fe0cc86d3b554ab55d8fe4bd55b70, type: 2}
     actions: []
@@ -210,8 +215,8 @@ MonoBehaviour:
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
-  - text: "\uB108\uBB34 \uD2F0\uB098\uB294 \uAC70 \uC544\uB2C8\uC57C?[n]\uC228\uAE38\uAC70\uBA74
-      \uC798 \uC228\uACBC\uC5B4\uC57C\uC9C0.[n]\uD5C8\uC811\uD55C \uBBF8\uAD81\uC544."
+  - text: "\uB108\uBB34 \uD2F0 \uB098\uB294 \uAC70 \uC544\uB2C8\uC57C?[n]\uC228\uAE38
+      \uAC70\uBA74 \uC798 \uC228\uACBC\uC5B4\uC57C\uC9C0.[n]\uD5C8\uC811\uD55C \uBBF8\uAD81\uC544."
     speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
     actions: []
     music: {fileID: 0}
@@ -238,8 +243,8 @@ MonoBehaviour:
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
-  - text: "\uCEAC...\uC774\uAC8C \uB9DE\uB124.[n]\uB0B4\uAC00 \uAC10\uC774 \uC880
-      \uC88B\uC544."
+  - text: "\uCEAC...\uC774\uAC8C \uB9DE\uB124.[n]\uC5ED\uC2DC \uB0B4\uAC00 \uAC10\uC774
+      \uC88B\uB2E4\uB2C8\uAE4C."
     speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
     actions: []
     music: {fileID: 0}

@@ -40,7 +40,7 @@ MonoBehaviour:
       moveSpeed: 1
     music: {fileID: 0}
     sound: {fileID: 0}
-  - text: "\uD5C8\uC5B5...\uD5C8\uC5B5..."
+  - text: "\uD558\uC544..."
     speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
@@ -92,7 +92,7 @@ MonoBehaviour:
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
-  - text: Zzz
+  - text: Zzz...
     speaker: {fileID: 11400000, guid: c59fe0cc86d3b554ab55d8fe4bd55b70, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
@@ -102,5 +102,5 @@ MonoBehaviour:
       moveSpeed: 1
     music: {fileID: 0}
     sound: {fileID: 0}
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: ac1086637c8fd784eb0f129279c9f2ba, type: 3}
   nextScene: {fileID: 11400000, guid: a3f9e88cef69ddf41b72e0bf5f573e7a, type: 2}

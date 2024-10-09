@@ -18,11 +18,6 @@ MonoBehaviour:
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
-  - text: 
-    speaker: {fileID: 0}
-    actions: []
-    music: {fileID: 0}
-    sound: {fileID: 0}
   - text: "\uB8E8\uB4DC![n]\uB8E8\uB4DC\uB2D8![n]\uB8E8\uB4DC"
     speaker: {fileID: 11400000, guid: c59fe0cc86d3b554ab55d8fe4bd55b70, type: 2}
     actions: []
@@ -38,7 +33,7 @@ MonoBehaviour:
       moveSpeed: 1
     music: {fileID: 0}
     sound: {fileID: 0}
-  - text: "\uC7A0\uAF2C\uB300\uD558\uC9C0\uB9D0\uACE0 \uC5B4\uC11C \uC77C\uC5B4\uB098\uB77C\uAD6C!"
+  - text: "\uC7A0\uAF2C\uB300\uD558\uC9C0 \uB9D0\uACE0 \uC5B4\uC11C \uC77C\uC5B4\uB098\uB77C\uAD6C!"
     speaker: {fileID: 11400000, guid: 1a686b430ab517342a58061e99772d16, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 1a686b430ab517342a58061e99772d16, type: 2}
@@ -54,7 +49,7 @@ MonoBehaviour:
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "...\uB9C8\uBC95\uB3C4 \uBABB\uC4F0\uACE0 \uAD6C\uBA4D\uC73C\uB85C \uBE60\uC838\uBC84\uB824\uC11C
-      \uB0A0 \uAC1C\uACE0\uC0DD \uC2DC\uD0A8 \uC0AC\uB78C\uC774 \uB108\uC57C..[n]\uD50C\uB808\uC544..."
+      \uB0A0 \uAC1C\uACE0\uC0DD \uC2DC\uD0A8 \uC0AC\uB78C\uC774 \uD50C\uB808\uC544..[n]\uB108\uC57C.."
     speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
     actions: []
     music: {fileID: 0}
@@ -64,7 +59,7 @@ MonoBehaviour:
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
-  - text: "\uC194\uC9C1\uD788 \uB9D0\uD558\uC9C0 \uBC1C\uBC11\uC5D0 \uAC11\uC790\uAE30
+  - text: "\uC194\uC9C1\uD788 \uB9D0\uD558\uC9C0[n]\uBC1C \uBC11\uC5D0 \uAC11\uC790\uAE30
       \uC0DD\uAE34 \uAD6C\uBA4D\uC740 \uB098\uC870\uCC28\uB3C4 \uBC18\uC751\uD560
       \uC218 \uC5C6\uC5C8\uB2E4."
     speaker: {fileID: 11400000, guid: 769a8b588781bf948bff6c93207bd827, type: 2}
@@ -76,7 +71,7 @@ MonoBehaviour:
       moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
-  - text: "\uADF8\uB098\uC800\uB098 \uBAB8\uC774 \uBA40\uCA61\uD574\uBCF4\uC774\uB294\uAD70[n]\uBBF8\uAD81\uC758
+  - text: "\uADF8\uB098\uC800\uB098 \uBAB8\uC774 \uBA40\uCA61\uD574 \uBCF4\uC774\uB294\uAD70[n]\uBBF8\uAD81\uC758
       \uD574\uACB0\uC0AC \uB8E8\uB4DC."
     speaker: {fileID: 11400000, guid: 769a8b588781bf948bff6c93207bd827, type: 2}
     actions: []
@@ -88,7 +83,7 @@ MonoBehaviour:
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
-  - text: "\uB0B4 \uC0C1\uCC98\uB4E4 \uC5B8\uC81C \uB2E4 \uD68C\uBCF5\uB41C\uAC70\uC57C?"
+  - text: "\uB0B4 \uC0C1\uCC98\uB4E4 \uC5B8\uC81C \uB2E4 \uD68C\uBCF5\uB41C \uAC70\uC57C?"
     speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
     actions: []
     music: {fileID: 0}
@@ -161,7 +156,7 @@ MonoBehaviour:
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "\uAE38\uB4DC \uB9C8\uC2A4\uD130\uAED8\uC11C \uC774\uC81C \uB2E4 \uB05D\uB09C
-      \uC77C\uC774\uB77C[n]\uBB38\uC81C \uC5C6\uC744 \uAC70\uB77C\uACE0\uB294 \uD558\uC9C0\uB9CC..."
+      \uC77C\uC774\uB77C[n]\uBB38\uC81C\uC5C6\uC744 \uAC70\uB77C\uACE0\uB294 \uD558\uC9C0\uB9CC..."
     speaker: {fileID: 11400000, guid: 8d960552c86c720459d7e1cef3afb705, type: 2}
     actions: []
     music: {fileID: 0}
@@ -188,14 +183,14 @@ MonoBehaviour:
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
-  - text: "\uD558\uD558. \uCD95\uD558\uD574\uC8FC\uC154\uC11C \uAC10\uC0AC\uD569\uB2C8\uB2E4.
-      \uADF8\uB7F0\uB370...[n]\uC81C \uB208\uC774 \uC544\uC9C1 \uC544\uD508\uAC74\uAC00\uC694?"
+  - text: "\uD558\uD558. \uCD95\uD558\uD574 \uC8FC\uC154\uC11C \uAC10\uC0AC\uD569\uB2C8\uB2E4.
+      \uADF8\uB7F0\uB370...[n]\uC81C \uB208\uC774 \uC544\uC9C1 \uC544\uD508 \uAC74\uAC00\uC694?"
     speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "\uC81C\uAC00 \uAC16\uACE0 \uB098\uC628 \uBCF4\uBB3C\uB4E4\uC740 \uBD84\uBA85
-      \uC131\uC778 \uB0A8\uC131 \uD0A4\uB9CC\uD55C \uC790\uB8E8 3\uAC1C\uBD84 \uC774\uC0C1\uC774\uC5C8\uC744
+      \uC131\uC778 \uB0A8\uC131 \uD0A4\uB9CC \uD55C \uC790\uB8E8 3\uAC1C\uBD84 \uC774\uC0C1\uC774\uC5C8\uC744
       \uD150\uB370..."
     speaker: {fileID: 11400000, guid: aa14cce341d8c304faa4c53d65d18640, type: 2}
     actions: []
@@ -247,7 +242,7 @@ MonoBehaviour:
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "\uAE84\uD558\uD558\uD558[n]\uB8E8\uB4DC \uBE48\uD138\uD130\uB9AC\uB124?[n]\uB2E4\uC2DC
-      \uBBF8\uAD81 \uB4E4\uC5B4\uAC00\uC57C \uACA0\uC9C0?"
+      \uBBF8\uAD81 \uB4E4\uC5B4\uAC00\uC57C\uACA0\uC9C0?"
     speaker: {fileID: 11400000, guid: 1a686b430ab517342a58061e99772d16, type: 2}
     actions: []
     music: {fileID: 0}
