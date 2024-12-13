@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerState
@@ -30,7 +29,7 @@ public class PlayerState
         this.player = _player;
         this.animBoolName = animBoolName;
     }
-    
+
 
     public virtual void Enter()
     {
@@ -43,24 +42,13 @@ public class PlayerState
     {
         stateTimer -= Time.deltaTime;
         movementInput = PlayerInputHandler.instance.GetMovementInput();
-        //xInput = Input.GetAxisRaw("Horizontal");
-        //yInput = Input.GetAxisRaw("Vertical");
         player.anim.SetFloat("yVelocity", rb.velocity.y);
 
+        // x 입력값에 따른 플레이어 이동 제어
         if (movementInput.x == 0 && dontFreeze == false)
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         else if (movementInput.x != 0 || dontFreeze == true)
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-
-        //CheckSlope();
-
-        //float maxAngle = 50f;
-        //if (isSlope && player.IsGroundDetected() && slopeAngle < maxAngle)
-        //    rb.velocity = perp * player.moveSpeed * movementInput.x * -1f;
-        //else if (!isSlope && player.IsGroundDetected())
-        //    rb.velocity = new Vector2(movementInput.x, 0);
-        //else
-        //rb.velocity = new Vector2(movementInput.x, rb.velocity.y);
     }
 
     public virtual void Exit()
@@ -75,6 +63,7 @@ public class PlayerState
 
     protected bool IsActionTriggered(string actionName)
     {
+        // New Input System의 액션네임을 통한 키입력 감지
         var action = PlayerInputHandler.instance.GetAction(actionName);
         return action != null && action.triggered;
     }

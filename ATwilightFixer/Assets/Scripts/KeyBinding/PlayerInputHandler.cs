@@ -53,11 +53,13 @@ public class PlayerInputHandler : MonoBehaviour
         controls.Character.Right.canceled += ctx => rightPressed = false;
     }
 
+    // 플레이어의 이동 입력을 반환하는 메서드
     public Vector2 GetMovementInput()
     {
         float x = 0f;
         float y = 0f;
 
+        // 각 방향에 대한 입력 상태에 따라 x, y 값 업데이트
         if (upPressed) y += 1f;
         if (downPressed) y -= 1f;
         if (leftPressed) x -= 1f;
@@ -66,16 +68,20 @@ public class PlayerInputHandler : MonoBehaviour
         return new Vector2(x, y);
     }
 
+    // 특정 액션을 이름으로 찾아서 반환하는 메서드
     public InputAction GetAction(string actionName)
     {
+        // PlayerController의 asset에서 액션을 검색하여 반환
         return controls.asset.FindAction(actionName);
     }
 
+    // 모든 액션을 리스트로 반환하는 메서드
     public List<InputAction> GetAllActions()
     {
         List<InputAction> actions = new List<InputAction>();
         foreach (var map in controls.asset.actionMaps)
         {
+            // 모든 액션 맵을 순회하며 액션들을 리스트에 추가
             actions.AddRange(map.actions);
         }
         return actions;

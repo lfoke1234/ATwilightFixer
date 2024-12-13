@@ -44,17 +44,15 @@ public class PlayerGroundedState : PlayerState
         // }
 
 
+        // 충돌 체크에 따른 상태전환
+        if (player.IsGroundDetected() == false)
+            stateMachine.ChangeState(player.airState);
 
-
+        // 키 입력에 따른 상태 전환
         if (IsActionTriggered("Attack") && player.stats.currentStamina > 0)
         {
             stateMachine.ChangeState(player.primaryAttack);
         }
-
-        if (player.IsGroundDetected() == false)
-            stateMachine.ChangeState(player.airState);
-
-        
 
         if (IsActionTriggered("Slash") && SkillManager.instance.slash.CanUseSkill())
         {
@@ -69,8 +67,10 @@ public class PlayerGroundedState : PlayerState
 
     }
 
+    // 경사로 체크 메서드
     protected void CheckSlope()
     {
+
         RaycastHit2D hit = Physics2D.Raycast(player.slopeCheckPosition.position, Vector2.down, player.slopeCheckDistance, ground);
 
         if (hit)

@@ -50,11 +50,13 @@ public class PlayerAnimationTriggers : MonoBehaviour
 
     private void SlashTrigger()
     {
+        // 슬래시 범위 안에 있는 모든 충돌체 탐지
         Collider2D[] col = Physics2D.OverlapBoxAll(player.slashCheck.position, player.slashBoxSize, 0);
         player.fx.ScreenShake(new Vector3(1.5f, 1.0f));
 
         foreach (var hit in col)
         {
+            // Enemy나 WorldObject에 충돌했을 경우 처리
             if (hit.GetComponent<Enemy>() != null || hit.GetComponent<WorldObject>() != null)
             {
                 EnemyStats _target = hit.GetComponent<EnemyStats>();
@@ -62,8 +64,19 @@ public class PlayerAnimationTriggers : MonoBehaviour
 
                 if (_target != null)
                 {
+                    // 데미지 적용
                     _target.TakeDamage(player.skill.slash.slashDoDamage);
+
+                    // 피격 효과 생성
                     player.fx.CreatHitFX(_target.transform, true);
+
+                    // 타겟을 위로 띄우는 힘 적용
+                    Rigidbody2D targetRb = _target.GetComponent<Rigidbody2D>();
+                    if (targetRb != null)
+                    {
+                        float launchForce = 5f; // 위로 띄우는 힘의 크기
+                        targetRb.velocity = new Vector2(targetRb.velocity.x, launchForce);
+                    }
                 }
                 else if (_targetObject != null)
                 {
@@ -72,6 +85,7 @@ public class PlayerAnimationTriggers : MonoBehaviour
             }
         }
     }
+
 
     private void WeaopnEffect()
     {

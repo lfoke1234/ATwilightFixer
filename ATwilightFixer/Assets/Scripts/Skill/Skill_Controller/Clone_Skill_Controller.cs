@@ -22,7 +22,7 @@ public class Clone_Skill_Controller : MonoBehaviour
 
     private void Update()
     {
-
+        // 공격이 종료되면 클론이 서서히 사라지도록 처리
         if (isEnd)
         {
             sr.color = new Color(1, 1, 1, sr.color.a - (Time.deltaTime * colorLossingSpeed));
@@ -36,6 +36,7 @@ public class Clone_Skill_Controller : MonoBehaviour
 
     public void SetupClone(Vector2 newPosition, bool isFlip)
     {
+        // 클론의 위치와 방향 설정 및 애니메이션 초기화
         transform.position = newPosition;
 
         if (isFlip)
@@ -50,6 +51,7 @@ public class Clone_Skill_Controller : MonoBehaviour
     {
         if (!isEnd)
         {
+            // 공격 애니메이션을 이전과 다른 랜덤한 번호로 재생
             int randomNum;
             do
             {
@@ -63,17 +65,19 @@ public class Clone_Skill_Controller : MonoBehaviour
 
     private void AnimationTrigger()
     {
+        // 남은 공격 횟수가 있을 경우 애니메이션 재생, 없으면 종료
         if (exitCount > 0)
         {
             exitCount--;
             SetAnimation();
         }
-        else if (exitCount <= 0)
+        else
         {
             animator.SetBool("End", true);
             isEnd = true;
         }
     }
+
 
     private void AttackTrigger()
     {

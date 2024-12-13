@@ -9,6 +9,7 @@ public class Clone_Skill : Skill
     public GameObject CreateClone(Vector2 position, bool isFlip)
     {
         GameObject newClone = Instantiate(clonePrefab);
+        // 適経 持失
         newClone.GetComponent<Clone_Skill_Controller>().SetupClone(position, isFlip);
         return newClone;
     }

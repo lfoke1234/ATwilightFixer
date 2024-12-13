@@ -28,9 +28,9 @@ public class Slash_Skill : Skill
     {
         base.Start();
 
-        firstSlashButton.GetComponent<Button>().onClick.AddListener(unlockFirstSlash);
-        secondSlashButton.GetComponent<Button>().onClick.AddListener(unlockSecondSlash);
-        thirdSlashButton.GetComponent<Button>().onClick.AddListener(unlockThirdSlash);
+        // firstSlashButton.GetComponent<Button>().onClick.AddListener(unlockFirstSlash);
+        // secondSlashButton.GetComponent<Button>().onClick.AddListener(unlockSecondSlash);
+        // thirdSlashButton.GetComponent<Button>().onClick.AddListener(unlockThirdSlash);
     }
 
     public override void UseSkill()

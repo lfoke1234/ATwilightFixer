@@ -36,10 +36,6 @@ public class Arrow_Controller : MonoBehaviour
         {
             StackInto(collision);
         }
-        // else if (collision.gameObject.tag == "Arrow")
-        // {
-        //     Destroy(this.gameObject);
-        // }
     }
 
     private void StackInto(Collider2D collision)

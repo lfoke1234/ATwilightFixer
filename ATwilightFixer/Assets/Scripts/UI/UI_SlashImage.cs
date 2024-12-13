@@ -24,9 +24,9 @@ public class UI_SlashImage : MonoBehaviour
     {
         skillManager = SkillManager.instance;
 
-        slash1UnlockButton.GetComponent<Button>().onClick.AddListener(ChangeSprite1);
-        slash2UnlockButton.GetComponent<Button>().onClick.AddListener(ChangeSprite2);
-        slash3UnlockButton.GetComponent<Button>().onClick.AddListener(ChangeSprite3);
+        // slash1UnlockButton.GetComponent<Button>().onClick.AddListener(ChangeSprite1);
+        // slash2UnlockButton.GetComponent<Button>().onClick.AddListener(ChangeSprite2);
+        // slash3UnlockButton.GetComponent<Button>().onClick.AddListener(ChangeSprite3);
     }
 
     private void CheckAndChangeSprite()

@@ -64,6 +64,7 @@ public class ChainSpawner : MonoBehaviour
     }
     
 
+    // 플레이어 주위 거리 계산후 소환
     private void SpawnAroundPlayer(GameObject prefab, float randomAngle)
     {
         Vector3 spawnPosition = player.position + new Vector3(Mathf.Cos(randomAngle), Mathf.Sin(randomAngle), 0) * distance;

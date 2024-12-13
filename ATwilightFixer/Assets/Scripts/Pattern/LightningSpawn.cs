@@ -66,6 +66,7 @@ public class LightningSpawner : MonoBehaviour
 
     private void ScaleThunder(GameObject target)
     {
+        // 번개의 시작 위치에서 Ground까지의 거리 측정후 Scale 조정
         RaycastHit2D hit = Physics2D.Raycast(nextSpawnPosition, Vector2.down, 100f, isGround);
 
         float distance = Vector2.Distance(nextSpawnPosition, hit.point) / test;

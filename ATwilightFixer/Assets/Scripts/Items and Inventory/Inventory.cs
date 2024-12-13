@@ -9,11 +9,15 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour, ISaveManager
 {
+    // 싱글톤 인스턴스 설정 및 초기화
     public static Inventory Instance;
 
+    // 인벤토리 시작 시 세팅되는 아이템 목록 (시작 아이템)
     public List<ItemData> startingItems;
     public List<ItemData> startEquipItemData;
 
+    // **데이터 관리용 변수들**
+    // 장비, 인벤토리, 저장소 및 사용 가능한 아이템 관련 데이터 리스트와 사전
     public List<InventoryItem> equipment;
     public Dictionary<ItemData_Equipment, InventoryItem> equipmentDictionary;
 
@@ -26,7 +30,8 @@ public class Inventory : MonoBehaviour, ISaveManager
     public List<InventoryItem> usable;
     public Dictionary<ItemData_Useable, InventoryItem> usableDictionary;
 
-
+    // **UI 관리용 변수들**
+    // 인벤토리 UI 요소들을 참조하여 슬롯의 부모 오브젝트 및 다양한 UI 요소 관리
     [Header("Inventory UI")]
     [SerializeField] private Transform inventorySlotParent;
     [SerializeField] private Transform stashSlotParent;
@@ -40,6 +45,8 @@ public class Inventory : MonoBehaviour, ISaveManager
     private UI_StatSlot[] statSlot;
     private UI_QuickSlot[] quickSlot;
 
+    // **쿨다운 관리**
+    // 아이템 사용 쿨다운을 관리하는 변수들
     [Header("Items Cooldown")]
     private float lastTimeUsedFalsk;
     private float flaskCooldown;
@@ -47,12 +54,13 @@ public class Inventory : MonoBehaviour, ISaveManager
     private float lastTimeUseUsableItem;
     public float usableItemCooldown { get; private set; }
 
-
+    // **데이터베이스 관련 변수**
     [Header("Data base")]
     public List<ItemData> itemDataBase;
     public List<InventoryItem> loadedItems;
     public List<ItemData_Equipment> loadedEquipment;
     public List<InventoryItem> loadUsable;
+
     #region EquipmentItem
     public ItemData_Equipment level1Sword;
     public ItemData_Equipment level2Sword;
@@ -165,60 +173,75 @@ public class Inventory : MonoBehaviour, ISaveManager
 
         ItemData_Equipment oldEquipment = null;
 
+        // equipmentDictionary에서 동일한 장비 타입이 있는지 확인
+        // 이미 장착된 같은 유형의 아이템이 있는 경우 교체를 준비
         foreach (KeyValuePair<ItemData_Equipment, InventoryItem> item in equipmentDictionary)
         {
             if (item.Key.equipmentType == newEquiment.equipmentType)
             {
                 oldEquipment = item.Key;
+                break;
             }
         }
 
+        // 기존 장비가 있는 경우 해제 후 인벤토리에서 제거
         if (oldEquipment != null)
         {
             UnequipItem(oldEquipment);
             RemoveItem(oldEquipment);
         }
 
+        // 새로운 장비 아이템을 장착하고 데이터에 추가
         equipment.Add(newItem);
         equipmentDictionary.Add(newEquiment, newItem);
 
+        // 새로 장착한 장비의 능력치 보너스나 효과 추가
         newEquiment.AddModifire();
 
+        // 인벤토리에서 해당 아이템을 제거 (장착 후 인벤토리에 있을 필요가 없음)
         RemoveItem(_item);
 
+        // UI를 업데이트하여 새로운 장비 상태 반영
         UpdateSlotUI();
     }
 
+
     public void UnequipItem(ItemData_Equipment itemToRemove)
     {
+        // 장착 해제할 아이템을 장비 딕셔너리에서 찾음
         if (equipmentDictionary.TryGetValue(itemToRemove, out InventoryItem value))
         {
-            equipment.Remove(value);
-            equipmentDictionary.Remove(itemToRemove);
-            itemToRemove.RemoveModifire();
+            equipment.Remove(value); // 장비 리스트에서 제거
+            equipmentDictionary.Remove(itemToRemove); // 장비 딕셔너리에서 제거
+            itemToRemove.RemoveModifire(); // 장비의 능력치 효과 제거
         }
     }
 
+
     public void EquipUsableItem(ItemData _item)
     {
+        // 사용 가능한 아이템으로 캐스팅
         ItemData_Useable newUsable = _item as ItemData_Useable;
 
+        // 이미 사용 가능한 아이템 딕셔너리에 있는 경우 스택 증가
         if (usableDictionary.TryGetValue(newUsable, out InventoryItem existingItem))
         {
             existingItem.stackSize += stashDictionary[_item].stackSize;
         }
         else
         {
+            // 새로운 사용 가능한 아이템을 딕셔너리에 추가
             InventoryItem newItem = new InventoryItem(newUsable);
             newItem.stackSize = stashDictionary[_item].stackSize;
             usable.Add(newItem);
             usableDictionary.Add(newUsable, newItem);
         }
 
+        // 인벤토리에서 아이템 제거 후 UI 업데이트
         RemoveItem(_item);
         UpdateSlotUI();
     }
-    
+
     #region EquipItem
 
     public void EquipLevel1Sword()
@@ -368,19 +391,22 @@ public class Inventory : MonoBehaviour, ISaveManager
 
     public void AddItem(ItemData _item)
     {
+        // 장비 아이템일 경우 인벤토리에 추가
         if (_item.itemType == ItemType.Equipment && CanAddtoInventory())
         {
             AddToInventory(_item);
         }
+        // 재료 아이템일 경우 재료 보관함에 추가
         else if (_item.itemType == ItemType.Material)
         {
             AddStash(_item);
         }
+        // 사용 가능한 아이템일 경우 사용 가능한 목록에 추가하거나 스택 증가
         else if (_item.itemType == ItemType.Useable)
         {
             if (usableDictionary.TryGetValue((ItemData_Useable)_item, out InventoryItem value))
             {
-                value.AddStack();
+                value.AddStack(); // 이미 존재하는 경우 스택 증가
             }
             else
             {
@@ -388,17 +414,19 @@ public class Inventory : MonoBehaviour, ISaveManager
             }
         }
 
-        UpdateSlotUI();
+        UpdateSlotUI(); // UI 갱신
     }
 
     private void AddStash(ItemData _item)
     {
+        // 저장소에 이미 같은 아이템이 존재하는지 확인
         if (stashDictionary.TryGetValue(_item, out InventoryItem value))
         {
-            value.AddStack();
+            value.AddStack(); // 존재한다면 스택을 증가
         }
         else
         {
+            // 새로운 아이템으로 저장소에 추가
             InventoryItem newItem = new InventoryItem(_item);
             stash.Add(newItem);
             stashDictionary.Add(_item, newItem);
@@ -437,16 +465,19 @@ public class Inventory : MonoBehaviour, ISaveManager
 
     private void AddItemToStash(InventoryItem itemToLoad)
     {
+        // 저장소에 이미 같은 아이템이 있는 경우
         if (stashDictionary.TryGetValue(itemToLoad.data, out InventoryItem existingItem))
         {
-            existingItem.stackSize += itemToLoad.stackSize;
+            existingItem.stackSize += itemToLoad.stackSize; // 스택 크기 증가
         }
         else
         {
+            // 새로운 아이템을 저장소에 추가
             stash.Add(itemToLoad);
             stashDictionary.Add(itemToLoad.data, itemToLoad);
         }
 
+        // UI 업데이트
         UpdateSlotUI();
     }
 
@@ -468,6 +499,7 @@ public class Inventory : MonoBehaviour, ISaveManager
 
     public void RemoveItem(ItemData _item)
     {
+        // 인벤토리에서 아이템 제거
         if (inventoryDictionary.TryGetValue(_item, out InventoryItem value))
         {
             if (value.stackSize <= 1)
@@ -477,22 +509,24 @@ public class Inventory : MonoBehaviour, ISaveManager
             }
             else
             {
-                value.RemoveStack();
+                value.RemoveStack(); // 스택 크기 감소
             }
         }
 
-
+        // 아이템 제거
         if (stashDictionary.TryGetValue(_item, out InventoryItem stashValue))
         {
             stash.Remove(stashValue);
             stashDictionary.Remove(_item);
         }
 
+        // UI 업데이트
         UpdateSlotUI();
     }
 
     public void RemoveUsableItem(ItemData_Useable _item)
     {
+        // 사용 가능한 아이템 딕셔너리에서 제거
         if (usableDictionary.TryGetValue(_item, out InventoryItem usableValue))
         {
             if (usableValue.stackSize <= 1)
@@ -502,10 +536,11 @@ public class Inventory : MonoBehaviour, ISaveManager
             }
             else
             {
-                usableValue.RemoveStack();
+                usableValue.RemoveStack(); // 스택 크기 감소
             }
         }
 
+        // UI 업데이트
         UpdateSlotUI();
     }
 
@@ -595,10 +630,12 @@ public class Inventory : MonoBehaviour, ISaveManager
 
     public void UseQuickSlot(int quickSlotNumber)
     {
+        // 퀵 슬롯에서 아이템 사용
         UI_QuickSlot quickSlot = FindQuickSlotByNumber(quickSlotNumber);
 
         bool canUseItem = Time.time > lastTimeUseUsableItem + usableItemCooldown;
 
+        // 사용 가능할 경우 아이템 사용
         if (canUseItem)
         {
             if (quickSlot != null && quickSlot.item != null)
@@ -608,16 +645,18 @@ public class Inventory : MonoBehaviour, ISaveManager
                 if (usableItem != null)
                 {
                     usableItemCooldown = usableItem.itemCooldown;
-                    usableItem.ExcuteItemEffect();
-                    RemoveUsableItem(usableItem);
-                    lastTimeUseUsableItem = Time.time;
+                    usableItem.ExcuteItemEffect(); // 아이템 사용 효과 실행
+                    RemoveUsableItem(usableItem); // 사용한 아이템 제거
+                    lastTimeUseUsableItem = Time.time; // 마지막 사용 시간 갱신
                 }
             }
         }
     }
 
+
     private UI_QuickSlot FindQuickSlotByNumber(int quickSlotNumber)
     {
+        // 주어진 퀵 슬롯 번호에 해당하는 퀵 슬롯을 찾음
         UI_QuickSlot[] quickSlots = quickSlotParent.GetComponentsInChildren<UI_QuickSlot>();
         foreach (var quickSlot in quickSlots)
         {
@@ -626,7 +665,7 @@ public class Inventory : MonoBehaviour, ISaveManager
                 return quickSlot;
             }
         }
-        return null;
+        return null; // 해당 번호의 퀵 슬롯을 찾지 못한 경우 null 반환
     }
 
     public void LoadData(GameData _data)

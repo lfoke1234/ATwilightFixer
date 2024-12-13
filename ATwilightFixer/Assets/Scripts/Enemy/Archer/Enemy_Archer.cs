@@ -75,20 +75,6 @@ public class Enemy_Archer : Enemy
     public bool IsPlayerClosed() => Physics2D.Raycast(closepos.position, new Vector2(facingDir, 0), attackDistance, isPlayer);
     public bool GroundBehind() => Physics2D.BoxCast(groundBehindCheck.position, groundBehindCheckSize, 0, Vector2.zero, 0, isGround);
 
-    public override void Die()
-    {
-        base.Die();
-        stateMachine.ChangeState(deadState);
-
-        StartCoroutine(DestroyAfterDelay(1f));
-    }
-
-    private IEnumerator DestroyAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Destroy(gameObject);
-    }
-
     public override Collider2D IsPlayerDetected()
     {
         Collider2D[] hitColliders = Physics2D.OverlapBoxAll(playerChecker.position, boxSize, 0, isPlayer);
@@ -107,6 +93,21 @@ public class Enemy_Archer : Enemy
 
         return null;
     }
+
+    public override void Die()
+    {
+        base.Die();
+        stateMachine.ChangeState(deadState);
+
+        StartCoroutine(DestroyAfterDelay(1f));
+    }
+
+    private IEnumerator DestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
+    }
+
     protected override void OnDrawGizmos()
     {
         base.OnDrawGizmos();

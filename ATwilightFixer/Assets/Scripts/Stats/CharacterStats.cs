@@ -139,22 +139,28 @@ public class CharacterStats : MonoBehaviour
         if (_targetStats.isDead)
             return;
 
+        // 회피할경우 return
         //if (TargetCanAvoidAttack(_targetStats)) return;
         _targetStats.GetComponent<Entity>().SetupKnockbackDir(transform);
 
+        // 시전자의 공격력 적용
         int totalDamage = damage.GetValue();
 
+        // 크리티컬일 경우 크리티컬 피해 적용
         // if (CanCrit())
         // {
         //     totalDamage = CalculateCriticalDamage(totalDamage);
         // }
 
+        // 타겟의 아머 체크후 피해 경감
         totalDamage = CheckTargetArmor(_targetStats, totalDamage);
 
+        // 시각효과
         fx.CreatHitFX(_targetStats.transform, false);
 
         _targetStats.TakeDamage(totalDamage);
 
+        // 마법 데미지일 경우 상태이상 추가
         DoMagicalDamage(_targetStats);
     }
 
@@ -192,43 +198,54 @@ public class CharacterStats : MonoBehaviour
     // 마뎀 to ApplyAilments
     public virtual void DoMagicalDamage(CharacterStats _targetStatas)
     {
+        // 대상에게 마법 피해를 적용하는 함수
+
+        // 각 마법 피해량을 가져옴 (독, 얼음, 번개)
         int _poisonDamage = posionDamage.GetValue();
         int _iceDamage = iceDamage.GetValue();
         int _lightingDamage = lightingDamage.GetValue();
 
+        // 총 마법 피해량 계산 (독 피해 + 얼음 피해 + 번개 피해 + 지능 스탯의 추가 피해)
         int totalMagicalDamage = _poisonDamage + _iceDamage + _lightingDamage + intelligence.GetValue();
 
+        // 대상의 마법 저항을 체크하여 최종 피해량을 결정
         totalMagicalDamage = CheckTargetResustance(_targetStatas, totalMagicalDamage);
         _targetStatas.TakeDamage(totalMagicalDamage);
 
+        // 모든 마법 피해가 0 이하인 경우 상태 이상을 적용하지 않음
         if (Mathf.Max(_poisonDamage, _iceDamage, _lightingDamage) <= 0)
         {
             return;
         }
 
+        // 각 상태 이상(독, 빙결, 감전) 적용 여부를 확인
         bool canApplyPoison = _poisonDamage > _iceDamage && _poisonDamage > _lightingDamage;
         bool canApplyChill = _iceDamage > _poisonDamage && _iceDamage > _lightingDamage;
         bool canApplyShock = _lightingDamage > _poisonDamage && _lightingDamage > _iceDamage;
 
-        AttemptyToApplyAilments(_targetStatas, _poisonDamage, _iceDamage, _lightingDamage, ref canApplyPoison, ref canApplyChill, ref canApplyShock);
-
+        // 상태 이상 적용 시도
+        AttemptyToApplyAilments(_targetStatas, _poisonDamage, _iceDamage, _lightingDamage,
+                                 ref canApplyPoison, ref canApplyChill, ref canApplyShock);
     }
 
     private void AttemptyToApplyAilments(CharacterStats _targetStatas, int _poisonDamage, int _iceDamage, int _lightingDamage, ref bool canApplyPoison, ref bool canApplyChill, ref bool canApplyShock)
     {
+        // 대상이 이미 죽어있는 경우 상태 이상 적용을 중지
         if (_targetStatas.isDead)
             return;
 
+        // 세 가지 상태 이상 모두 적용되지 않은 경우에만 반복
         while (!canApplyPoison && !canApplyChill && !canApplyShock)
         {
+            // 50% 확률로 독 상태 적용
             if (Random.value < 0.5f && _poisonDamage > 0)
             {
                 canApplyPoison = true;
                 _targetStatas.ApplyAilments(canApplyPoison, canApplyChill, canApplyShock);
-
                 return;
             }
 
+            // 50% 확률로 빙결 상태 적용
             if (Random.value < 0.5f && _iceDamage > 0)
             {
                 canApplyChill = true;
@@ -236,6 +253,7 @@ public class CharacterStats : MonoBehaviour
                 return;
             }
 
+            // 50% 확률로 감전 상태 적용
             if (Random.value < 0.5f && _lightingDamage > 0)
             {
                 canApplyShock = true;
@@ -244,43 +262,45 @@ public class CharacterStats : MonoBehaviour
             }
         }
 
+        // 독 상태가 적용된 경우, 추가적인 독 피해 설정
         if (canApplyPoison)
             _targetStatas.SetupPoisonDamage(Mathf.RoundToInt(_poisonDamage * 0.2f));
 
+        // 상태 이상 적용
         _targetStatas.ApplyAilments(canApplyPoison, canApplyChill, canApplyShock);
     }
 
     public void ApplyAilments(bool _poison, bool _chill, bool _shock)
     {
+        // 이미 상태 이상이 적용된 경우 중복 적용 방지
         if (isPoisoned || isChilled || isShocked)
             return;
 
-        if(_poison)
+        // 독 상태 적용
+        if (_poison)
         {
             poisonedTimer = 2f;
             isPoisoned = _poison;
-
             fx.poisonFxFor(poisonedTimer);
         }
 
+        // 빙결 상태 적용
         if (_chill)
         {
             chilledTimer = 2f;
             isChilled = _chill;
 
-            //float slowPercentage = 0.5f;
-
-            //GetComponent<Entity>().EntitySpeedChangeBy(slowPercentage, chilledTimer);
+            // 적이 빙결된 동안 시간 동결
             Enemy enemy = GetComponent<Enemy>();
             enemy.StartCoroutine("FreezeTimeFor", chilledTimer);
             fx.ChillFxFor(chilledTimer);
         }
 
-        if(_shock)
+        // 감전 상태 적용
+        if (_shock)
         {
             shockedTimer = 2f;
             isShocked = _shock;
-
             fx.ShockFxFor(shockedTimer);
         }
     }
@@ -307,11 +327,13 @@ public class CharacterStats : MonoBehaviour
         if (returnDamage)
             return;
 
+        // DoDamage에서 적용된 최종 데미지 적용
         DecreaseHealthBy(_damage);
         
         Entity target = GetComponent<Entity>();
         Enemy enemy = GetComponent<Enemy>();
 
+        // 적이 죽어있는경유 return
         if (target.stats.isDead == false)
         {
             if (target.GetComponent<Enemy>() == true)
@@ -321,6 +343,7 @@ public class CharacterStats : MonoBehaviour
             target.fx.StartCoroutine("FlashFX");
         }
 
+        // 체력이 없을경우 각 Entity에 Die() 호출
         if (currentHealth <= 0 && !isDead)
             Die();
     }
@@ -359,9 +382,11 @@ public class CharacterStats : MonoBehaviour
     {
         currentHealth -= _damage;
 
+        // 데미지 팝업 이펙트 생성
         if (_damage > 0)
             fx.CreateDamagePopUpText(_damage.ToString());
 
+        // 구독 메서드에게 알림 전달
         if (onHealthChanged != null)
             onHealthChanged();
     }

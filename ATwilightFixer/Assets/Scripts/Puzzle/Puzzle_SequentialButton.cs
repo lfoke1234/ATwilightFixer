@@ -2,18 +2,19 @@ using UnityEngine;
 
 public class Puzzle_SequentialButton : MonoBehaviour
 {
-    [SerializeField] private GameObject[] buttons;  // 순서대로 눌러야 하는 버튼들
-    [SerializeField] private GameObject door;  // 퍼즐이 완료되면 열리는 문
-    [SerializeField] private float distanceToPlayer;  // 플레이어와 버튼 간의 거리
-    [SerializeField] private Sprite leverOnSprite;  // 활성화된 레버 스프라이트
-    [SerializeField] private Sprite leverOffSprite; // 비활성화된 레버 스프라이트
-    [SerializeField] private GameObject finalButton; // 최종 확인 버튼
+    [SerializeField] private GameObject[] buttons;
+    [SerializeField] private GameObject door;
+    [SerializeField] private float distanceToPlayer;
+    [SerializeField] private Sprite leverOnSprite;
+    [SerializeField] private Sprite leverOffSprite;
+    [SerializeField] private GameObject finalButton;
 
-    private int currentButtonIndex;
+    private int currentButtonIndex; // 현재 눌러야 할 버튼의 인덱스
     private bool isCleard;
     private bool puzzleFailed;
     private SpriteRenderer[] buttonRenderers;
 
+    // 퍼즐 초기화
     private void Start()
     {
         buttonRenderers = new SpriteRenderer[buttons.Length];
@@ -30,26 +31,29 @@ public class Puzzle_SequentialButton : MonoBehaviour
         CheckPlayerInput();
     }
 
+    // 플레이어의 입력을 체크하고 버튼을 순서대로 누르는지 확인
     private void CheckPlayerInput()
     {
         if (!isCleard)
         {
+            // 현재 눌러야 할 버튼을 플레이어가 근처에서 상호작용한 경우
             if (currentButtonIndex < buttons.Length && IsPlayerNearby(buttons[currentButtonIndex]) && IsActionTriggered("Interaction"))
             {
                 TriggerButton(currentButtonIndex);
             }
+            // 최종 버튼을 플레이어가 근처에서 상호작용한 경우
             else if (IsPlayerNearby(finalButton) && IsActionTriggered("Interaction"))
             {
-                if (currentButtonIndex == buttons.Length && !puzzleFailed)
+                if (currentButtonIndex == buttons.Length && !puzzleFailed) // 모든 버튼을 올바르게 눌렀다면 퍼즐 완료
                 {
                     OnPuzzleCompleted();
                 }
-                else
+                else // 올바르게 누르지 않았다면 퍼즐 초기화
                 {
                     ResetPuzzle();
                 }
             }
-            else
+            else // 플레이어가 현재 눌러야 할 버튼이 아닌 다른 버튼을 누른 경우
             {
                 for (int i = 0; i < buttons.Length; i++)
                 {
@@ -63,9 +67,10 @@ public class Puzzle_SequentialButton : MonoBehaviour
         }
     }
 
+    // 순서대로 버튼을 눌렀을 때의 동작
     private void TriggerButton(int buttonIndex)
     {
-        if (buttonIndex == currentButtonIndex)
+        if (buttonIndex == currentButtonIndex) // 올바른 버튼을 누른 경우
         {
             buttonRenderers[buttonIndex].sprite = leverOnSprite;
             currentButtonIndex++;
@@ -73,32 +78,34 @@ public class Puzzle_SequentialButton : MonoBehaviour
         }
         else
         {
-            TriggerIncorrectButton(buttonIndex);
+            TriggerIncorrectButton(buttonIndex); // 잘못된 버튼을 누름
         }
     }
 
+    // 잘못된 버튼을 눌렀을 때의 동작
     private void TriggerIncorrectButton(int buttonIndex)
     {
         buttonRenderers[buttonIndex].sprite = leverOnSprite;
-        puzzleFailed = true;
+        puzzleFailed = true; // 퍼즐 실패 상태로 전환
         Debug.Log("Puzzle failed!");
     }
 
+    // 퍼즐이 완료되었을 때의 동작
     private void OnPuzzleCompleted()
     {
         door.SetActive(false);
         isCleard = true;
-        finalButton.GetComponent<SpriteRenderer>().sprite = leverOnSprite;
+        finalButton.GetComponent<SpriteRenderer>().sprite = leverOnSprite; 
         Debug.Log("Puzzle completed!");
     }
 
+    // 퍼즐을 초기 상태로 리셋
     private void ResetPuzzle()
     {
-        currentButtonIndex = 0;
+        currentButtonIndex = 0; 
         puzzleFailed = false;
         Debug.Log("Resetting puzzle.");
 
-        // 모든 레버의 스프라이트를 원래대로 돌림
         for (int i = 0; i < buttons.Length; i++)
         {
             buttonRenderers[i].sprite = leverOffSprite;
@@ -106,11 +113,13 @@ public class Puzzle_SequentialButton : MonoBehaviour
         finalButton.GetComponent<SpriteRenderer>().sprite = leverOffSprite;
     }
 
+    // 플레이어가 특정 버튼 근처에 있는지 확인
     private bool IsPlayerNearby(GameObject button)
     {
         return Vector2.Distance(button.transform.position, PlayerManager.instance.player.transform.position) <= distanceToPlayer;
     }
 
+    // 특정 액션이 트리거되었는지 확인 (상호작용 입력)
     public bool IsActionTriggered(string actionName)
     {
         var action = PlayerInputHandler.instance.GetAction(actionName);

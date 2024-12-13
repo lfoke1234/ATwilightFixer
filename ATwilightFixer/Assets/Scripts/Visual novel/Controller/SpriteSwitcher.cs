@@ -16,6 +16,7 @@ public class SpriteSwitcher : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    // 새로운 배경 이미지를 부드럽게 전환하는
     public void SwitchImage(Sprite sprite)
     {
         if (!isSwitched)
@@ -31,6 +32,7 @@ public class SpriteSwitcher : MonoBehaviour
         isSwitched = !isSwitched;
     }
 
+    // 새로운 배경 이미지를 즉시 설정
     public void SetImage(Sprite sprite)
     {
         if (!isSwitched)

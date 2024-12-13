@@ -32,6 +32,7 @@ public class Dash_Skill : Skill
 
     public override bool CanUseSkill()
     {
+        // 레벨별 마나량 조절
         if (dash1Unlocked)
         {
             amount = 0;
@@ -45,6 +46,7 @@ public class Dash_Skill : Skill
             amount = 40;
         }
 
+        // 조건 체크후 사용 가능시 UseSkill();
         if (coolDownTimer < 0 && player.stats.currentStamina > amount)
         {
             coolDownTimer = coolDown;

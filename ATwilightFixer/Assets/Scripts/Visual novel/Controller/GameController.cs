@@ -24,6 +24,8 @@ namespace RPG.VisualNovel
             IDLE, ANIMATE, CHOOSE
         }
 
+        // 게임 시작 시 초기화 작업을 수행
+        // 다음 씬 세팅과 비주얼 노벨 시작
         void Start()
         {
             if (NovelScriptManager.Instance.nextPlayScene != null)
@@ -60,11 +62,13 @@ namespace RPG.VisualNovel
             }
         }
 
+        // 다음씬 재생
         public void PlayScene(GameScene scene)
         {
             StartCoroutine(SwitchScene(scene));
         }
 
+        // 장면 전환을 처리하는 코루틴
         private IEnumerator SwitchScene(GameScene scene)
         {
             state = State.ANIMATE;
@@ -103,6 +107,7 @@ namespace RPG.VisualNovel
             }
         }
 
+        // 현재 문장의 배경음악 및 사운드를 재생
         private void PlayAudio(StoryScene.Sentence sentence)
         {
             audioController.PlayAudio(sentence.music, sentence.sound);

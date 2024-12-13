@@ -9,12 +9,14 @@ public class UI : MonoBehaviour, ISaveManager
     public static UI instance;
     [SerializeField] int[] donSwitchInGameUI;
 
+    // 게임오버 화면 관련
     [Header("End Screen")]
     [SerializeField] private UI_FadeScreen fadeScreen;
     [SerializeField] private GameObject endText;
     [SerializeField] private GameObject restartButton;
     [Space]
 
+    // UI 목록
     [SerializeField] private GameObject characterUI;
     [SerializeField] private GameObject skillTreeUI;
     [SerializeField] private GameObject craftUI;
@@ -23,12 +25,15 @@ public class UI : MonoBehaviour, ISaveManager
     [SerializeField] private GameObject resolutionUI;
     [SerializeField] private GameObject inGameUI;
 
+    // 툴팁 목록
     public UI_SkillTooltip skillTooltip;
     public UI_ItemTooltip itemTooltip;
     public UI_StatTooltip statTooltip;
 
+    // 볼륨
     [SerializeField] private UI_VolumeSlider[] volumeSettings;
 
+    // UI 전환 관련
     private GameObject[] uiPanels;
     private int currentUIPanelIndex;
     private bool isActiveUI;
@@ -128,6 +133,7 @@ public class UI : MonoBehaviour, ISaveManager
         HandleInGameUIShow(scene.buildIndex);
     }
 
+    // 현재 씬의 인덱스를 기준으로 In-Game UI를 활성화하거나 비활성화합니다.
     private void HandleInGameUIShow(int currentSceneIndex)
     {
         if (Array.Exists(donSwitchInGameUI, element => element == currentSceneIndex))
@@ -140,9 +146,9 @@ public class UI : MonoBehaviour, ISaveManager
         }
     }
 
+    // 특정 UI 패널로 전환합니다.
     public void SwitchTo(GameObject _menu)
     {
-
         for (int i = 0; i < transform.childCount; i++)
         {
             bool fadeScreen = transform.GetChild(i).GetComponent<UI_FadeScreen>() != null;
@@ -150,10 +156,10 @@ public class UI : MonoBehaviour, ISaveManager
                 transform.GetChild(i).gameObject.SetActive(false);
         }
 
-        if(_menu != null)
+        if (_menu != null)
         {
             _menu.SetActive(true);
-           AudioManager.instance.PlaySFX(5, null);
+            AudioManager.instance.PlaySFX(5, null);
         }
 
         if (GameManager.Instance != null)
@@ -169,12 +175,12 @@ public class UI : MonoBehaviour, ISaveManager
                 GameManager.Instance.PausueGame(true);
             }
         }
-
     }
 
+    // 키 입력으로 UI 패널을 전환합니다.
     public void SwitchWithKeyTo(GameObject _menu)
     {
-        if(_menu != null && _menu.activeSelf)
+        if (_menu != null && _menu.activeSelf)
         {
             _menu.SetActive(false);
             CheckForInGameUI();
@@ -184,18 +190,21 @@ public class UI : MonoBehaviour, ISaveManager
         SwitchTo(_menu);
     }
 
+    // 다음 UI 패널로 전환합니다.
     private void SwitchToNextUIPanel()
     {
         currentUIPanelIndex = (currentUIPanelIndex + 1) % uiPanels.Length;
         SwitchTo(uiPanels[currentUIPanelIndex]);
     }
 
+    // 이전 UI 패널로 전환합니다.
     private void SwitchToPreviousUIPanel()
     {
         currentUIPanelIndex = (currentUIPanelIndex - 1 + uiPanels.Length) % uiPanels.Length;
         SwitchTo(uiPanels[currentUIPanelIndex]);
     }
 
+    // 현재 UI 패널을 선택합니다.
     private void SelectCurrentUIPanel()
     {
         if (uiPanels[currentUIPanelIndex].activeSelf)
@@ -204,6 +213,7 @@ public class UI : MonoBehaviour, ISaveManager
         }
     }
 
+    // In-Game UI가 필요한지 확인하고 전환합니다.
     private void CheckForInGameUI()
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -215,16 +225,13 @@ public class UI : MonoBehaviour, ISaveManager
         SwitchTo(inGameUI);
     }
 
-    public GameObject GetInventory()
-    {
-        return characterUI;
-    }
-
+    // 엔딩 화면을 전환합니다.
     public void SwitchOnEndScreen()
     {
         fadeScreen.FadeOut();
         StartCoroutine(EndScreenCorutine());
     }
+
 
     IEnumerator EndScreenCorutine()
     {
@@ -244,11 +251,21 @@ public class UI : MonoBehaviour, ISaveManager
         PlayerManager.instance.player.ResetPlayer();
     }
 
+    public void SaveandExit()
+    {
+        SaveManager.instance.SaveGame();
+        Application.Quit();
+    }
+
     public void TimeScale()
     {
         GameManager.Instance.PausueGame(false);
     }
 
+    public GameObject GetInventory()
+    {
+        return characterUI;
+    }
     public void LoadData(GameData _data)
     {
         foreach (KeyValuePair<string, float> pair in _data.volumSettings)
@@ -262,11 +279,6 @@ public class UI : MonoBehaviour, ISaveManager
 
     }
 
-    public void SaveandExit()
-    {
-        SaveManager.instance.SaveGame();
-        Application.Quit();
-    }
 
     public void SaveData(ref GameData _data)
     {

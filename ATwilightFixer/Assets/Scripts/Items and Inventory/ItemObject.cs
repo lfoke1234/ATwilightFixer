@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemObject : MonoBehaviour
@@ -7,12 +5,7 @@ public class ItemObject : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private ItemData itemData;
 
-
-    private void OnValidate()
-    {
-        SetupVisual();
-    }
-
+    // 아이템의 외형 설정
     private void SetupVisual()
     {
         if (itemData == null)
@@ -22,6 +15,7 @@ public class ItemObject : MonoBehaviour
         gameObject.name = "Item object - " + itemData.itemName;
     }
 
+    // 아이템 설정 및 초기 속도 지정
     public void SetUpItem(ItemData _itemData, Vector2 _velocity)
     {
         itemData = _itemData;
@@ -30,6 +24,7 @@ public class ItemObject : MonoBehaviour
         SetupVisual();
     }
 
+    // 아이템을 플레이어가 획득할 때 호출되는 함수
     public void PickupItem()
     {
         if (itemData is ItemData_InstantItem instantItem)
@@ -39,13 +34,6 @@ public class ItemObject : MonoBehaviour
             return;
         }
 
-        if (Inventory.Instance.CanAddtoInventory() == false && itemData.itemType == ItemType.Equipment)
-        {
-            rb.velocity = new Vector2(0, 7);
-            return;
-        }
-
-        AudioManager.instance.PlaySFX(6, null);
         Inventory.Instance.AddItem(itemData);
         Destroy(gameObject);
     }

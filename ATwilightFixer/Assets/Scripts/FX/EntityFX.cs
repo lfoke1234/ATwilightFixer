@@ -58,7 +58,7 @@ public class EntityFX : MonoBehaviour
         GameObject newText = Instantiate(popUpTextPrefab, new Vector2(transform.position.x, transform.position.y + size), Quaternion.identity);
 
         newText.GetComponent<TextMeshPro>().text = _text;
-    }
+    }   
 
     #region Screen Shake
     public void ScreenShake(Vector3 _shakePower)
@@ -71,7 +71,6 @@ public class EntityFX : MonoBehaviour
         screenShake.m_DefaultVelocity = new Vector3(_shakePower.x * player.facingDir, _shakePower.y) * _shakeMultiplier;
         screenShake.GenerateImpulse();
     }
-
     #endregion
 
     public void GameSpeedControll(float newSpeed, float duration)
@@ -94,14 +93,10 @@ public class EntityFX : MonoBehaviour
     private IEnumerator FlashFX()
     {
         sr.material = hitMat;
-        //Color currentColor = sr.color;
-        //sr.color = Color.white;
 
         yield return new WaitForSeconds(flashDuration);
 
-        //sr.color = currentColor;
         sr.material = originMat;
-
     }
 
     private void GrayColorBlink()
@@ -116,12 +111,14 @@ public class EntityFX : MonoBehaviour
 
     public void CreatHitFX(Transform _target, bool _isSpecial)
     {
+        // 랜덤값
         float zRotation = Random.Range(-90, 90);
         float xPosition = Random.Range(-0.5f, 0.5f);
         float yPosition = Random.Range(-0.5f, 0.5f);
 
         GameObject hitPrefab = hitFX;
 
+        // 치명타 일때
         if (_isSpecial)
         {
             hitPrefab = spetialHitFX;
@@ -129,6 +126,7 @@ public class EntityFX : MonoBehaviour
 
         GameObject newHitfx = Instantiate(hitPrefab, _target.position + new Vector3(xPosition, yPosition), Quaternion.identity, _target);
 
+        // 치명타 아닐때 랜덤 회전값
         if (_isSpecial == false)
             newHitfx.transform.Rotate(new Vector3(0, 0, zRotation));
         else

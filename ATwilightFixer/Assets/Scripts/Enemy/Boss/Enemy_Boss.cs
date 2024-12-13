@@ -116,6 +116,7 @@ public class Enemy_Boss : Enemy
     }
     #endregion
 
+    // 보스위치에서 지정된 범위 내에 번개 소환
     private void SpawnThunder()
     {
         for (int i = 0; i < 4; i++)
@@ -126,6 +127,7 @@ public class Enemy_Boss : Enemy
         }
     }
 
+    // 보스위치에서 지정된 범위 내에 적 소환
     private void SpawnEnemies()
     {
         for (int i = 0; i < enemies.Length; i++)

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// 장비의 부위를 정의하는 열거형
 public enum EquipmentType
 {
     Weapon,
@@ -13,11 +14,15 @@ public enum EquipmentType
 [CreateAssetMenu(fileName = "New Item Data", menuName = "Data/Equipment")]
 public class ItemData_Equipment : ItemData
 {
+    // 아이템의 타입
     public EquipmentType equipmentType;
 
+    // 아이템의 쿨타임과 효과
     public float itemCooldown;
     public ItemEffect[] itemEffects;
 
+    // 추가적인 능력치들
+    #region Stat
     [Header("Major Stat")]
     public int strength; 
     public int agility;
@@ -42,12 +47,16 @@ public class ItemData_Equipment : ItemData
     public int fireDamage;
     public int iceDamage;
     public int lightingDamage;
+    #endregion
 
+    // 아이템 제작에 필요한 재료들
     [Header("Creaft requrements")]
     public List<InventoryItem> craftingMaterial;
 
+    //
     private int descriptionLength;
 
+    // 장비의 고유한 효과
     public void ExcuteItemEffect()
     {
         foreach (var item in itemEffects)
@@ -56,6 +65,7 @@ public class ItemData_Equipment : ItemData
         }
     }
 
+    // 장비 아이템 장착 시 추가적인 능력치를 플레이어에게 부여
     public void AddModifire()
     {
         PlayerStats playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
@@ -82,6 +92,7 @@ public class ItemData_Equipment : ItemData
         playerStats.lightingDamage.AddModifiers(lightingDamage);
     }
 
+    // 장비 아이템 해제 시 부여한 능력치를 제거
     public void RemoveModifire() 
     {
         PlayerStats playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
@@ -108,18 +119,22 @@ public class ItemData_Equipment : ItemData
         playerStats.lightingDamage.RemoveModifiers(lightingDamage);
     }
 
+    // 아이템 설명을 생성하는 메서드 (기존 메서드 덮어쓰기)
     public override string GetDescription()
     {
+        // StringBuilder 초기화 (기존 내용 삭제)
         sb.Length = 0;
         descriptionLength = 0;
 
+        // 아이템의 각 속성을 설명에 추가
         AddItemDescription(damage, "공격력");
         AddItemDescription(trueDamage, "공격력");
         AddItemDescription(health, "체력");
         AddItemDescription(recoveryStaminaSpeed, "스테미나 회복");
         AddItemDescription(armor, "방어력");
 
-        if(descriptionLength < 5)
+        // 설명이 5줄 미만인 경우 빈 줄을 추가하여 설명 길이를 맞춤
+        if (descriptionLength < 5)
         {
             for (int i = 0; i < 5 - descriptionLength; i++)
             {
@@ -128,19 +143,25 @@ public class ItemData_Equipment : ItemData
             }
         }
 
+        // 최종적으로 생성된 설명 반환
         return sb.ToString();
     }
 
+    // 아이템 속성을 설명에 추가하는 메서드
     private void AddItemDescription(int _value, string _name)
     {
-        if(_value != 0)
+        // 값이 0이 아닌 경우에만 설명 추가
+        if (_value != 0)
         {
-            if(sb.Length > 0)
+            // StringBuilder에 이미 내용이 있는 경우 줄 바꿈 추가
+            if (sb.Length > 0)
                 sb.AppendLine();
 
-            if(_value > 0)
+            // 값이 양수일 경우 속성 설명 추가
+            if (_value > 0)
                 sb.Append("+ " + _value + " " + _name);
 
+            // 설명에 추가된 속성의 개수 증가
             descriptionLength++;
         }
     }

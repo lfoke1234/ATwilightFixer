@@ -21,6 +21,7 @@ public class Player : Entity
     public float counterAttackDuaration = 0.2f;
 
     public bool isBusy {  get; private set; }
+
     [Header("Move info")]
     public float moveSpeed = 8f;
     public float jumoForce = 12f;
@@ -207,6 +208,36 @@ public class Player : Entity
         {
             this.GetComponent<PlayerStats>().LevelDown();
         }
+
+        // if (Input.GetKeyDown(KeyCode.Q))
+        // {
+        //     // 전기 충격 상태 적용
+        //     GetComponent<PlayerStats>().isShocked = true;
+        //     GetComponent<PlayerStats>().shockedTimer = 5f;
+        // 
+        //     // 전기 효과 시각적 표현
+        //     fx.ShockFxFor(5f);
+        // }
+        // 
+        // if (Input.GetKeyDown(KeyCode.W))
+        // {
+        //     // 냉기 상태 적용
+        //     GetComponent<PlayerStats>().isChilled = true;
+        //     GetComponent<PlayerStats>().chilledTimer = 5f;
+        // 
+        //     // 냉기 효과 시각적 표현
+        //     fx.ChillFxFor(5f);
+        // }
+        // 
+        // if (Input.GetKeyDown(KeyCode.E))
+        // {
+        //     // 독 상태 적용
+        //     GetComponent<PlayerStats>().isPoisoned = true;
+        //     GetComponent<PlayerStats>().poisonedTimer = 5f;
+        // 
+        //     // 독 효과 시각적 표현
+        //     fx.poisonFxFor(5f);
+        // }
     }
 
     #region ChangeSpeed
@@ -255,19 +286,6 @@ public class Player : Entity
 
     #region Collision
 
-    // public bool SlashCheck()
-    // {
-    //     Collider2D[] hitColliders = Physics2D.OverlapBoxAll(slashCheck.position, slashBoxSize, 0);
-    //     foreach (var hitCollider in hitColliders)
-    //     {
-    //         if (hitCollider.CompareTag("Enemy"))
-    //         {
-    //             return true;
-    //         }
-    //     }
-    //     return false;
-    // }
-
     public bool WallClimbCheck() => Physics2D.Raycast(climbCheck.position, Vector2.right * facingDir, climbCheckDistance, isGround);
 
     public bool CheckLand() => Physics2D.Raycast(checkLand.position, Vector2.down, groundCheckDistance, isGround);
@@ -286,6 +304,7 @@ public class Player : Entity
         if (IsWallDected())
             return;
 
+        // Player 클래스에서 대쉬 인풋 체크후 상태전환
         if (IsActionTriggered("Dash") && SkillManager.instance.dash.CanUseSkill()) 
         {
             Vector2 dashMovement = PlayerInputHandler.instance.GetMovementInput();

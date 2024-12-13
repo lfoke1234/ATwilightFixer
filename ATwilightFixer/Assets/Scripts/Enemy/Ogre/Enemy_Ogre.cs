@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Xml;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public class Enemy_Ogre : Enemy
@@ -16,7 +13,7 @@ public class Enemy_Ogre : Enemy
 
     [SerializeField] private Transform projectilePosition;
     [SerializeField] private Transform playerChecker2;
-    [SerializeField] private Vector2 playerCheckBoxSize2;  
+    [SerializeField] private Vector2 playerCheckBoxSize2;
 
     #region State
 
@@ -55,7 +52,7 @@ public class Enemy_Ogre : Enemy
     protected override void Update()
     {
         base.Update();
-        
+
     }
 
     public override bool CanBeStunned()

@@ -29,15 +29,20 @@ public class Projectile_Controller : MonoBehaviour
     {
         stats = _stats;
 
+        // 투사체와 목표 지점간의 벡터 계산
         Vector2 toTarget = targetPosition - transform.position;
 
+        // 방향 벡터 계산
         float distance = toTarget.magnitude;
         Vector2 direction = toTarget.normalized;
 
+        // 중력 설정과 초기 각도 설정
+        // 최대 사거리와 적절한 포물선 운동을 위한 각도 계산
         float gravity = Mathf.Abs(Physics2D.gravity.y * rb.gravityScale);
         float angle = 45 * Mathf.Deg2Rad;
         float velocity = Mathf.Sqrt((gravity * distance) / Mathf.Sin(2 * angle));
 
+        // 벡터 설정후 포물선의 초기 속도를 결정
         Vector2 launchVelocity = new Vector2(velocity * Mathf.Cos(angle), velocity * Mathf.Sin(angle));
         launchVelocity.x *= Mathf.Sign(toTarget.x);
 

@@ -16,6 +16,7 @@ namespace RPG.VisualNovel
             rectTransform = GetComponent<RectTransform>();
         }
 
+        // 선택지 UI를 설정
         public void SetupChoose(ChooseScene scene)
         {
             DestroyLabels();
@@ -37,12 +38,23 @@ namespace RPG.VisualNovel
             rectTransform.sizeDelta = size;
         }
 
+        // 선택이 수행되었을 때 게임 컨트롤러에 해당 장면을 재생시키고 선택지 UI 숨기기
         public void PerformChoose(StoryScene scene)
         {
             gameController.PlayScene(scene);
             animator.SetTrigger("Hide");
         }
 
+        // 기존 선택지 레이블을 제거
+        private void DestroyLabels()
+        {
+            foreach (Transform childTransform in transform)
+            {
+                Destroy(childTransform.gameObject);
+            }
+        }
+
+        // 선택지 레이블의 위치 계산
         private float CalculateLabelPosition(int labelIndex, int labelCount)
         {
             if (labelCount % 2 == 0)
@@ -73,12 +85,5 @@ namespace RPG.VisualNovel
             }
         }
 
-        private void DestroyLabels()
-        {
-            foreach (Transform childTransform in transform)
-            {
-                Destroy(childTransform.gameObject);
-            }
-        }
     }
 }

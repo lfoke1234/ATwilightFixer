@@ -56,6 +56,7 @@ public class UI_KeyBinding : MonoBehaviour, ISaveManager
     private void Start()
     {
         #region AddListener and Update Text
+        // 각 버튼에 클릭 리스너를 추가하고 텍스트를 업데이트
         rightButton.onClick.AddListener(() => StartRebinding("Right", rightText));
         UpdateButtonText("Right", rightText);
 
@@ -91,9 +92,10 @@ public class UI_KeyBinding : MonoBehaviour, ISaveManager
         #endregion
     }
 
+    // 키 리바인딩을 시작
     private void StartRebinding(string actionName, TextMeshProUGUI buttonText)
     {
-        buttonText.text = "키 입력";
+        buttonText.text = "키 입력"; // 버튼 텍스트를 "키 입력"으로 변경
         var action = PlayerInputHandler.instance.GetAction(actionName);
         if (action == null) return;
 
@@ -103,14 +105,15 @@ public class UI_KeyBinding : MonoBehaviour, ISaveManager
               .WithControlsExcluding("<Mouse>/delta")
               .OnComplete(operation =>
               {
-                  action.Enable();
+                  action.Enable(); // 리바인딩 완료 후 액션을 활성
                   UpdateButtonTextWithSize(action.controls[0].path, buttonText);
-                  SaveManager.instance.SaveSpecificScript(this.GetType().Name);
-                  operation.Dispose();
+                  SaveManager.instance.SaveSpecificScript(this.GetType().Name); // 설정 저장
+                  operation.Dispose(); // 리소스 정리
               })
               .Start();
     }
 
+    // 버튼의 텍스트를 업데이트
     private void UpdateButtonText(string actionName, TextMeshProUGUI buttonText)
     {
         var action = PlayerInputHandler.instance.GetAction(actionName);
@@ -120,6 +123,7 @@ public class UI_KeyBinding : MonoBehaviour, ISaveManager
         }
     }
 
+    // 입력 컨트롤 경로에 따라 버튼 텍스트를 업데이트하고 글자 크기를 조정
     private void UpdateButtonTextWithSize(string controlPath, TextMeshProUGUI buttonText)
     {
         string readableName;
@@ -193,6 +197,7 @@ public class UI_KeyBinding : MonoBehaviour, ISaveManager
         }
     }
 
+    // 각 액션에 해당하는 텍스트를 반환
     private TextMeshProUGUI GetButtonText(string actionName)
     {
         switch (actionName)

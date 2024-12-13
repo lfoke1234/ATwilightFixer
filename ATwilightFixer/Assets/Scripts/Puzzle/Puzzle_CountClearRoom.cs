@@ -40,6 +40,7 @@ public class Puzzle_CountClearRoom : MonoBehaviour
 
     void Update()
     {
+        // 현재 방이 활성화되었고, 모든 몬스터가 사라졌을 경우
         if (isActive && currentMontor.TrueForAll(monster => monster == null))
         {
             Vector2 player = PlayerManager.instance.player.transform.position;
@@ -47,7 +48,7 @@ public class Puzzle_CountClearRoom : MonoBehaviour
             clearCount++;
             door.SetActive(false);
 
-            if (clearCondition > clearCount)
+            if (clearCondition > clearCount) // 클리어 조건이 아직 충족되지 않은 경우
             {
                 if (clearCount % 2 == 0)
                 {
@@ -61,7 +62,7 @@ public class Puzzle_CountClearRoom : MonoBehaviour
                 }
                 isActive = false;
             }
-            else if (clearCount >= clearCondition)
+            else if (clearCount >= clearCondition) // 클리어 조건 충족 시 퍼즐 완료 처리
             {
                 UpdateGuideText("문이 열렸습니다.", new Vector2(player.x, player.y + 3f));
                 clearDoor.SetActive(false);
@@ -71,6 +72,7 @@ public class Puzzle_CountClearRoom : MonoBehaviour
         }
     }
 
+    // 플레이어가 방에 진입했을 때 몬스터 소환
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Player>() != null && isActive == false)
@@ -86,6 +88,7 @@ public class Puzzle_CountClearRoom : MonoBehaviour
         }
     }
 
+    // 안내 텍스트 업데이트
     void UpdateGuideText(string text, Vector2 position)
     {
         guideText.text = text;
@@ -93,6 +96,7 @@ public class Puzzle_CountClearRoom : MonoBehaviour
         guideText.gameObject.SetActive(true);
     }
 
+    // 몬스터 그룹 1 소환
     private void SpawnMonstor1()
     {
         if (guideObj2.activeSelf)
@@ -116,6 +120,7 @@ public class Puzzle_CountClearRoom : MonoBehaviour
         isActive = true;
     }
 
+    // 몬스터 그룹 2 소환
     private void SpawnMonstor2()
     {
         if (guideObj1.activeSelf)

@@ -23,15 +23,17 @@ public class PlayerPrimaryAttackState : PlayerState
             comboCounter = 0;
         }
 
+        // 현재 카운터에 따른 애니메이션 세팅
         player.anim.SetInteger("ComboCounter", comboCounter);
 
+        // 키 입력에 따른 플레이어 forward 설정
         float attackDir = player.facingDir;
-
         if (movementInput.x != 0)
         {
             attackDir = movementInput.x;
         }
 
+        // 공격마다 역동감을 주기위한 속도값 추가
         player.SetVelocity(player.attackMovement[comboCounter].x * attackDir, player.attackMovement[comboCounter].y);
 
         stateTimer = 0.1f;

@@ -84,17 +84,19 @@ public class Boss_FlashCutState : EnemyState
         Vector2 origin = enemy.transform.position;
         Vector2 direction = new Vector2(enemy.facingDir, 0);
 
+        // 레이어 설정
         LayerMask playerLayer = LayerMask.GetMask("Player");
         LayerMask groundLayer = LayerMask.GetMask("Ground");
         LayerMask brokenWall = LayerMask.GetMask("BrokenWall");
-
         float maxDistance = flashDistance;
 
+        // 보스의 크기와 거리를 통한 충돌 판정
         Vector2 boxSize = new Vector2(enemy.transform.localScale.x, enemy.transform.localScale.y);
         RaycastHit2D[] hit = Physics2D.RaycastAll(enemy.transform.position, direction, flashDistance);
         RaycastHit2D[] hits = Physics2D.BoxCastAll(origin, boxSize, 0, direction, maxDistance);
         float travelDistance = maxDistance;
 
+        // 감지된 충돌 객체들을 순회
         foreach (RaycastHit2D player in hit)
         {
             if (player.collider != null)
@@ -111,10 +113,12 @@ public class Boss_FlashCutState : EnemyState
             }
         }
 
+        // 이동할 목표 위치 계산
         Vector2 targetPosition = origin + direction * travelDistance;
         enemy.transform.position = targetPosition;
     }
 
+    // 지정된 위치에 보스의 분신을 생성
     private void CreateClone(Vector2 position, bool isFlip)
     {
         GameObject clone = Instantiate(enemy.clonePrefab, position, Quaternion.identity);

@@ -37,6 +37,7 @@ public class Puzzle_DropObject : MonoBehaviour
         }
     }
 
+    // 플레이어가 물체 아래에 있는지 확인하는 메서드 (레이캐스트 사용)
     private bool DropCheck() => Physics2D.Raycast(check.position, Vector2.down, distance, isPlayer);
 
     private void Drop()

@@ -77,11 +77,13 @@ public class Enemy_Slime : Enemy
 
     public override void AnimationUniqueAttackTrigger()
     {
+        // Animation Event 에 할당할 메서드
         CreateSliem(childAmount, slimePrefab);
     }
 
     private void CreateSliem(int _amountSlimes, GameObject _slimePrefab)
     {
+        // 하위 슬라임을 정해진 수만큼 생성
         for (int i = 0; i < _amountSlimes; i++)
         {
             GameObject newSlime = Instantiate(_slimePrefab, transform.position, Quaternion.identity);
@@ -95,11 +97,13 @@ public class Enemy_Slime : Enemy
         if (facingDir != facingDir)
             Flip();
 
+        // 랜덤 분열 Velocity값 설정
         float xVelocity = Random.Range(minCreateVelocity.x, maxCreateVelocity.x);
         float yVelocity = Random.Range(minCreateVelocity.y, maxCreateVelocity.y);
 
         isKnocked = true;
 
+        // 랜덤 Velocity 할당
         GetComponent<Rigidbody2D>().velocity = new Vector2(xVelocity * facingDir, yVelocity);
 
         Invoke("CancelKnockback", 1.5f);

@@ -67,6 +67,7 @@ public class Entity : MonoBehaviour
         anim.speed = 1;
     }
 
+    #region KnockBack Info
     public virtual void SetupKnockbackDir(Transform _damageDir)
     {
         if (_damageDir.position.x > transform.position.x)
@@ -94,6 +95,7 @@ public class Entity : MonoBehaviour
         yield return new WaitForSeconds(knockbackDuration);
         isKnocked = false;
     }
+    #endregion
 
     #region Velocity
     public void SetZeroVelocity()
@@ -106,7 +108,6 @@ public class Entity : MonoBehaviour
     public void SetVelocity(float xVelocity, float yVelocity)
     {
         //if (isKnocked) return;
-
         rb.velocity = new Vector2(xVelocity, yVelocity);
         FlipController(xVelocity);
     }
@@ -119,19 +120,6 @@ public class Entity : MonoBehaviour
     #endregion
 
     #region Collision
-
-    // public virtual void SlopesHandle()
-    // {
-    //     RaycastHit2D Hit2D = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, isGround);
-    // 
-    //     if (Hit2D != false)
-    //     {
-    //         Vector2 temp = entityFeet.position;
-    //         temp.y = Hit2D.point.y;
-    //         entityFeet.position = temp;
-    //     }
-    // }
-
     public virtual bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, isGround);
     public virtual bool IsWallDected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, isGround);
 

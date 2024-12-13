@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -129,6 +130,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SaveAndQuit()
+    {
+        StartCoroutine(WaitSave());
+    }
+
+
+    private IEnumerator WaitSave()
+    {
+        SaveManager.instance.SaveGame();
+        yield return new WaitForSeconds(0.5f);
+        Application.Quit();
+    }
     public void StopCutScene() => isPlayCutScene = false;
     public void PlayCutScene() => isPlayCutScene = true;
 }
